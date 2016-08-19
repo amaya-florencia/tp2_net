@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="UI_Web.SiteMaster" %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>    
+<head runat="server">
+        <title>Academia</title>
+    </head>
+    <body>
+        <form id="bodyForm" runat="server">
+            <asp:Menu runat="server" ID="menu" DataSourceID="SiteMapDataSource">
+
+            </asp:Menu>
+
+            <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
+
+            <div>
+                <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
+
+                </asp:ContentPlaceHolder>
+            </div>
+    </form>
+    </body>
+</html>

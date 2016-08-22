@@ -30,34 +30,34 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.lblConfirmarClave = new System.Windows.Forms.Label();
+            this.txtClave = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtConfirmarClave = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblConfirmarClave = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtClave = new System.Windows.Forms.TextBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.lblApellido = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.txtConfirmarClave = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.chkHabilitado = new System.Windows.Forms.CheckBox();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblCelular = new System.Windows.Forms.Label();
             this.lblTipoDoc = new System.Windows.Forms.Label();
+            this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
             this.lblNroDoc = new System.Windows.Forms.Label();
             this.txtNroDoc = new System.Windows.Forms.TextBox();
             this.lblFechaNac = new System.Windows.Forms.Label();
+            this.txtFechaNac = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtFechaNac = new System.Windows.Forms.TextBox();
-            this.cmbTipoDoc = new System.Windows.Forms.ComboBox();
             this.lblClave = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,6 +124,55 @@
             this.lblNombre.TabIndex = 10;
             this.lblNombre.Text = "Nombre";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(468, 240);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 24;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(335, 240);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 23;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            // 
+            // lblConfirmarClave
+            // 
+            this.lblConfirmarClave.AutoSize = true;
+            this.lblConfirmarClave.Location = new System.Drawing.Point(335, 211);
+            this.lblConfirmarClave.Name = "lblConfirmarClave";
+            this.lblConfirmarClave.Size = new System.Drawing.Size(81, 13);
+            this.lblConfirmarClave.TabIndex = 15;
+            this.lblConfirmarClave.Text = "Confirmar Clave";
+            // 
+            // txtClave
+            // 
+            this.txtClave.Location = new System.Drawing.Point(136, 214);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(100, 20);
+            this.txtClave.TabIndex = 19;
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(136, 3);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 16;
+            // 
+            // txtConfirmarClave
+            // 
+            this.txtConfirmarClave.Location = new System.Drawing.Point(468, 214);
+            this.txtConfirmarClave.Name = "txtConfirmarClave";
+            this.txtConfirmarClave.Size = new System.Drawing.Size(100, 20);
+            this.txtConfirmarClave.TabIndex = 22;
+            // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
@@ -142,56 +191,6 @@
             this.lblId.TabIndex = 9;
             this.lblId.Text = "ID";
             // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(335, 174);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
-            this.lblUsuario.TabIndex = 14;
-            this.lblUsuario.Text = "Usuario";
-            // 
-            // lblConfirmarClave
-            // 
-            this.lblConfirmarClave.AutoSize = true;
-            this.lblConfirmarClave.Location = new System.Drawing.Point(335, 211);
-            this.lblConfirmarClave.Name = "lblConfirmarClave";
-            this.lblConfirmarClave.Size = new System.Drawing.Size(81, 13);
-            this.lblConfirmarClave.TabIndex = 15;
-            this.lblConfirmarClave.Text = "Confirmar Clave";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(136, 177);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtEmail.TabIndex = 18;
-            // 
-            // txtClave
-            // 
-            this.txtClave.Location = new System.Drawing.Point(136, 214);
-            this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(100, 20);
-            this.txtClave.TabIndex = 19;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(335, 240);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 23;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(468, 240);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 24;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(468, 36);
@@ -209,6 +208,15 @@
             this.lblApellido.TabIndex = 13;
             this.lblApellido.Text = "Apellido";
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Location = new System.Drawing.Point(335, 174);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuario.TabIndex = 14;
+            this.lblUsuario.Text = "Usuario";
+            // 
             // txtUsuario
             // 
             this.txtUsuario.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
@@ -217,28 +225,12 @@
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 21;
             // 
-            // txtConfirmarClave
+            // txtEmail
             // 
-            this.txtConfirmarClave.Location = new System.Drawing.Point(468, 214);
-            this.txtConfirmarClave.Name = "txtConfirmarClave";
-            this.txtConfirmarClave.Size = new System.Drawing.Size(100, 20);
-            this.txtConfirmarClave.TabIndex = 22;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtNombre.Location = new System.Drawing.Point(136, 36);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.ReadOnly = true;
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 17;
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(136, 3);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 20);
-            this.txtId.TabIndex = 16;
+            this.txtEmail.Location = new System.Drawing.Point(136, 177);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.TabIndex = 18;
             // 
             // chkHabilitado
             // 
@@ -292,6 +284,19 @@
             this.lblTipoDoc.Text = "Tipo documento";
             this.lblTipoDoc.Click += new System.EventHandler(this.lblTipoDoc_Click);
             // 
+            // cmbTipoDoc
+            // 
+            this.cmbTipoDoc.FormattingEnabled = true;
+            this.cmbTipoDoc.Items.AddRange(new object[] {
+            "DNI",
+            "LC",
+            "ETC"});
+            this.cmbTipoDoc.Location = new System.Drawing.Point(136, 69);
+            this.cmbTipoDoc.Name = "cmbTipoDoc";
+            this.cmbTipoDoc.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipoDoc.TabIndex = 39;
+            this.cmbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDoc_SelectedIndexChanged);
+            // 
             // lblNroDoc
             // 
             this.lblNroDoc.AutoSize = true;
@@ -318,6 +323,14 @@
             this.lblFechaNac.TabIndex = 35;
             this.lblFechaNac.Text = "Fecha nacimiento";
             // 
+            // txtFechaNac
+            // 
+            this.txtFechaNac.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
+            this.txtFechaNac.Location = new System.Drawing.Point(136, 102);
+            this.txtFechaNac.Name = "txtFechaNac";
+            this.txtFechaNac.Size = new System.Drawing.Size(100, 20);
+            this.txtFechaNac.TabIndex = 38;
+            // 
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
@@ -334,27 +347,6 @@
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 37;
             // 
-            // txtFechaNac
-            // 
-            this.txtFechaNac.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.txtFechaNac.Location = new System.Drawing.Point(136, 102);
-            this.txtFechaNac.Name = "txtFechaNac";
-            this.txtFechaNac.Size = new System.Drawing.Size(100, 20);
-            this.txtFechaNac.TabIndex = 38;
-            // 
-            // cmbTipoDoc
-            // 
-            this.cmbTipoDoc.FormattingEnabled = true;
-            this.cmbTipoDoc.Items.AddRange(new object[] {
-            "DNI",
-            "LC",
-            "ETC"});
-            this.cmbTipoDoc.Location = new System.Drawing.Point(136, 69);
-            this.cmbTipoDoc.Name = "cmbTipoDoc";
-            this.cmbTipoDoc.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipoDoc.TabIndex = 39;
-            this.cmbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDoc_SelectedIndexChanged);
-            // 
             // lblClave
             // 
             this.lblClave.AutoSize = true;
@@ -363,6 +355,15 @@
             this.lblClave.Size = new System.Drawing.Size(34, 13);
             this.lblClave.TabIndex = 40;
             this.lblClave.Text = "Clave";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtNombre.Location = new System.Drawing.Point(136, 36);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.ReadOnly = true;
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 17;
             // 
             // UsuarioAlta
             // 

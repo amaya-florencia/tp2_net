@@ -12,9 +12,18 @@ namespace UI.Desktop
 {
     public partial class AlumnoAlta : Form
     {
+        private int id;
+        private ApplicationForm.ModoForm modificacion;
+
         public AlumnoAlta()
         {
             InitializeComponent();
+        }
+
+        public AlumnoAlta(int id, ApplicationForm.ModoForm modificacion)
+        {
+            this.id = id;
+            this.modificacion = modificacion;
         }
     }
 }

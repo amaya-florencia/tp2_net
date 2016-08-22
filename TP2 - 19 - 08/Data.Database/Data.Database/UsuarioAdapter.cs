@@ -73,7 +73,7 @@ namespace Data.Database
                 this.OpenConnection();
 
                 //SqlCommand cmdUsuarios = new SqlCommand("select * from Usuarios", SqlConn);
-                SqlCommand cmdUsuarios = new SqlCommand("select * from Usuarios", this.SqlConn);
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios", this.SqlConn);
 
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
 
@@ -81,10 +81,10 @@ namespace Data.Database
                 {
                     Usuario usr = new Usuario();
 
-                    usr.ID = (int)drUsuarios["id"];
-                    usr.NombreUsuario = (string)drUsuarios["usuario"];
+                    usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
-                    //usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.Habilitado = (bool)drUsuarios["habilitado"];
                     usr.Nombre = (string)drUsuarios["nombre"];
                     usr.Apellido = (string)drUsuarios["apellido"];
                     usr.Email = (string)drUsuarios["email"];
@@ -115,7 +115,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdUsuarios = new SqlCommand("select * from Usuarios where id_usuario @id ", SqlConn);
+                SqlCommand cmdUsuarios = new SqlCommand("select * from Usuarios where id_usuario=@id ", SqlConn);
                 cmdUsuarios.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
 

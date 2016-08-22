@@ -61,17 +61,18 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-          /*  AlumnoAlta formUsuario = new AlumnoAlta(ApplicationForm.ModoForm.Alta);
+            ///AlumnoAlta formUsuario = new AlumnoAlta(ApplicationForm.ModoForm.Alta);
+            AlumnoAlta formUsuario = new AlumnoAlta();
             formUsuario.ShowDialog();
-            this.Listar();*/
+            this.Listar();
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            /*int id = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+            int id = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
             AlumnoAlta formUsuario = new AlumnoAlta(id, ApplicationForm.ModoForm.Modificacion);
             formUsuario.ShowDialog();
-            this.Listar();*/
+            this.Listar();
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)

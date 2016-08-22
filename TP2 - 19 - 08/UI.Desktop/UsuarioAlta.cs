@@ -56,8 +56,8 @@ namespace UI.Desktop
         {
             this.txtId.Text = this.UsuarioActual.ID.ToString();
             this.cmbTipoDoc.Text = this.UsuarioActual.TipoDocumento;
-            this.txtNroDoc.Text = this.UsuarioActual.NroDocumento;
-            this.txtFechaNac.Text = this.UsuarioActual.FechaNac.ToString();
+            this.dtpFechaNacimiento.Value = this.UsuarioActual.FechaNac;
+            //this.txtFechaNac.Text = this.UsuarioActual.FechaNac.ToString();
             this.txtNombre.Text = this.UsuarioActual.Nombre;
             this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtDireccion.Text = this.UsuarioActual.Direccion;
@@ -96,7 +96,8 @@ namespace UI.Desktop
                 UsuarioActual.Clave = this.txtConfirmarClave.Text;
                 UsuarioActual.TipoDocumento = this.cmbTipoDoc.Text;
                 UsuarioActual.NroDocumento = this.txtNroDoc.Text;
-                UsuarioActual.FechaNac = Convert.ToDateTime(this.txtFechaNac.Text);
+                //UsuarioActual.FechaNac = Convert.ToDateTime(this.txtFechaNac.Text);
+                UsuarioActual.FechaNac = this.dtpFechaNacimiento.Value;
                 UsuarioActual.Direccion = this.txtDireccion.Text;
                 UsuarioActual.Telefono = this.txtTelefono.Text;
                 UsuarioActual.Celular = this.txtCelular.Text;
@@ -114,7 +115,8 @@ namespace UI.Desktop
                 UsuarioActual.Clave = this.txtConfirmarClave.Text;
                 UsuarioActual.TipoDocumento = this.cmbTipoDoc.Text;
                 UsuarioActual.NroDocumento = this.txtNroDoc.Text;
-                UsuarioActual.FechaNac = Convert.ToDateTime(this.txtFechaNac.Text);
+                //UsuarioActual.FechaNac = Convert.ToDateTime(this.txtFechaNac.Text);
+                UsuarioActual.FechaNac = this.dtpFechaNacimiento.Value;
                 UsuarioActual.Direccion = this.txtDireccion.Text;
                 UsuarioActual.Telefono = this.txtTelefono.Text;
                 UsuarioActual.Celular = this.txtCelular.Text;
@@ -170,8 +172,12 @@ namespace UI.Desktop
                 mensaje += "el telefono no puede estar en blanco." + "\n";
             if (string.IsNullOrEmpty(txtCelular.Text.Trim()))
                 mensaje += "El celular  no puede estar en blanco." + "\n";
-            if (string.IsNullOrEmpty(txtFechaNac.Text.Trim()))
-                mensaje += "La fecha de naciomiento no puede estar en blanco." + "\n";
+            /* if (string.IsNullOrEmpty(txtFechaNac.Text.Trim()))
+                 mensaje += "La fecha de naciomiento no puede estar en blanco." + "\n";*/
+            if (String.IsNullOrEmpty(this.dtpFechaNacimiento.Text))
+            {
+                mensaje += "- Complete la fecha de nacimiento\n";
+            }
             if (string.IsNullOrEmpty(cmbTipoDoc.Text.Trim()))
                 mensaje += "El tipo de documento no puede estar en blanco." + "\n";
             if (string.IsNullOrEmpty(txtNroDoc.Text.Trim()))
@@ -209,6 +215,11 @@ namespace UI.Desktop
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAceptar_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

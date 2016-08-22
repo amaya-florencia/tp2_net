@@ -53,11 +53,11 @@
             this.lblNroDoc = new System.Windows.Forms.Label();
             this.txtNroDoc = new System.Windows.Forms.TextBox();
             this.lblFechaNac = new System.Windows.Forms.Label();
-            this.txtFechaNac = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblClave = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,11 +95,11 @@
             this.tableLayoutPanel1.Controls.Add(this.lblNroDoc, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtNroDoc, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblFechaNac, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtFechaNac, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblDireccion, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtDireccion, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblClave, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dtpFechaNacimiento, 1, 3);
             this.tableLayoutPanel1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -142,6 +142,7 @@
             this.btnAceptar.TabIndex = 23;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_1);
             // 
             // lblConfirmarClave
             // 
@@ -323,14 +324,6 @@
             this.lblFechaNac.TabIndex = 35;
             this.lblFechaNac.Text = "Fecha nacimiento";
             // 
-            // txtFechaNac
-            // 
-            this.txtFechaNac.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.txtFechaNac.Location = new System.Drawing.Point(136, 102);
-            this.txtFechaNac.Name = "txtFechaNac";
-            this.txtFechaNac.Size = new System.Drawing.Size(100, 20);
-            this.txtFechaNac.TabIndex = 38;
-            // 
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
@@ -364,6 +357,14 @@
             this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 17;
+            // 
+            // dtpFechaNacimiento
+            // 
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(136, 102);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(193, 20);
+            this.dtpFechaNacimiento.TabIndex = 41;
+            this.dtpFechaNacimiento.Value = new System.DateTime(2016, 8, 22, 0, 0, 0, 0);
             // 
             // UsuarioAlta
             // 
@@ -407,10 +408,10 @@
         private System.Windows.Forms.Label lblNroDoc;
         private System.Windows.Forms.TextBox txtNroDoc;
         private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.TextBox txtFechaNac;
         private System.Windows.Forms.Label lblFechaNac;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.ComboBox cmbTipoDoc;
         private System.Windows.Forms.Label lblClave;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
     }
 }

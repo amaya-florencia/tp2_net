@@ -27,8 +27,7 @@ namespace UI.Desktop
         public UsuarioAlta(int ID, ModoForm modo) : this()
         {
             Modo = modo;
-            UsuarioLogic usrLog = new UsuarioLogic();
-            usrLog.GetOne(ID);
+            
         }
 
         private Usuario _usuarioActual;
@@ -219,7 +218,52 @@ namespace UI.Desktop
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
+            UsuarioLogic usrLog = new UsuarioLogic();
 
+            if (this.txtClave.Text == this.txtConfirmarClave.Text)
+            {
+                Usuario usr = new Usuario();
+                usr.NombreUsuario = this.txtUsuario.Text;
+                usr.Clave = this.txtClave.Text;
+                usr.Habilitado = this.chkHabilitado.Checked;
+                /*usr.TipoDocumento = this.cmbTipoDoc.Text;
+                usr.NroDocumento = this.txtNroDoc.Text;*/
+                usr.Nombre = this.txtNombre.Text;
+                usr.Apellido = this.txtApellido.Text;
+                usr.Email = this.txtEmail.Text;
+                /*usr.Direccion = this.txtDireccion.Text;
+                usr.Telefono = this.txtTelefono.Text;
+                usr.Celular = this.txtCelular.Text;
+                usr.FechaNac = this.dtpFechaNacimiento.Value;
+                */
+                usrLog.Save(usr);
+            }
+            else
+            {
+                MessageBox.Show("Las claves no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            this.Close();
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)//btnBuscar
+        {
+            UsuarioLogic usrLog = new UsuarioLogic();
+            Usuario usr= usrLog.GetOne(Convert.ToInt32(this.txtId.Text));
+            this.txtUsuario.Text=usr.NombreUsuario;
+            this.txtClave.Text=usr.Clave;
+            this.chkHabilitado.Checked=usr.Habilitado;
+            /*usr.TipoDocumento = this.cmbTipoDoc.Text;
+            usr.NroDocumento = this.txtNroDoc.Text;*/
+            this.txtNombre.Text=usr.Nombre;
+            this.txtApellido.Text=usr.Apellido;
+            this.txtEmail.Text=usr.Email;
+            /*usr.Direccion = this.txtDireccion.Text;
+            usr.Telefono = this.txtTelefono.Text;
+            usr.Celular = this.txtCelular.Text;
+            usr.FechaNac = this.dtpFechaNacimiento.Value;
+            */
         }
     }
 }

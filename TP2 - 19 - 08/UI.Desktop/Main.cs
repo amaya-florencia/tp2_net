@@ -31,8 +31,9 @@ namespace UI.Desktop
 
         }
 
-        
+        private void especialidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
-      
+        }
     }
 }

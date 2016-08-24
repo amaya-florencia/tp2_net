@@ -220,7 +220,8 @@ namespace Data.Database
         protected void Insert(Usuario usuario)
         {
             try
-            {
+            {   //Insert into personas? y... faltan datos
+
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("INSERT INTO usuarios(nombre_usuario, clave, habilitado, nombre, apellido, email)" +
                                                     "VALUES(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email)" +

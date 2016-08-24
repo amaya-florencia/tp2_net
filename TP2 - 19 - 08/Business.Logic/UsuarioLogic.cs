@@ -20,7 +20,7 @@ namespace Business.Logic
          * 
          */
          
-        Data.Database.UsuarioAdapter _UsuarioData;
+        UsuarioAdapter _UsuarioData;
         public Data.Database.UsuarioAdapter UsuarioData
         {
             get { return _UsuarioData; }
@@ -29,25 +29,20 @@ namespace Business.Logic
 
         public UsuarioLogic()
         {
-            Data.Database.UsuarioAdapter UsuarioData = new Data.Database.UsuarioAdapter();
-
+           UsuarioAdapter UsuarioData = new UsuarioAdapter();
         }
-
         public List<Usuario> GetAll()
         {
             try
             {
                 Data.Database.UsuarioAdapter ua = new Data.Database.UsuarioAdapter();
                 return ua.GetAll();
-                //UsuarioAdapter ua = new UsuarioAdapter();
-                //return UsuarioData.GetAll(); //////////Excepción no controlada del tipo 'System.NullReferenceException
             }catch(Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error GetAll",Ex);
                 throw ExcepcionManejada;
             }
         }
-
         public Usuario GetOne(int id)
         {
             return UsuarioData.GetOne(id);

@@ -62,17 +62,32 @@ namespace UI.Desktop
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
             ///AlumnoAlta formUsuario = new AlumnoAlta(ApplicationForm.ModoForm.Alta);
-            AlumnoAlta formUsuario = new AlumnoAlta();
+            UsuarioAlta formUsuario = new UsuarioAlta();
             formUsuario.ShowDialog();
             this.Listar();
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            int id = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
-            AlumnoAlta formUsuario = new AlumnoAlta(id, ApplicationForm.ModoForm.Modificacion);
+            /*int id = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[14].DataBoundItem).ID;
+            UsuarioAlta formUsuario = new UsuarioAlta(id, ApplicationForm.ModoForm.Modificacion);
             formUsuario.ShowDialog();
-            this.Listar();
+            this.Listar();*/
+            if (this.dgvUsuarios.SelectedRows.Count == 1)
+            {
+                //Obtengo el ID de la fila seleccionada
+                int idUsuario = Int32.Parse(((DataRowView)this.dgvUsuarios.SelectedRows[0].DataBoundItem)["id_usuario"].ToString());
+
+                //Instancio formulario en modo MODIFICACION
+                UsuarioAlta formUsuario = new UsuarioAlta(idUsuario, ApplicationForm.ModoForm.Modificacion);
+
+                formUsuario.ShowDialog();
+                this.Listar();
+            }
+            else
+            {
+                MessageBox.Show("Advertencia", "Primero seleccione una fila de la grilla", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)

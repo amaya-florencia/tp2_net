@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AltaEspecialidad.cs">
+    <Compile Include="EspecialidadAlta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaEspecialidad.Designer.cs">
-      <DependentUpon>AltaEspecialidad.cs</DependentUpon>
+    <Compile Include="EspecialidadAlta.Designer.cs">
+      <DependentUpon>EspecialidadAlta.cs</DependentUpon>
     </Compile>
     <Compile Include="ApplicationForm.cs">
       <SubType>Form</SubType>
@@ -64,6 +64,12 @@
     </Compile>
     <Compile Include="CambioContraseña.Designer.cs">
       <DependentUpon>CambioContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EspecialidadesAMB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EspecialidadesAMB.Designer.cs">
+      <DependentUpon>EspecialidadesAMB.cs</DependentUpon>
     </Compile>
     <Compile Include="UsuarioAlta.cs">
       <SubType>Form</SubType>
@@ -97,14 +103,17 @@
     <Compile Include="UsuariosABM.designer.cs">
       <DependentUpon>UsuariosABM.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AltaEspecialidad.resx">
-      <DependentUpon>AltaEspecialidad.cs</DependentUpon>
+    <EmbeddedResource Include="EspecialidadAlta.resx">
+      <DependentUpon>EspecialidadAlta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CambioContraseña.resx">
       <DependentUpon>CambioContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EspecialidadesAMB.resx">
+      <DependentUpon>EspecialidadesAMB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsuarioAlta.resx">
       <DependentUpon>UsuarioAlta.cs</DependentUpon>

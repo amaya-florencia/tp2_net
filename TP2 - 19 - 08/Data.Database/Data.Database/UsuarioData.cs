@@ -10,7 +10,7 @@ using Business.Entities;
 namespace Data.Database
 {
     public class UsuarioData
-    {
+    {/*
         #region "SQL Adapter"
         protected SqlDataAdapter _daUsuarios;
 
@@ -38,12 +38,12 @@ namespace Data.Database
                 
                 //"Data Source=localhost;Initial Catalog=academia;Integrated Security=true;");
         
-            /*
+            
                 Facultad:  "Data Source=localhost\\UTNFRRO;Initial Catalog=Academia;Integrated Security=false;user=net;password=net;");
                             "Data Source=serverisi;Initial Catalog=academia;Integrated Security=false;user=net;password=net;");
                 Casa: "Data Source=localhost;Initial Catalog=academia;Integrated Security=true;");
                 MS SQL SERVER 2005 Express Edition: "Data Source=localhost\SQLEXPRESS;Initial Catalog=academia;Integrated Security=true;");
-             */
+             
 
 
 
@@ -94,7 +94,7 @@ namespace Data.Database
                             new SqlCommand(" DELETE FROM usuarios WHERE id=@id ", this.Conn);
             this.daUsuarios.DeleteCommand.Parameters.Add("@id", SqlDbType.Int, 1, "id");
         }
-
+        
         public DataTable GetAll()
         {
             DataTable dtUsuarios = new DataTable();
@@ -119,7 +119,7 @@ namespace Data.Database
         {
             ///////////////////////////////
 
-        }
+        }*/
 
     } //End Class
 

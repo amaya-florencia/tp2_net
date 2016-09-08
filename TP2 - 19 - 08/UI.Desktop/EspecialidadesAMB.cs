@@ -9,18 +9,31 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Logic;
 using Business.Entities;
+using Util;
 
 
 namespace UI.Desktop
 {
     public partial class EspecialidadesAMB : Form
     {
+        private Usuario _usuarioActual;
+        public Usuario UsuarioActual
+        {
+            get { return _usuarioActual; }
+            set { _usuarioActual = value; }
+        }
         public EspecialidadesAMB()
         {
             InitializeComponent();
+            //this.dgvEspecialidades.AutoGenerateColumns = false;
+            this.Listar();
+        }
+        public EspecialidadesAMB(Usuario u) : this() {
+            UsuarioActual = u;
         }
         private void Especialidades_Load(object sender, EventArgs e)
         {
+            VerificarABMC();
             this.Listar();
         }
 
@@ -41,6 +54,48 @@ namespace UI.Desktop
             catch (Exception Ex)
             {
                 MessageBox.Show("Error2", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            this.Listar();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void VerificarABMC()
+        {
+            foreach (ModuloUsuario mu in UsuarioActual.ModulosUsuario)
+            {
+                if (mu.Modulo.Descripcion == "Especialidades")
+                {
+                    this.dgvEspecialidades.Visible = mu.PermiteConsulta;
+                    this.tsbNuevo.Visible = mu.PermiteAlta;
+                    this.tsbEliminar.Visible = mu.PermiteBaja;
+                    this.tsbEditar.Visible = mu.PermiteModificacion;
+                }
+            }
+        }
+
+        private void tsbEditar_Click(object sender, EventArgs e)
+        {
+            if (this.dgvEspecialidades.SelectedRows.Count == 1)
+            {
+                //Obtengo el ID de la fila seleccionada
+                int ID = ((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID;
+
+                //Instancio formulario en modo MODIFICACION
+                EspecialidadAlta formEspecialidad = new EspecialidadAlta(ID, ApplicationForm.ModoForm.Modificacion);
+
+                formEspecialidad.ShowDialog();
+                this.Listar();
+            }
+            else
+            {
+                MessageBox.Show("Advertencia", "Primero seleccione una fila de la grilla", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

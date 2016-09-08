@@ -29,13 +29,13 @@ namespace Business.Logic
 
         public UsuarioLogic()
         {
-           UsuarioAdapter UsuarioData = new UsuarioAdapter();
+           UsuarioAdapter usrAdapter = new UsuarioAdapter();
         }
         public List<Usuario> GetAll()
         {
             try
             {
-                Data.Database.UsuarioAdapter ua = new Data.Database.UsuarioAdapter();
+                UsuarioAdapter ua = new UsuarioAdapter();
                 return ua.GetAll();
             }catch(Exception Ex)
             {
@@ -45,7 +45,9 @@ namespace Business.Logic
         }
         public Usuario GetOne(int id)
         {
-            return UsuarioData.GetOne(id);
+            UsuarioAdapter ua = new UsuarioAdapter();
+
+            return ua.GetOne(id);
         }
         public void Detele(int id)
         {

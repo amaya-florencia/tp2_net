@@ -28,12 +28,13 @@ namespace UI.Desktop
             
             UsuarioLogic ul = new UsuarioLogic();
             try 
-            { 
+            {
                 this.dgvUsuarios.DataSource = ul.GetAll(); 
+                //this.dgvUsuarios.DataSource = new UsuarioLogic().GetAll();
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Error2","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Error al listar","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
              
 
@@ -61,7 +62,6 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            ///AlumnoAlta formUsuario = new AlumnoAlta(ApplicationForm.ModoForm.Alta);
             UsuarioAlta formUsuario = new UsuarioAlta();
             formUsuario.ShowDialog();
             this.Listar();
@@ -69,18 +69,12 @@ namespace UI.Desktop
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            /*int id = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[14].DataBoundItem).ID;
-            UsuarioAlta formUsuario = new UsuarioAlta(id, ApplicationForm.ModoForm.Modificacion);
-            formUsuario.ShowDialog();
-            this.Listar();*/
             if (this.dgvUsuarios.SelectedRows.Count == 1)
             {
                 //Obtengo el ID de la fila seleccionada
-                int idUsuario = Int32.Parse(((DataRowView)this.dgvUsuarios.SelectedRows[0].DataBoundItem)["id_usuario"].ToString());
-
+                int idUsuario = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
                 //Instancio formulario en modo MODIFICACION
-                UsuarioAlta formUsuario = new UsuarioAlta(idUsuario, ApplicationForm.ModoForm.Modificacion);
-
+                UsuarioAlta formUsuario = new UsuarioAlta(idUsuario, ApplicationForm.ModoForm.Modificacion);             
                 formUsuario.ShowDialog();
                 this.Listar();
             }
@@ -92,10 +86,10 @@ namespace UI.Desktop
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-           /* int id = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
-            AlumnoAlta formUsuario = new AlumnoAlta(id, ApplicationForm.ModoForm.Baja);
-            formUsuario.ShowDialog();
-            this.Listar();*/
+            int idUsuario = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+            UsuarioAlta formUsuario = new UsuarioAlta(idUsuario, ApplicationForm.ModoForm.Baja);
+             formUsuario.ShowDialog();
+             this.Listar();
         }
     }
 }

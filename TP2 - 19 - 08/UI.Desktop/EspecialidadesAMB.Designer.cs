@@ -37,8 +37,6 @@
             this.dgvEspecialidades = new System.Windows.Forms.DataGridView();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.IDEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEspecialidades)).BeginInit();
@@ -74,6 +72,7 @@
             this.tsbEditar.Name = "tsbEditar";
             this.tsbEditar.Size = new System.Drawing.Size(23, 22);
             this.tsbEditar.Text = "Editar";
+            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
             // tsbEliminar
             // 
@@ -103,44 +102,35 @@
             // 
             // dgvEspecialidades
             // 
+            this.dgvEspecialidades.AllowUserToDeleteRows = false;
             this.dgvEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEspecialidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDEspecialidad,
-            this.Descripcion});
             this.tableLayoutPanel1.SetColumnSpan(this.dgvEspecialidades, 2);
             this.dgvEspecialidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEspecialidades.Location = new System.Drawing.Point(3, 3);
             this.dgvEspecialidades.Name = "dgvEspecialidades";
-            this.dgvEspecialidades.Size = new System.Drawing.Size(312, 233);
+            this.dgvEspecialidades.ReadOnly = true;
+            this.dgvEspecialidades.Size = new System.Drawing.Size(312, 234);
             this.dgvEspecialidades.TabIndex = 0;
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(3, 242);
+            this.btnActualizar.Location = new System.Drawing.Point(3, 243);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(235, 242);
+            this.btnSalir.Location = new System.Drawing.Point(235, 243);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // IDEspecialidad
-            // 
-            this.IDEspecialidad.HeaderText = "ID";
-            this.IDEspecialidad.Name = "IDEspecialidad";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // EspecialidadesAMB
             // 
@@ -168,8 +158,6 @@
         private System.Windows.Forms.ToolStripButton tsbEliminar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dgvEspecialidades;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDEspecialidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnSalir;
     }

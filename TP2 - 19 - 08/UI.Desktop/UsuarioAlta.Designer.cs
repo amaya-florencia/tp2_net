@@ -58,7 +58,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -352,7 +351,6 @@
             this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.dtpFechaNacimiento, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.chkHabilitado, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnBuscar, 2, 0);
             this.tableLayoutPanel1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -367,16 +365,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(665, 277);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(335, 3);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 42;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.button1_Click);
             // 
             // UsuarioAlta
             // 
@@ -425,6 +413,5 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnBuscar;
     }
 }

@@ -10,20 +10,23 @@ using Business.Entities;
 
 namespace Business.Logic
 {
-    public class EspecialidadLogic
+    public class EspecialidadLogic:BusinessLogic
     {
+        #region Propiedades
         EspecialidadAdapter _EspecialidadData;
         public EspecialidadAdapter EspecialidadData
         {
             get { return _EspecialidadData; }
             set { _EspecialidadData = value; }
         }
+        #endregion
 
+        #region Constructores
         public EspecialidadLogic()
         {
             EspecialidadAdapter EspecialidadData = new EspecialidadAdapter();
-
         }
+        #endregion
 
         public List<Especialidad> GetAll()
         {
@@ -31,7 +34,6 @@ namespace Business.Logic
             {
                 EspecialidadAdapter ea = new EspecialidadAdapter();
                 return ea.GetAll();
-
             }
             catch (Exception Ex)
             {
@@ -39,6 +41,19 @@ namespace Business.Logic
                 throw ExcepcionManejada;
             }
         }
-        
+        public Especialidad GetOne (int ID)
+        {
+            return EspecialidadData.GetOne(ID);
+        }
+        public void Delete(int ID)
+        {
+            EspecialidadData.Delete(ID);
+        }
+
+        public void Save(Especialidad esp)
+        {
+            EspecialidadAdapter oEspecialidadAdapter = new EspecialidadAdapter();
+            oEspecialidadAdapter.Save(esp);
+        }
     }
 }

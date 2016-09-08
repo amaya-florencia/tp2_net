@@ -10,10 +10,18 @@ namespace Business.Entities
      public  class Usuario : BusinessEntity
     {
         #region "Propiedades"
+
+        private Int32 _idPersona;
         private String _NombreUsuario, _Clave, _Nombre, _Apellido, _Email, _TipoDocumento, _NroDocumento, _Direccion, _Telefono, _Celular; 
         private bool _Habilitado;
         private DateTime _FechaNac;
+        private List<ModuloUsuario> _modulosUsuario;
 
+        public Int32 IdPersona
+        {
+            get { return _idPersona; }
+            set { _idPersona = value; }
+        }
         public String NombreUsuario
         {
             get { return _NombreUsuario; }
@@ -78,6 +86,11 @@ namespace Business.Entities
         {
             get { return _FechaNac; }
             set { _FechaNac = value; }
+        }
+        public List<ModuloUsuario> ModulosUsuario
+        {
+            get { return _modulosUsuario; }
+            set { _modulosUsuario = value; }
         }
         #endregion
 

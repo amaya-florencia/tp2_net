@@ -82,6 +82,7 @@
             this.tsbEliminar.Name = "tsbEliminar";
             this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
             this.tsbEliminar.Text = "Eliminar";
+            this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
             // tableLayoutPanel1
             // 

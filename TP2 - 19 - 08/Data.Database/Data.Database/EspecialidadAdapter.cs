@@ -54,7 +54,7 @@ namespace Data.Database
                 if (drEspecialidades.Read())
                 {
                     esp.ID = (int)drEspecialidades["id_especialidad"];
-                    esp.Descripcion = (string)drEspecialidades["desc_especialidad"];                    
+                    esp.Descripcion = drEspecialidades["desc_especialidad"].ToString();                    
                 }
                 drEspecialidades.Close();
             }
@@ -83,7 +83,7 @@ namespace Data.Database
             {
                 this.Update(esp);
             }
-            esp.State = BusinessEntity.States.Unmodified;
+            //esp.State = BusinessEntity.States.Unmodified;
         }
         protected void Insert(Especialidad esp)
         {
@@ -112,8 +112,8 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE especialidades SET id_especialidad=@id, desc_especialidad=@desc," +
-                                                    "WHERE id_especialidad=@id", SqlConn);
+                SqlCommand cmdSave = new SqlCommand("UPDATE especialidades SET desc_especialidad = @desc" +
+                                                    " WHERE id_especialidad=@id", SqlConn);
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = esp.ID;
                 cmdSave.Parameters.Add("@desc", SqlDbType.VarChar, 50).Value = esp.Descripcion;
@@ -135,7 +135,7 @@ namespace Data.Database
            try
             {
                 this.OpenConnection();
-                SqlCommand cmdDelete = new SqlCommand("delete especialidades where id_especialidad=@id", SqlConn);
+                SqlCommand cmdDelete = new SqlCommand("DELETE especialidades WHERE id_especialidad=@id", SqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = iD;
                 cmdDelete.ExecuteNonQuery();
             }

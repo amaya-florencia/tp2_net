@@ -43,11 +43,13 @@ namespace Business.Logic
         }
         public Especialidad GetOne (int ID)
         {
-            return EspecialidadData.GetOne(ID);
+            EspecialidadAdapter ea = new EspecialidadAdapter();
+            return ea.GetOne(ID);
         }
         public void Delete(int ID)
         {
-            EspecialidadData.Delete(ID);
+            EspecialidadAdapter ea = new EspecialidadAdapter();
+            ea.Delete(ID);
         }
 
         public void Save(Especialidad esp)

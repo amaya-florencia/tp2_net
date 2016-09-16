@@ -41,35 +41,24 @@ namespace UI.Desktop
         #endregion
         public override void MapearADatos()
         {
-            if (this.Modo == ModoForm.Alta)
-            {
-                
-                EspecialidadActual.ID = Convert.ToInt32(this.txtID.Text);
-                EspecialidadActual.Descripcion = this.txtDescripcion.Text;
-
-
-                EspecialidadActual.State = Usuario.States.New;
+            if (this.Modo == ApplicationForm.ModoForm.Alta)
+            {               
+                EspecialidadActual = new Especialidad();
             }
-            if (Modo == ModoForm.Modificacion)
+            if (this.Modo == ApplicationForm.ModoForm.Modificacion || this.Modo == ApplicationForm.ModoForm.Alta)
             {
                 EspecialidadActual.ID = Convert.ToInt32(this.txtID.Text);
-                EspecialidadActual.Descripcion = this.txtDescripcion.Text;
-
-                EspecialidadActual.State = Usuario.States.Modified;
-            }
-            if (Modo == ModoForm.Consulta)
-            {
-                EspecialidadActual.State = Usuario.States.Unmodified;
-            }
+                EspecialidadActual.Descripcion = this.txtDescripcion.Text;                
+            }            
             switch (this.Modo)
             {
-                case ModoForm.Alta:
+                case ApplicationForm.ModoForm.Alta:
                     EspecialidadActual.State = BusinessEntity.States.New;
                     break;
-                case ModoForm.Modificacion:
+                case ApplicationForm.ModoForm.Modificacion:
                     EspecialidadActual.State = BusinessEntity.States.Modified;
                     break;
-                case ModoForm.Baja:
+                case ApplicationForm.ModoForm.Baja:
                     EspecialidadActual.State = BusinessEntity.States.Deleted;
                     break;
             }
@@ -97,18 +86,28 @@ namespace UI.Desktop
             }
 
         }
-        public virtual void GuardarCambios()
+        public override void GuardarCambios()
         {
-            this.MapearADatos();
-            EspecialidadLogic espLog = new EspecialidadLogic();
-            espLog.Save(EspecialidadActual);
+            EspecialidadLogic especialidadLogic = new EspecialidadLogic();
+            if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
+            {              
+                this.MapearADatos();               
+                especialidadLogic.Save(EspecialidadActual);
+            }
+            else if (this.Modo == ApplicationForm.ModoForm.Baja)
+            {
+                especialidadLogic.Delete(EspecialidadActual.ID);
+                //try
+                //{                    
+                //    especialidadLogic.Delete(EspecialidadActual.ID);
+                //}
+                //catch (Exception ex)
+                //{
+                //    this.Notificar(ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
+            }
         }
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
- 
-                this.GuardarCambios();
-                this.Close();
-        }
+        
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -117,8 +116,21 @@ namespace UI.Desktop
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-            this.GuardarCambios();
-            this.Close();
+            if(this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
+            {
+                this.GuardarCambios();
+                this.Close();
+            }
+            else if (this.Modo == ApplicationForm.ModoForm.Baja)
+            {
+                DialogResult rta=  MessageBox.Show("Confirma la eliminacion de la especialidad" + this.EspecialidadActual.Descripcion + "?","", MessageBoxButtons.OKCancel,MessageBoxIcon.Exclamation);
+                if (rta == DialogResult.OK)
+                {
+                    this.GuardarCambios();
+                    this.Close();
+                }
+            }
+           
         }
     }
 }

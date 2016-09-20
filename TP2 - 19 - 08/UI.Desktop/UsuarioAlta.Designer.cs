@@ -140,7 +140,7 @@
             this.cmbTipoDoc.Name = "cmbTipoDoc";
             this.cmbTipoDoc.Size = new System.Drawing.Size(180, 21);
             this.cmbTipoDoc.TabIndex = 39;
-            this.cmbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDoc_SelectedIndexChanged);
+           
             // 
             // lblTipoDoc
             // 
@@ -150,7 +150,7 @@
             this.lblTipoDoc.Size = new System.Drawing.Size(84, 13);
             this.lblTipoDoc.TabIndex = 31;
             this.lblTipoDoc.Text = "Tipo documento";
-            this.lblTipoDoc.Click += new System.EventHandler(this.lblTipoDoc_Click);
+           
             // 
             // lblCelular
             // 
@@ -373,8 +373,7 @@
             this.ClientSize = new System.Drawing.Size(675, 289);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UsuarioAlta";
-            this.Text = "Nuevo Usuario";
-            this.Load += new System.EventHandler(this.UsuarioAlta_Load);
+            this.Text = "Nuevo Usuario";         
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

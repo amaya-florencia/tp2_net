@@ -89,6 +89,7 @@ namespace Data.Database
                     usr.Nombre = (string)drUsuarios["nombre"];
                     usr.Apellido = (string)drUsuarios["apellido"];
                     usr.Email = (string)drUsuarios["email"];
+                   // usr.FechaNac = (DateTime)drUsuarios["fecha_nac"];
 
                     usuarios.Add(usr);
                 }
@@ -110,7 +111,6 @@ namespace Data.Database
         #endregion
 
         public Usuario GetOne(int ID)
-
         {            
             Usuario usr = new Usuario();
             try
@@ -122,12 +122,12 @@ namespace Data.Database
                 if (drUsuarios.Read())
                 {
                     usr.ID = (int)drUsuarios["id_usuario"];
-                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
-                    usr.Clave = (string)drUsuarios["clave"];
+                    usr.NombreUsuario = drUsuarios["nombre_usuario"].ToString();
+                    usr.Clave = drUsuarios["clave"].ToString();
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
-                    usr.Nombre = (string)drUsuarios["nombre"];
-                    usr.Apellido = (string)drUsuarios["apellido"];
-                    usr.Email = (string)drUsuarios["email"];                   
+                    usr.Nombre = drUsuarios["nombre"].ToString();
+                    usr.Apellido = drUsuarios["apellido"].ToString();
+                    usr.Email = drUsuarios["email"].ToString();                   
                 }
                 drUsuarios.Close();
             }
@@ -144,7 +144,7 @@ namespace Data.Database
         }
         public void Delete(int ID)
         {
-            //Usuarios.Remove(this.GetOne(ID));
+            Usuarios.Remove(this.GetOne(ID));
             try
             {
                 this.OpenConnection();
@@ -222,6 +222,7 @@ namespace Data.Database
             cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
             cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
             cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.Email;
+        
             cmdSave.ExecuteNonQuery();
             this.CloseConnection();
         } 

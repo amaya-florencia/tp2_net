@@ -19,6 +19,8 @@ namespace Business.Logic
             get { return _EspecialidadData; }
             set { _EspecialidadData = value; }
         }
+        EspecialidadAdapter ea = new EspecialidadAdapter();
+
         #endregion
 
         #region Constructores
@@ -43,19 +45,19 @@ namespace Business.Logic
         }
         public Especialidad GetOne (int ID)
         {
-            EspecialidadAdapter ea = new EspecialidadAdapter();
+            
             return ea.GetOne(ID);
         }
         public void Delete(int ID)
         {
-            EspecialidadAdapter ea = new EspecialidadAdapter();
+            
             ea.Delete(ID);
         }
 
         public void Save(Especialidad esp)
         {
-            EspecialidadAdapter oEspecialidadAdapter = new EspecialidadAdapter();
-            oEspecialidadAdapter.Save(esp);
+           
+            ea.Save(esp);
         }
     }
 }

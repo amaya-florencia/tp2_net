@@ -19,18 +19,30 @@ namespace Business.Logic
          * TP2 - Unidad 2 - Lab 03
          * 
          */
-         
-        UsuarioAdapter _UsuarioData;
-        public Data.Database.UsuarioAdapter UsuarioData
-        {
-            get { return _UsuarioData; }
-            set { _UsuarioData = value; }
-        }
 
+        //UsuarioAdapter _UsuarioData;
+        //public UsuarioAdapter UsuarioData
+        //{
+        //    get { return _UsuarioData; }
+        //    set { _UsuarioData = value; }
+        //}
+
+        //public UsuarioLogic()
+        //{
+        //   UsuarioAdapter usrAdapter = new UsuarioAdapter();
+        //}
+        #region Constructores
         public UsuarioLogic()
         {
-           UsuarioAdapter usrAdapter = new UsuarioAdapter();
+           
         }
+        #endregion
+        UsuarioAdapter UsuarioData = new UsuarioAdapter();
+
+        #region Propiedades
+        
+        #endregion
+
         public List<Usuario> GetAll()
         {
             try
@@ -44,20 +56,17 @@ namespace Business.Logic
             }
         }
         public Usuario GetOne(int id)
-        {
-            UsuarioAdapter ua = new UsuarioAdapter();
-
-            return ua.GetOne(id);
+        {            
+            return UsuarioData.GetOne(id);
         }
-        public void Detele(int id)
+        public void Delete(int id)
         {
             UsuarioData.Delete(id);
         }
    
        public void Save(Usuario usr)
-        {
-            UsuarioAdapter oUsuarioAdapter = new UsuarioAdapter();
-            oUsuarioAdapter.Save(usr);
+        {            
+            UsuarioData.Save(usr);
         }
 
 /* 

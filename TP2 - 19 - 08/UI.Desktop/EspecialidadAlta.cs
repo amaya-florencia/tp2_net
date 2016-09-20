@@ -26,10 +26,17 @@ namespace UI.Desktop
         public EspecialidadAlta(int ID, ModoForm modo):this()
         {
             this.Modo = modo;
-
             EspecialidadLogic especialidadLogic = new EspecialidadLogic();
-            this.EspecialidadActual = especialidadLogic.GetOne(ID);
-            this.MapearDeDatos();
+            try
+            {
+                this.EspecialidadActual = especialidadLogic.GetOne(ID);
+                this.MapearDeDatos();
+            }
+            catch (Exception e)
+            {
+                this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
         #region Propiedades
         private Especialidad _EspecialidadActual;
@@ -47,7 +54,7 @@ namespace UI.Desktop
             }
             if (this.Modo == ApplicationForm.ModoForm.Modificacion || this.Modo == ApplicationForm.ModoForm.Alta)
             {
-                EspecialidadActual.ID = Convert.ToInt32(this.txtID.Text);
+               // EspecialidadActual.ID = Convert.ToInt32(this.txtID.Text);
                 EspecialidadActual.Descripcion = this.txtDescripcion.Text;                
             }            
             switch (this.Modo)
@@ -78,13 +85,8 @@ namespace UI.Desktop
                     this.txtDescripcion.ReadOnly = true;
                     this.Text = "Baja de Especialidad";
                     btnAceptar.Text = "Eliminar";
-                    break;
-                case ModoForm.Consulta:
-                    this.Text = "Consulta de Especialidad";
-                    btnAceptar.Text = "Aceptar";
-                    break;
+                    break;                
             }
-
         }
         public override void GuardarCambios()
         {
@@ -96,15 +98,14 @@ namespace UI.Desktop
             }
             else if (this.Modo == ApplicationForm.ModoForm.Baja)
             {
-                especialidadLogic.Delete(EspecialidadActual.ID);
-                //try
-                //{                    
-                //    especialidadLogic.Delete(EspecialidadActual.ID);
-                //}
-                //catch (Exception ex)
-                //{
-                //    this.Notificar(ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+                try
+                {
+                    especialidadLogic.Delete(EspecialidadActual.ID);
+                }
+                catch (Exception ex)
+                {
+                    this.Notificar(ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
         

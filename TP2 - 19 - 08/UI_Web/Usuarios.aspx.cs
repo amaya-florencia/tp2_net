@@ -165,7 +165,7 @@ namespace UI_Web
         }
         private void DeleteEntity(int id)
         {
-            this.Logic.Detele(id);
+            this.Logic.Delete(id);
         }
 
         protected void lnkNuevo_Click(object sender, EventArgs e)

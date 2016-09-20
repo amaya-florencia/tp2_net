@@ -15,12 +15,16 @@ namespace UI.Desktop
 {
     public partial class UsuarioAlta : ApplicationForm
     {
+        private Usuario _usuarioActual;
+        public Usuario UsuarioActual
+        {
+            get { return _usuarioActual; }
+            set { _usuarioActual = value; }
+        }
         public UsuarioAlta(ModoForm modo) : this()
         {
-            Modo = modo;
+            Modo = modo;           
         }
-        public Usuario Usuario { get; set; }
-
         public UsuarioAlta()
         {
             InitializeComponent();
@@ -33,39 +37,17 @@ namespace UI.Desktop
             {
                 this.UsuarioActual = usuarioLogic.GetOne(ID);
                 this.MapearDeDatos();                
-            }catch (Exception e)
+            }
+            catch (Exception e)
             {
                 this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private Usuario _usuarioActual;
-        public Usuario UsuarioActual
-        {
-            get { return _usuarioActual; }
-            set { _usuarioActual = value; }
-        }
-        private void UsuarioAlta_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTipoDoc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbTipoDoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        }         
         public override void MapearDeDatos()
         {
             this.txtId.Text = this.UsuarioActual.ID.ToString();
             this.cmbTipoDoc.Text = this.UsuarioActual.TipoDocumento;
-            //this.dtpFechaNacimiento.Value = this.UsuarioActual.FechaNac;
-            //this.txtFechaNac.Text = this.UsuarioActual.FechaNac.ToString();
+           // this.dtpFechaNacimiento.Value = this.UsuarioActual.FechaNac;            
             this.txtNombre.Text = this.UsuarioActual.Nombre;
             this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtDireccion.Text = this.UsuarioActual.Direccion;
@@ -83,23 +65,24 @@ namespace UI.Desktop
                     break;
                 case ModoForm.Baja:
                     this.Text = "Baja de Usuario";
-                    btnAceptar.Text = "Eliminar";
-                    
+                    btnAceptar.Text = "Eliminar";                    
                     break;
                 case ModoForm.Consulta:
                     this.Text = "Consulta de Usuario";
-                    btnAceptar.Text = "Aceptar";
-                    
+                    btnAceptar.Text = "Aceptar";                    
                     break;
             }
         }
 
         public override void MapearADatos()
         {
-            if (Modo == ModoForm.Alta)
+            if (this.Modo == ApplicationForm.ModoForm.Alta)
             {
                 Usuario usr = new Usuario();
                 this.UsuarioActual = usr;
+            }
+            if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo==ApplicationForm.ModoForm.Modificacion)
+            {                  
                 UsuarioActual.Apellido = this.txtApellido.Text;
                 UsuarioActual.Nombre = this.txtNombre.Text;
                 UsuarioActual.Email = this.txtEmail.Text;
@@ -107,34 +90,12 @@ namespace UI.Desktop
                 UsuarioActual.Clave = this.txtClave.Text;
                 UsuarioActual.Clave = this.txtConfirmarClave.Text;
                 UsuarioActual.TipoDocumento = this.cmbTipoDoc.Text;
-                UsuarioActual.NroDocumento = this.txtNroDoc.Text;
-                //UsuarioActual.FechaNac = Convert.ToDateTime(this.txtFechaNac.Text);
+                UsuarioActual.NroDocumento = this.txtNroDoc.Text;               
                 UsuarioActual.FechaNac = this.dtpFechaNacimiento.Value;
                 UsuarioActual.Direccion = this.txtDireccion.Text;
                 UsuarioActual.Telefono = this.txtTelefono.Text;
-                UsuarioActual.Celular = this.txtCelular.Text;
-
-                
-            }
-            if (Modo == ModoForm.Modificacion)
-            {
-                
-                //UsuarioActual.ID = Convert.ToInt32(this.txtId.Text);
-                UsuarioActual.Apellido = this.txtApellido.Text;
-                UsuarioActual.Nombre = this.txtNombre.Text;
-                UsuarioActual.Email = this.txtEmail.Text;
-                UsuarioActual.NombreUsuario = this.txtUsuario.Text;
-                UsuarioActual.Clave = this.txtClave.Text;
-                UsuarioActual.Clave = this.txtConfirmarClave.Text;
-                UsuarioActual.TipoDocumento = this.cmbTipoDoc.Text;
-                UsuarioActual.NroDocumento = this.txtNroDoc.Text;
-                //UsuarioActual.FechaNac = Convert.ToDateTime(this.txtFechaNac.Text);
-                UsuarioActual.FechaNac = this.dtpFechaNacimiento.Value;
-                UsuarioActual.Direccion = this.txtDireccion.Text;
-                UsuarioActual.Telefono = this.txtTelefono.Text;
-                UsuarioActual.Celular = this.txtCelular.Text;
-                // UsuarioActual.Habilitado = this.chkHabilitado.Checked;
-            }
+                UsuarioActual.Celular = this.txtCelular.Text;                
+            }           
             switch (this.Modo)
             {
                 case ModoForm.Alta:
@@ -147,16 +108,11 @@ namespace UI.Desktop
                     UsuarioActual.State = BusinessEntity.States.Deleted;
                     break;
             }
-
         }
-
         public override void GuardarCambios()
         {
-            //this.MapearADatos();
-            //UsuarioLogic usuarioLog = new UsuarioLogic();
-            //usuarioLog.Save(UsuarioActual);
             UsuarioLogic usuarioLogic = new UsuarioLogic();
-            if (this.Modo == ModoForm.Alta || this.Modo == ModoForm.Modificacion)
+            if ((this.Modo == ApplicationForm.ModoForm.Alta) || (this.Modo == ApplicationForm.ModoForm.Modificacion))
             {
                 try
                 {
@@ -175,7 +131,8 @@ namespace UI.Desktop
                 try
                 {
                     //Elimino el usuario
-                    usuarioLogic.Detele(Usuario.ID);
+                    usuarioLogic.Delete(UsuarioActual.ID);
+                    this.Close();
                 }
                 catch (Exception e)
                 {
@@ -184,11 +141,10 @@ namespace UI.Desktop
             }
         }
 
-        public virtual bool Validar()
+        public override bool Validar()
         {
             bool valida = false;
             RegexUtilities util = new RegexUtilities();
-
             string mensaje = "";
             if (txtApellido.Text.Trim() == "")
                 mensaje += "El apellido no puede estar en blanco." + "\n";
@@ -238,21 +194,8 @@ namespace UI.Desktop
 
             return valida;
         }
-
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            bool valida = this.Validar();
-            if (valida)
-            {
-                this.GuardarCambios();
-                this.Close();
-            }
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+             
+              
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
@@ -262,7 +205,9 @@ namespace UI.Desktop
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
             #region
+            /*
             UsuarioLogic usrLog = new UsuarioLogic();
+            bool valido = this.Validar();
 
             if (this.txtClave.Text == this.txtConfirmarClave.Text)
             {
@@ -270,16 +215,16 @@ namespace UI.Desktop
                 usr.NombreUsuario = this.txtUsuario.Text;
                 usr.Clave = this.txtClave.Text;
                 usr.Habilitado = this.chkHabilitado.Checked;
-                /*usr.TipoDocumento = this.cmbTipoDoc.Text;
-                usr.NroDocumento = this.txtNroDoc.Text;*/
+                //usr.TipoDocumento = this.cmbTipoDoc.Text;
+                //usr.NroDocumento = this.txtNroDoc.Text;
                 usr.Nombre = this.txtNombre.Text;
                 usr.Apellido = this.txtApellido.Text;
                 usr.Email = this.txtEmail.Text;
-                /*usr.Direccion = this.txtDireccion.Text;
-                usr.Telefono = this.txtTelefono.Text;
-                usr.Celular = this.txtCelular.Text;
-                usr.FechaNac = this.dtpFechaNacimiento.Value;
-                */
+                //usr.Direccion = this.txtDireccion.Text;
+                //usr.Telefono = this.txtTelefono.Text;
+                //usr.Celular = this.txtCelular.Text;
+                //usr.FechaNac = this.dtpFechaNacimiento.Value;
+                
                 usrLog.Save(usr);
             }
             else
@@ -287,35 +232,27 @@ namespace UI.Desktop
                 MessageBox.Show("Las claves no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            this.Close();
+           this.Close();
+           */
             #endregion
-            if (this.Modo == ModoForm.Modificacion)
+
+            if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
             {
-
                 this.GuardarCambios();
-
                 this.Close();
+            }
+            else if (this.Modo == ApplicationForm.ModoForm.Baja)
+            {
+                DialogResult rta = MessageBox.Show("Confirma la eliminacion del usuario" + this.UsuarioActual.Apellido + "?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                if (rta == DialogResult.OK)
+                {
+                    this.GuardarCambios();
+                    this.Close();
+                }
             }
 
         }
 
-        private void button1_Click(object sender, EventArgs e)//btnBuscar
-        {
-            UsuarioLogic usrLog = new UsuarioLogic();
-            Usuario usr= usrLog.GetOne(Convert.ToInt32(this.txtId.Text));/*-----error*/
-            this.txtUsuario.Text=usr.NombreUsuario;
-            this.txtClave.Text=usr.Clave;
-            this.chkHabilitado.Checked=usr.Habilitado;
-            /*usr.TipoDocumento = this.cmbTipoDoc.Text;
-            usr.NroDocumento = this.txtNroDoc.Text;*/
-            this.txtNombre.Text=usr.Nombre;
-            this.txtApellido.Text=usr.Apellido;
-            this.txtEmail.Text=usr.Email;
-            /*usr.Direccion = this.txtDireccion.Text;
-            usr.Telefono = this.txtTelefono.Text;
-            usr.Celular = this.txtCelular.Text;
-            usr.FechaNac = this.dtpFechaNacimiento.Value;
-            */
-        }
+
     }
 }

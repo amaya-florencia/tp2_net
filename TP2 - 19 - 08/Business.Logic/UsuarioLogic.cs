@@ -21,7 +21,7 @@ namespace Business.Logic
          */
          
         UsuarioAdapter _UsuarioData;
-        public Data.Database.UsuarioAdapter UsuarioData
+        public UsuarioAdapter UsuarioData
         {
             get { return _UsuarioData; }
             set { _UsuarioData = value; }

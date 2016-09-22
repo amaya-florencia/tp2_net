@@ -57,9 +57,9 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpUsuario = new System.Windows.Forms.TableLayoutPanel();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tlpUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtpFechaNacimiento
@@ -313,60 +313,60 @@
             this.lblNombre.TabIndex = 10;
             this.lblNombre.Text = "Nombre";
             // 
-            // tableLayoutPanel1
+            // tlpUsuario
             // 
-            this.tableLayoutPanel1.AutoScroll = true;
-            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.Controls.Add(this.lblNombre, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 7);
-            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.lblConfirmarClave, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.txtClave, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.txtId, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtConfirmarClave, 3, 6);
-            this.tableLayoutPanel1.Controls.Add(this.lblEmail, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lblId, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtApellido, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblApellido, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblUsuario, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtUsuario, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtEmail, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lblTelefono, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txtCelular, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txtTelefono, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lblCelular, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lblTipoDoc, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.cmbTipoDoc, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblNroDoc, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtNroDoc, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblFechaNac, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblDireccion, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtDireccion, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblClave, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dtpFechaNacimiento, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.chkHabilitado, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnBuscar, 2, 0);
-            this.tableLayoutPanel1.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 1);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(665, 277);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tlpUsuario.AutoScroll = true;
+            this.tlpUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tlpUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tlpUsuario.ColumnCount = 4;
+            this.tlpUsuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpUsuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tlpUsuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpUsuario.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tlpUsuario.Controls.Add(this.lblNombre, 0, 1);
+            this.tlpUsuario.Controls.Add(this.btnCancelar, 3, 7);
+            this.tlpUsuario.Controls.Add(this.btnAceptar, 2, 7);
+            this.tlpUsuario.Controls.Add(this.lblConfirmarClave, 2, 6);
+            this.tlpUsuario.Controls.Add(this.txtClave, 1, 6);
+            this.tlpUsuario.Controls.Add(this.txtId, 1, 0);
+            this.tlpUsuario.Controls.Add(this.txtConfirmarClave, 3, 6);
+            this.tlpUsuario.Controls.Add(this.lblEmail, 0, 5);
+            this.tlpUsuario.Controls.Add(this.lblId, 0, 0);
+            this.tlpUsuario.Controls.Add(this.txtApellido, 3, 1);
+            this.tlpUsuario.Controls.Add(this.lblApellido, 2, 1);
+            this.tlpUsuario.Controls.Add(this.lblUsuario, 2, 5);
+            this.tlpUsuario.Controls.Add(this.txtUsuario, 3, 5);
+            this.tlpUsuario.Controls.Add(this.txtEmail, 1, 5);
+            this.tlpUsuario.Controls.Add(this.lblTelefono, 2, 4);
+            this.tlpUsuario.Controls.Add(this.txtCelular, 1, 4);
+            this.tlpUsuario.Controls.Add(this.txtTelefono, 3, 4);
+            this.tlpUsuario.Controls.Add(this.lblCelular, 0, 4);
+            this.tlpUsuario.Controls.Add(this.lblTipoDoc, 0, 2);
+            this.tlpUsuario.Controls.Add(this.cmbTipoDoc, 1, 2);
+            this.tlpUsuario.Controls.Add(this.lblNroDoc, 2, 2);
+            this.tlpUsuario.Controls.Add(this.txtNroDoc, 3, 2);
+            this.tlpUsuario.Controls.Add(this.lblFechaNac, 0, 3);
+            this.tlpUsuario.Controls.Add(this.lblDireccion, 2, 3);
+            this.tlpUsuario.Controls.Add(this.txtDireccion, 3, 3);
+            this.tlpUsuario.Controls.Add(this.lblClave, 0, 6);
+            this.tlpUsuario.Controls.Add(this.txtNombre, 1, 1);
+            this.tlpUsuario.Controls.Add(this.dtpFechaNacimiento, 1, 3);
+            this.tlpUsuario.Controls.Add(this.chkHabilitado, 3, 0);
+            this.tlpUsuario.Controls.Add(this.btnBuscar, 2, 0);
+            this.tlpUsuario.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.tlpUsuario.Location = new System.Drawing.Point(-2, 0);
+            this.tlpUsuario.Name = "tlpUsuario";
+            this.tlpUsuario.RowCount = 8;
+            this.tlpUsuario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19F));
+            this.tlpUsuario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19F));
+            this.tlpUsuario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19F));
+            this.tlpUsuario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19F));
+            this.tlpUsuario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24F));
+            this.tlpUsuario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tlpUsuario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpUsuario.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tlpUsuario.Size = new System.Drawing.Size(665, 277);
+            this.tlpUsuario.TabIndex = 1;
             // 
             // btnBuscar
             // 
@@ -383,12 +383,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 289);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tlpUsuario);
             this.Name = "UsuarioAlta";
             this.Text = "Nuevo Usuario";
             this.Load += new System.EventHandler(this.UsuarioAlta_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tlpUsuario.ResumeLayout(false);
+            this.tlpUsuario.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -424,7 +424,7 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tlpUsuario;
         private System.Windows.Forms.Button btnBuscar;
     }
 }

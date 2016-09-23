@@ -12,14 +12,15 @@ namespace Data.Database
 {
     public class PersonaAdapter : Adapter
     {
-        public List<Persona> GetAll()
+        public List<Persona> GetAll(Enum tipoPersona)
         {
             List<Persona> personas = new List<Persona>();
             try
             {
                 this.OpenConnection();
 
-                SqlCommand cmdGetAllPersonas = new SqlCommand("select * from personas", this.SqlConn);
+                SqlCommand cmdGetAllPersonas = new SqlCommand("select * from personas where tipo_persona=@tipo_persona", this.SqlConn);
+                cmdGetAllPersonas.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = tipoPersona;  
 
                 SqlDataReader drPersonas = cmdGetAllPersonas.ExecuteReader();
 

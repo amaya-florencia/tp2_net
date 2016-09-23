@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Util;
 
 namespace UI.Desktop
 {
@@ -34,6 +35,20 @@ namespace UI.Desktop
         private void especialidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void docentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Enum tipoPersona = Enumeradores.TiposPersonas.Docente;
+            PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
+            formPersonaABM.ShowDialog();
+        }
+
+        private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Enum tipoPersona = Enumeradores.TiposPersonas.Alumno;
+            PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
+            formPersonaABM.ShowDialog();
         }
     }
 }

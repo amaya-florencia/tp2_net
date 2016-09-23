@@ -14,24 +14,28 @@ namespace UI.Desktop
 {
     public partial class PersonaABM : Form
     {
-        private Enum tipoPersona;
+        
 
         public PersonaABM()
         {
             InitializeComponent();
         }
 
-        public PersonaABM(Enum tipoPersona)
+        /*public PersonaABM(Enum tipoPersona)
         {
             this.tipoPersona = tipoPersona;
-        }
+            InitializeComponent();
+        }*/
+       
 
-        public void Listar(Enum tipoPersona)
+        //public void Listar(Enum tipoPersona)
+        public void Listar()
         {
             PersonaLogic pl = new PersonaLogic();
             try
             {
-                this.dgvPersonas.DataSource = pl.GetAll(tipoPersona);
+               // this.dgvPersonas.DataSource = pl.GetAll(tipoPersona);
+                this.dgvPersonas.DataSource = pl.GetAll();
             }
             catch (Exception Ex)
             {
@@ -40,7 +44,8 @@ namespace UI.Desktop
         }
         private void PersonaABM_Load(object sender, EventArgs e)
         {
-            this.Listar(this.tipoPersona);
+            //this.Listar(this.tipoPersona);
+            this.Listar();
         }
 
         private void tlPersonas_Paint(object sender, PaintEventArgs e)
@@ -50,7 +55,8 @@ namespace UI.Desktop
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            this.Listar(this.tipoPersona);
+            //this.Listar(this.tipoPersona);
+            this.Listar();
         }
 
         private void btnSsalir_Click(object sender, EventArgs e)
@@ -67,7 +73,8 @@ namespace UI.Desktop
         {
             PersonaAlta formPersona = new PersonaAlta();
             formPersona.ShowDialog();
-            this.Listar(this.tipoPersona);
+            this.Listar();
+            //this.Listar(this.tipoPersona);
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
@@ -82,7 +89,8 @@ namespace UI.Desktop
                 PersonaAlta formPersona = new PersonaAlta(idPersona, ApplicationForm.ModoForm.Modificacion);
 
                 formPersona.ShowDialog();
-                this.Listar(this.tipoPersona);
+                //this.Listar(this.tipoPersona);
+                this.Listar();
             }
             else
             {
@@ -96,6 +104,14 @@ namespace UI.Desktop
              AlumnoAlta formUsuario = new AlumnoAlta(id, ApplicationForm.ModoForm.Baja);
              formUsuario.ShowDialog();
              this.Listar();*/
+        }
+
+        private void tsbNuevo_Click_1(object sender, EventArgs e)
+        {
+            PersonaAlta formPersona = new PersonaAlta();
+            formPersona.ShowDialog();
+            //this.Listar(this.tipoPersona);
+            this.Listar();
         }
     }
 }

@@ -12,7 +12,9 @@ namespace Data.Database
 {
     public class PersonaAdapter : Adapter
     {
-        public List<Persona> GetAll(Enum tipoPersona)
+        static public Enum tipoPersona;
+       // public List<Persona> GetAll(Enum tipoPersona)
+        public List<Persona> GetAll()
         {
             List<Persona> personas = new List<Persona>();
             try
@@ -20,7 +22,7 @@ namespace Data.Database
                 this.OpenConnection();
 
                 SqlCommand cmdGetAllPersonas = new SqlCommand("select * from personas where tipo_persona=@tipo_persona", this.SqlConn);
-                cmdGetAllPersonas.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = tipoPersona;  
+                cmdGetAllPersonas.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = tipoPersona.GetHashCode();  
 
                 SqlDataReader drPersonas = cmdGetAllPersonas.ExecuteReader();
 
@@ -28,9 +30,8 @@ namespace Data.Database
                 {
                     Persona per = new Persona();
 
-                    
+                    per.ID = (int)drPersonas["id_persona"];                    
                     per.Nombre = (string)drPersonas["nombre"];
-                    per.ID = (int)drPersonas["id_personas"];
                     per.Apellido = (string)drPersonas["apellido"];
                     per.Direccion = (string)drPersonas["direccion"];
                     per.Email = (string)drPersonas["email"];
@@ -144,7 +145,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
                 cmdSave.Parameters.Add("@legajo", SqlDbType.VarChar, 50).Value = persona.Legajo;
-                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.VarChar, 50).Value = persona.TipoPersona;
+                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.VarChar, 50).Value = persona.TipoPersona.GetHashCode();
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.VarChar, 50).Value = persona.IdPlan;
                 cmdSave.ExecuteNonQuery();
             }
@@ -176,7 +177,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
                 cmdSave.Parameters.Add("@legajo", SqlDbType.VarChar, 50).Value = persona.Legajo;
-                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.VarChar, 50).Value = persona.TipoPersona;
+                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.VarChar, 50).Value = tipoPersona.GetHashCode(); //asigno el valor de la variable static ¿?
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.VarChar, 50).Value = persona.IdPlan;
                 persona.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
 

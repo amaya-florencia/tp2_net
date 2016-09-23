@@ -23,12 +23,14 @@ namespace Business.Logic
             PersonaAdapter PersonaData = new PersonaAdapter();
         }
 
-        public List<Persona> GetAll(Enum tipoPersona)
+        //public List<Persona> GetAll(Enum tipoPersona)
+        public List<Persona> GetAll()
         {
             try
             {
                 PersonaAdapter pa = new PersonaAdapter();
-                return pa.GetAll(tipoPersona);
+                //return pa.GetAll(tipoPersona);
+                return pa.GetAll();
             }
             catch (Exception Ex)
             {

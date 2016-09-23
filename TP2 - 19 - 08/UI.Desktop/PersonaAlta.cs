@@ -76,16 +76,12 @@ namespace UI.Desktop
                 PersonaActual.Nombre = this.txtNombre.Text;
                 PersonaActual.Apellido = this.txtApellido.Text;
                 PersonaActual.FechaNac = this.dtpFechaNacimiento.Value;
-                PersonaActual.Legajo = Int32.Parse(this.txtLegajo.Text);
+                PersonaActual.Legajo = Convert.ToInt32(this.txtLegajo.Text);
                 PersonaActual.Direccion = this.txtDireccion.Text;
                 PersonaActual.Telefono = this.txtTelefono.Text;
                 PersonaActual.Email = this.txtEmail.Text;
-                PersonaActual.TipoPersona = (Util.Enumeradores.TiposPersonas)this.cmbRol.SelectedItem;
-                PersonaActual.IdPlan = Int32.Parse(this.cmbPlan.SelectedText);
-                /*PersonaActual.NombreUsuario = this.txtUsuario.Text;
-                PersonaActual.Clave = this.txtClave.Text;
-                PersonaActual.Clave = this.txtConfirmarClave.Text;
-                */
+                PersonaActual.IdPlan = this.cmbPlan.SelectedItem.GetHashCode();
+                //PersonaActual.TipoPersona = 
 
                 PersonaActual.State = Usuario.States.New;
             }
@@ -100,10 +96,6 @@ namespace UI.Desktop
                 PersonaActual.Direccion = this.txtDireccion.Text;
                 PersonaActual.Telefono = this.txtTelefono.Text;
                 PersonaActual.Email = this.txtEmail.Text;
-                /*PersonaActual.NombreUsuario = this.txtUsuario.Text;
-                PersonaActual.Clave = this.txtClave.Text;
-                PersonaActual.Clave = this.txtConfirmarClave.Text;
-                */
 
 
                 PersonaActual.State = Usuario.States.Modified;

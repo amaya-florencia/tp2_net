@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,16 +40,21 @@ namespace UI.Desktop
 
         private void docentesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Enum tipoPersona = Enumeradores.TiposPersonas.Docente;
-            PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
-            formPersonaABM.ShowDialog();
+          // Enum tipoPersona = Enumeradores.TiposPersonas.Docente;
+//           PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
+           
+           PersonaABM formPersonaABM = new PersonaABM();
+           PersonaAdapter.tipoPersona = Enumeradores.TiposPersonas.Docente;
+           formPersonaABM.ShowDialog();
         }
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Enum tipoPersona = Enumeradores.TiposPersonas.Alumno;
+           /* Enum tipoPersona = Enumeradores.TiposPersonas.Alumno;
             PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
             formPersonaABM.ShowDialog();
+            */
+            
         }
     }
 }

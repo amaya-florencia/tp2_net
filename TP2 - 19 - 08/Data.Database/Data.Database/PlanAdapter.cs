@@ -13,7 +13,7 @@ namespace Data.Database
     {
         public List<Plan> GetAll()
         {
-            List<Plan> planes = new List<Plan>;
+            List<Plan> planes = new List<Plan>();
             try
             {               
                 this.OpenConnection();
@@ -54,7 +54,10 @@ namespace Data.Database
                     plan.ID = (int)drPlanes["id_plan"];
                     plan.Descripcion = (string)drPlanes["desc_plan"];
                 }
+            }catch{
+
             }
+            return plan;
         }
         
     }

@@ -22,7 +22,8 @@ namespace UI.Desktop
             //Application.Run(new UsuariosABM());
             ///Application.Run(new Login());
             //Application.Run(new UsuarioAlta());
-           Application.Run(new EspecialidadesAMB());
+           //Application.Run(new EspecialidadesAMB());
+            Application.Run(new PersonaABM());
         }
     }
 }

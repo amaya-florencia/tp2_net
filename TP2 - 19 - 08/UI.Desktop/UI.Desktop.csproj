@@ -81,17 +81,17 @@
     <Compile Include="EspecialidadesAMB.Designer.cs">
       <DependentUpon>EspecialidadesAMB.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProfesorAlta.cs">
+    <Compile Include="PersonaAlta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProfesorAlta.Designer.cs">
-      <DependentUpon>ProfesorAlta.cs</DependentUpon>
+    <Compile Include="PersonaAlta.Designer.cs">
+      <DependentUpon>PersonaAlta.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProfesoresABM.cs">
+    <Compile Include="PersonaABM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProfesoresABM.Designer.cs">
-      <DependentUpon>ProfesoresABM.cs</DependentUpon>
+    <Compile Include="PersonaABM.Designer.cs">
+      <DependentUpon>PersonaABM.cs</DependentUpon>
     </Compile>
     <Compile Include="UsuarioAlta.cs">
       <SubType>Form</SubType>
@@ -137,8 +137,11 @@
     <EmbeddedResource Include="EspecialidadesAMB.resx">
       <DependentUpon>EspecialidadesAMB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProfesorAlta.resx">
-      <DependentUpon>ProfesorAlta.cs</DependentUpon>
+    <EmbeddedResource Include="PersonaABM.resx">
+      <DependentUpon>PersonaABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonaAlta.resx">
+      <DependentUpon>PersonaAlta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsuarioAlta.resx">
       <DependentUpon>UsuarioAlta.cs</DependentUpon>

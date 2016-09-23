@@ -27,8 +27,9 @@ namespace Data.Database
                 {
                     Persona per = new Persona();
 
-                    per.ID = (int)drPersonas["id_personas"];
+                    
                     per.Nombre = (string)drPersonas["nombre"];
+                    per.ID = (int)drPersonas["id_personas"];
                     per.Apellido = (string)drPersonas["apellido"];
                     per.Direccion = (string)drPersonas["direccion"];
                     per.Email = (string)drPersonas["email"];

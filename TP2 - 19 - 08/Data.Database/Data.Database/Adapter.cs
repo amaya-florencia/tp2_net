@@ -12,7 +12,9 @@ namespace Data.Database
 
         //Clave por defecto a utlizar para la cadena de conexion
         //const string consKeyDefaultCnnString = "ConnStringLocal";
-        const string consKeyDefaultCnnString = "ConnStringFlor";
+        //const string consKeyDefaultCnnString = "ConnStringFlor";
+        const string consKeyDefaultCnnString = "ConnStringBelen";
+        
 
         private SqlConnection sqlConn;
         public SqlConnection SqlConn
@@ -36,7 +38,7 @@ namespace Data.Database
 
         protected SqlDataReader ExecuteReader(String commandText)
         {
-            throw new Exception("Metodo no implementado");
+            throw new Exception("Método no implementado");
         }
     }
 }

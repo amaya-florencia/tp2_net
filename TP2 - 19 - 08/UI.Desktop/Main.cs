@@ -94,5 +94,11 @@ namespace UI.Desktop
             UsuariosABM formUsuarios = new UsuariosABM();
             formUsuarios.Show();
         }
+
+        private void tsPlanes_Click(object sender, EventArgs e)
+        {
+            PlanABM formPlan = new PlanABM();
+            formPlan.Show();
+        }
     }
 }

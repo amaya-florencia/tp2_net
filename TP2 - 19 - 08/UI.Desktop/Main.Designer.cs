@@ -39,8 +39,8 @@
             this.tsDocentes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsInscripcion = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsCursos = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,6 +90,7 @@
             this.tsPlanes.Name = "tsPlanes";
             this.tsPlanes.Size = new System.Drawing.Size(53, 20);
             this.tsPlanes.Text = "Planes";
+            this.tsPlanes.Click += new System.EventHandler(this.tsPlanes_Click);
             // 
             // tsMaterias
             // 
@@ -128,6 +129,12 @@
             this.tsInscripcion.Size = new System.Drawing.Size(77, 20);
             this.tsInscripcion.Text = "Inscripción";
             // 
+            // tsCursos
+            // 
+            this.tsCursos.Name = "tsCursos";
+            this.tsCursos.Size = new System.Drawing.Size(55, 20);
+            this.tsCursos.Text = "Cursos";
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
@@ -135,12 +142,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(884, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsCursos
-            // 
-            this.tsCursos.Name = "tsCursos";
-            this.tsCursos.Size = new System.Drawing.Size(55, 20);
-            this.tsCursos.Text = "Cursos";
             // 
             // Main
             // 

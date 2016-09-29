@@ -34,7 +34,6 @@ namespace Business.Logic
         {
             try
             {
-                EspecialidadAdapter ea = new EspecialidadAdapter();
                 return ea.GetAll();
             }
             catch (Exception Ex)
@@ -45,8 +44,11 @@ namespace Business.Logic
         }
         public Especialidad GetOne (int ID)
         {
-            
             return ea.GetOne(ID);
+        }
+        public Especialidad GetIdEspecialidadPorDescripcion(String descripcion)
+        {
+            return ea.GetIdEspecialidadPorDescripcion(descripcion);
         }
         public void Delete(int ID)
         {

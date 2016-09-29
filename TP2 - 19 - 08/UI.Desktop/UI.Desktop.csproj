@@ -71,6 +71,18 @@
     <Compile Include="EspecialidadesAMB.Designer.cs">
       <DependentUpon>EspecialidadesAMB.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlanABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanABM.Designer.cs">
+      <DependentUpon>PlanABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanAlta.Designer.cs">
+      <DependentUpon>PlanAlta.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsuarioAlta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +126,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EspecialidadesAMB.resx">
       <DependentUpon>EspecialidadesAMB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanABM.resx">
+      <DependentUpon>PlanABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanAlta.resx">
+      <DependentUpon>PlanAlta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsuarioAlta.resx">
       <DependentUpon>UsuarioAlta.cs</DependentUpon>
@@ -170,6 +188,9 @@
       <Project>{d295dc4b-51de-44e7-8df5-803644f5950f}</Project>
       <Name>Util</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

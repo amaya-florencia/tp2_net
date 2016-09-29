@@ -66,7 +66,7 @@ namespace UI.Desktop
             }
             else if (this.Modo == ApplicationForm.ModoForm.Baja)
             {
-                DialogResult rta = MessageBox.Show("Confirma la eliminacion del usuario" + this.PlanActual.Descripcion + "?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                DialogResult rta = MessageBox.Show("Confirma la eliminacion del plan: " + this.PlanActual.Descripcion + " ?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 if (rta == DialogResult.OK)
                 {
                     this.GuardarCambios();
@@ -84,9 +84,8 @@ namespace UI.Desktop
             if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
             {
                 PlanActual.Descripcion = this.txtDescripcion.Text;
-
-                PlanActual.IdEspecialidad = this.cmbEspecialidad.SelectedIndex + 1;
-                 
+                PlanActual.IdEspecialidad = esp.GetIdEspecialidadPorDescripcion(this.txtEspecialidadSeleccionada.Text).ID;
+              
             }
             switch (this.Modo)
             {
@@ -98,6 +97,30 @@ namespace UI.Desktop
                     break;
                 case ModoForm.Baja:
                     PlanActual.State = BusinessEntity.States.Deleted;
+                    break;
+            }
+        }
+        public override void MapearDeDatos()
+        {
+
+            this.txtIdPlan.Text = this.PlanActual.ID.ToString();
+            this.txtDescripcion.Text = this.PlanActual.Descripcion;
+            this.txtEspecialidadSeleccionada.Text = esp.GetOne(this.PlanActual.IdEspecialidad).Descripcion;
+
+
+            switch (this.Modo)
+            {
+                case ModoForm.Modificacion:
+                    this.Text = "Modificacion de Usuario";
+                    btnAceptar.Text = "Guardar";
+                    break;
+                case ModoForm.Baja:
+                    this.Text = "Baja de Usuario";
+                    btnAceptar.Text = "Eliminar";
+                    break;
+                case ModoForm.Consulta:
+                    this.Text = "Consulta de Usuario";
+                    btnAceptar.Text = "Aceptar";
                     break;
             }
         }
@@ -128,6 +151,17 @@ namespace UI.Desktop
                     this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void cmbEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            txtEspecialidadSeleccionada.Text = cmbEspecialidad.GetItemText(cmbEspecialidad.SelectedItem);
+           
         }
     }
 }

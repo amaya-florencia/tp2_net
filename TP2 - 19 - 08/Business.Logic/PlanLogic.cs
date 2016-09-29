@@ -30,6 +30,7 @@ namespace Business.Logic
         {
             return PlanData.GetOne(id);
         }
+        
         public void Delete(int id)
         {
             PlanData.Delete(id);

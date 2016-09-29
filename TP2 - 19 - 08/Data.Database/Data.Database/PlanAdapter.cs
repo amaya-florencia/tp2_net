@@ -57,12 +57,15 @@ namespace Data.Database
                 {
                     plan.ID = (int)drPlanes["id_plan"];
                     plan.Descripcion = (string)drPlanes["desc_plan"];
+                    plan.IdEspecialidad = (int)drPlanes["id_especialidad"];
                 }
             }catch{
 
             }
             return plan;
         }
+       
+
         public void Save(Plan plan)
         {
             if (plan.State == BusinessEntity.States.New)
@@ -107,7 +110,7 @@ namespace Data.Database
         protected void Update(Plan plan)
         {
             this.OpenConnection();
-            SqlCommand cmdSave = new SqlCommand("UPDATE planes SET desc_plan=@v, id_especialidad=@id_especialidad," +                                                
+            SqlCommand cmdSave = new SqlCommand("UPDATE planes SET desc_plan=@desc_plan, id_especialidad=@id_especialidad" +                                                
                                                 " WHERE id_plan=@id", SqlConn);
 
 

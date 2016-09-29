@@ -74,12 +74,14 @@
             this.tsmEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsmEditar.Image")));
             this.tsmEditar.Name = "tsmEditar";
             this.tsmEditar.Size = new System.Drawing.Size(28, 20);
+            this.tsmEditar.Click += new System.EventHandler(this.tsmEditar_Click);
             // 
             // tsmEliminar
             // 
             this.tsmEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsmEliminar.Image")));
             this.tsmEliminar.Name = "tsmEliminar";
             this.tsmEliminar.Size = new System.Drawing.Size(28, 20);
+            this.tsmEliminar.Click += new System.EventHandler(this.tsmEliminar_Click_1);
             // 
             // PlanABM
             // 

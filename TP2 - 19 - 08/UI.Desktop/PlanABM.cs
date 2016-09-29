@@ -61,5 +61,37 @@ namespace UI.Desktop
         {
             this.Listar();
         }
+
+        private void tsmEditar_Click(object sender, EventArgs e)
+        {
+            if (this.dgvPlan.SelectedRows.Count == 1)
+            {                
+                int idPlan = ((Business.Entities.Plan)this.dgvPlan.SelectedRows[0].DataBoundItem).ID;                
+                PlanAlta formPlan = new PlanAlta(idPlan, ApplicationForm.ModoForm.Modificacion);
+                formPlan.ShowDialog();
+                this.Listar();
+            }
+            else
+            {
+                MessageBox.Show("Advertencia", "Primero seleccione una fila de la grilla", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+        }
+
+        private void tsmEliminar_Click_1(object sender, EventArgs e)
+        {
+            if (this.dgvPlan.SelectedRows.Count == 1)
+            {
+                int idPlan = ((Business.Entities.Plan)this.dgvPlan.SelectedRows[0].DataBoundItem).ID;
+                PlanAlta formPlan = new PlanAlta(idPlan, ApplicationForm.ModoForm.Baja);
+                formPlan.ShowDialog();
+                this.Listar();
+            }
+            else
+            {
+                MessageBox.Show("Advertencia", "Primero seleccione una fila de la grilla", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

@@ -150,7 +150,6 @@
             this.lblTipoDoc.Size = new System.Drawing.Size(84, 13);
             this.lblTipoDoc.TabIndex = 31;
             this.lblTipoDoc.Text = "Tipo documento";
-           
             // 
             // lblCelular
             // 
@@ -373,7 +372,7 @@
             this.ClientSize = new System.Drawing.Size(675, 289);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UsuarioAlta";
-            this.Text = "Nuevo Usuario";         
+            this.Text = "Nuevo Usuario";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

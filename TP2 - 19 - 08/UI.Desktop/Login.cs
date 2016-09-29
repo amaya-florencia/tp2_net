@@ -19,7 +19,7 @@ namespace UI.Desktop
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            ///falta programar el login para que acceda a la base
+            
         }
 
         private void lnkOlvidaPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

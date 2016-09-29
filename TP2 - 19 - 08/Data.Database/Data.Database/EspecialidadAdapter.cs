@@ -26,6 +26,7 @@ namespace Data.Database
                     Especialidad esp = new Especialidad();
                     esp.ID = (int)drEspecialidades["id_especialidad"];
                     esp.Descripcion = (string)drEspecialidades["desc_especialidad"];
+                    
                     especialidades.Add(esp);
                 }
                 drEspecialidades.Close();
@@ -42,6 +43,7 @@ namespace Data.Database
             return especialidades;
 
         }
+        
         public Especialidad GetOne(int ID){
             Especialidad esp = new Especialidad();
             try
@@ -55,6 +57,36 @@ namespace Data.Database
                 {
                     esp.ID = (int)drEspecialidades["id_especialidad"];
                     esp.Descripcion = drEspecialidades["desc_especialidad"].ToString();                    
+                }
+                drEspecialidades.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la especialidad", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return esp;
+        }
+
+       
+        public Especialidad GetIdEspecialidadPorDescripcion(String descripcion) // busco la especialidad para mapear en PlanAlta
+        {
+            Especialidad esp = new Especialidad();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdEspecialidades = new SqlCommand("SELECT * FROM especialidades where desc_especialidad=@descripcion ", SqlConn);
+                cmdEspecialidades.Parameters.Add("@descripcion", SqlDbType.VarChar, 50).Value = descripcion;
+                SqlDataReader drEspecialidades = cmdEspecialidades.ExecuteReader();
+
+                if (drEspecialidades.Read())
+                {
+                    esp.ID = (int)drEspecialidades["id_especialidad"];
+                    esp.Descripcion = drEspecialidades["desc_especialidad"].ToString();
                 }
                 drEspecialidades.Close();
             }
@@ -83,7 +115,7 @@ namespace Data.Database
             {
                 this.Update(esp);
             }
-            //esp.State = BusinessEntity.States.Unmodified;
+            
         }
         protected void Insert(Especialidad esp)
         {

@@ -252,7 +252,5 @@ namespace UI.Desktop
             }
 
         }
-
-
     }
 }

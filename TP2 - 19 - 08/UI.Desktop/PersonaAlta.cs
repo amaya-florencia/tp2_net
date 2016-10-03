@@ -15,9 +15,9 @@ namespace UI.Desktop
 {
     public partial class PersonaAlta : ApplicationForm
     {
-        public PersonaAlta(ModoForm modo) : this()
-        {
-            Modo = modo;
+        public PersonaAlta(Enum tipoPer) : this()
+        {          
+            Enum tipoPersona = tipoPer;
         }
         public PersonaAlta()
         {
@@ -29,6 +29,7 @@ namespace UI.Desktop
             Modo = modo;
         }
 
+        
         private Persona _personaActual;
         public Persona PersonaActual
         {
@@ -46,10 +47,6 @@ namespace UI.Desktop
             this.txtDireccion.Text = this.PersonaActual.Direccion;
             this.txtTelefono.Text = this.PersonaActual.Telefono;
             this.txtEmail.Text = this.PersonaActual.Email;
-            /*this.txtUsuario.Text = this.PersonaActual.NombreUsuario;
-            this.txtClave.Text = this.PersonaActual.Clave;
-            this.txtConfirmarClave.Text = this.PersonaActual.Clave;
-             */
 
             if ((Modo == ModoForm.Alta) || (Modo == ModoForm.Modificacion))
             {
@@ -81,7 +78,7 @@ namespace UI.Desktop
                 PersonaActual.Telefono = this.txtTelefono.Text;
                 PersonaActual.Email = this.txtEmail.Text;
                 PersonaActual.IdPlan = this.cmbPlan.SelectedItem.GetHashCode();
-                //PersonaActual.TipoPersona = 
+             //   PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)tipoPersona;
 
                 PersonaActual.State = Usuario.States.New;
             }
@@ -96,7 +93,8 @@ namespace UI.Desktop
                 PersonaActual.Direccion = this.txtDireccion.Text;
                 PersonaActual.Telefono = this.txtTelefono.Text;
                 PersonaActual.Email = this.txtEmail.Text;
-
+                PersonaActual.IdPlan = this.cmbPlan.SelectedItem.GetHashCode();
+            //    PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)tipoPersona;
 
                 PersonaActual.State = Usuario.States.Modified;
             }
@@ -141,29 +139,9 @@ namespace UI.Desktop
                 mensaje += "El teléfono no puede estar en blanco." + "\n";
             if (string.IsNullOrEmpty(txtLegajo.Text.Trim()))
                 mensaje += "El legajo no puede estar en blanco." + "\n";
-            */
-
-            /* Esto no pertenece a la tabla Personas
-             
-            if (string.IsNullOrEmpty(txtClave.Text.Trim()))
-                mensaje += "La clave no puede estar en blanco." + "\n";
-            if (string.IsNullOrEmpty(txtConfirmarClave.Text.Trim()))
-                mensaje += "El repetir clave no puede estar en blanco." + "\n";
-            if (txtConfirmarClave.Text.Trim() != txtClave.Text.Trim())
-                mensaje += "Las claves no coinciden." + "\n";
-            if (txtClave.Text.Length < 8)
-                mensaje += "La clave debe contener al menos 8 caracteres." + "\n";
-            if (string.IsNullOrEmpty(cmbTipoDoc.Text.Trim()))
-                mensaje += "El tipo de documento no puede estar en blanco." + "\n";
-            if (string.IsNullOrEmpty(txtNroDoc.Text.Trim()))
-                mensaje += "El numero de documento no puede estar en blanco." + "\n";
-            if (txtNroDoc.Text.Length < 7 || txtNroDoc.Text.Length > 8)
-                mensaje += "El numero de documento esta mal ingresado." + "\n";
-            
-             */
-
-            /* if (string.IsNullOrEmpty(txtFechaNac.Text.Trim()))
+            if (string.IsNullOrEmpty(txtFechaNac.Text.Trim()))
                  mensaje += "La fecha de naciomiento no puede estar en blanco." + "\n";*/
+            
             if (String.IsNullOrEmpty(this.dtpFechaNacimiento.Text))
             {
                 mensaje += "- Complete la fecha de nacimiento\n";

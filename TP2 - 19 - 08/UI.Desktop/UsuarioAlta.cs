@@ -56,7 +56,6 @@ namespace UI.Desktop
             this.txtId.Text = this.UsuarioActual.ID.ToString();
             this.cmbTipoDoc.Text = this.UsuarioActual.TipoDocumento;
             this.dtpFechaNacimiento.Value = this.UsuarioActual.FechaNac;
-            //this.txtFechaNac.Text = this.UsuarioActual.FechaNac.ToString();
             this.txtNombre.Text = this.UsuarioActual.Nombre;
             this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtDireccion.Text = this.UsuarioActual.Direccion;
@@ -94,8 +93,7 @@ namespace UI.Desktop
                 UsuarioActual.Clave = this.txtClave.Text;
                 UsuarioActual.Clave = this.txtConfirmarClave.Text;
                 UsuarioActual.TipoDocumento = this.cmbTipoDoc.Text;
-                UsuarioActual.NroDocumento = this.txtNroDoc.Text;
-                //UsuarioActual.FechaNac = Convert.ToDateTime(this.txtFechaNac.Text);
+                UsuarioActual.NroDocumento = this.txtNroDoc.Text;                
                 UsuarioActual.FechaNac = this.dtpFechaNacimiento.Value;
                 UsuarioActual.Direccion = this.txtDireccion.Text;
                 UsuarioActual.Telefono = this.txtTelefono.Text;

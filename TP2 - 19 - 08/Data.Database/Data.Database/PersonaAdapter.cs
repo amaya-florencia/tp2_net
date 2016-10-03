@@ -13,16 +13,17 @@ namespace Data.Database
     public class PersonaAdapter : Adapter
     {
         static public Enum tipoPersona;
-       // public List<Persona> GetAll(Enum tipoPersona)
-        public List<Persona> GetAll()
+       public List<Persona> GetAll(Enum tipoPersona)
+       // public List<Persona> GetAll()
         {
             List<Persona> personas = new List<Persona>();
             try
             {
+                int tipoPer = tipoPersona.GetHashCode();
                 this.OpenConnection();
 
                 SqlCommand cmdGetAllPersonas = new SqlCommand("select * from personas where tipo_persona=@tipo_persona", this.SqlConn);
-                cmdGetAllPersonas.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = tipoPersona.GetHashCode();  
+                cmdGetAllPersonas.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = tipoPer;  
 
                 SqlDataReader drPersonas = cmdGetAllPersonas.ExecuteReader();
 
@@ -166,11 +167,11 @@ namespace Data.Database
             {   
 
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO personas( nombre, apellido, direccion, email, telefono, legajo, tipo_persona, id_plan)" +
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO personas(nombre, apellido, direccion, email, telefono, legajo, tipo_persona, id_plan)" +
                                                     "VALUES(@nombre, @apellido, @direccion, @email, @telefono, @legajo, @tipo_persona, @id_plan)" +
                                                     "Select @@identity", SqlConn);
 
-                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = persona.ID;
+              //  cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = persona.ID;
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
                 cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
                 cmdSave.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = persona.Direccion;

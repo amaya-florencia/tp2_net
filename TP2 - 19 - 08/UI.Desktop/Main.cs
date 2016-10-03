@@ -40,11 +40,11 @@ namespace UI.Desktop
 
         private void docentesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          // Enum tipoPersona = Enumeradores.TiposPersonas.Docente;
-//           PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
+          Enum tipoPersona = Enumeradores.TiposPersonas.Docente;
+          PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
            
-           PersonaABM formPersonaABM = new PersonaABM();
-           PersonaAdapter.tipoPersona = Enumeradores.TiposPersonas.Docente;
+          // PersonaABM formPersonaABM = new PersonaABM();
+           //PersonaAdapter.tipoPersona = Enumeradores.TiposPersonas.Docente;
            formPersonaABM.ShowDialog();
         }
 

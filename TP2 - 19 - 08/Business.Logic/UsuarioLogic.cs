@@ -59,6 +59,15 @@ namespace Business.Logic
         {            
             return UsuarioData.GetOne(id);
         }
+        public Usuario GetOne(string nombreUsuario, string pass)
+        {
+            Usuario u = UsuarioData.GetOne(nombreUsuario);
+            if (u.Clave != pass)
+            {
+                u = null;
+            }
+            return u;
+        }
         public void Delete(int id)
         {
             UsuarioData.Delete(id);

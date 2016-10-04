@@ -27,19 +27,15 @@ namespace UI.Desktop
         {
             InitializeComponent();
         }
+        public Main (Usuario usuarioLog): this()
+        {
+            this.UsuarioActual = usuarioLog;
+           // this.PersonaActual = new PersonaLogic().GetOnePorPersona(this.UsuarioActual.IdPersona);
+        }
 
         private void mnuSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-        private void formMain_Shown(object sender, EventArgs e)
-        {
-            Login appLogin = new Login();
-            if (appLogin.ShowDialog() != DialogResult.OK)
-            {
-                this.Dispose();
-            }
-
         }
 
         private void especialidadesToolStripMenuItem_Click(object sender, EventArgs e)

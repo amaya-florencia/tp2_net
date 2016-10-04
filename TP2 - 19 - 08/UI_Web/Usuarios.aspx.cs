@@ -84,8 +84,7 @@ namespace UI_Web
         {
             this.Entity = this.Logic.GetOne(id);
             this.txtNombre.Text = this.Entity.Nombre;
-            this.txtApellido.Text = this.Entity.Apellido;
-            this.txtMail.Text = this.Entity.Email;
+            this.txtApellido.Text = this.Entity.Apellido;   
             this.chkHabilitado.Checked = this.Entity.Habilitado;
             this.txtNombreUsuario.Text = this.Entity.NombreUsuario;
         }
@@ -104,7 +103,7 @@ namespace UI_Web
         {
             usuario.Nombre = this.txtNombre.Text;
             usuario.Apellido = this.txtApellido.Text;
-            usuario.Email = this.txtMail.Text;
+           
             usuario.NombreUsuario = this.txtNombreUsuario.Text;
             usuario.Clave = this.txtClave.Text;
             usuario.Habilitado = this.chkHabilitado.Checked;
@@ -201,14 +200,6 @@ namespace UI_Web
                 txtValidarApellido.Visible = true;
                 txtValidarApellido.Text = "El apellido no puede estar vacio.";
             }
-
-            RegexUtilities util = new RegexUtilities();
-            if (!util.validarMail(txtMail.Text))
-            {
-                txtValidarMail.Visible = true;
-                txtValidarMail.Text = "El email no es valido.";
-            }
-            
 
             if (string.IsNullOrEmpty(txtNombreUsuario.Text))
             {

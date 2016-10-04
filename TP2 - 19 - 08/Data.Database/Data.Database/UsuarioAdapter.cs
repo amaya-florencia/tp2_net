@@ -34,8 +34,6 @@ namespace Data.Database
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
                     usr.Nombre = (string)drUsuarios["nombre"];
                     usr.Apellido = (string)drUsuarios["apellido"];
-                    usr.Email = (string)drUsuarios["email"];
-                   // usr.FechaNac = (DateTime)drUsuarios["fecha_nac"];
 
                     usuarios.Add(usr);
                 }
@@ -72,7 +70,6 @@ namespace Data.Database
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
                     usr.Nombre = drUsuarios["nombre"].ToString();
                     usr.Apellido = drUsuarios["apellido"].ToString();
-                    usr.Email = drUsuarios["email"].ToString();
                 }
                 drUsuarios.Close();
             }
@@ -104,7 +101,7 @@ namespace Data.Database
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
                     usr.Nombre = drUsuarios["nombre"].ToString();
                     usr.Apellido = drUsuarios["apellido"].ToString();
-                    usr.Email = drUsuarios["email"].ToString();                   
+                                 
                 }
                 drUsuarios.Close();
             }
@@ -162,8 +159,8 @@ namespace Data.Database
             
             this.OpenConnection();
             SqlCommand cmdSave = new SqlCommand("UPDATE usuarios SET nombre_usuario=@nombre_usuario, clave=@clave," +
-                                                "habilitado=@habilitado, nombre=@nombre, apellido=@apellido, " +
-                                                "email=@email WHERE id_usuario=@id", SqlConn);
+                                                "habilitado=@habilitado, nombre=@nombre, apellido=@apellido " +
+                                                "WHERE id_usuario=@id", SqlConn);
 
 
             cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
@@ -172,7 +169,7 @@ namespace Data.Database
             cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
             cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
             cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
-            cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.Email;
+            
         
             cmdSave.ExecuteNonQuery();
             this.CloseConnection();
@@ -181,11 +178,10 @@ namespace Data.Database
         protected void Insert(Usuario usuario)
         {
             try
-            {   //Insert into personas? y... faltan datos
-
+            {   
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO usuarios(nombre_usuario, clave, habilitado, nombre, apellido, email)" +
-                                                    "VALUES(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email)" +
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO usuarios(nombre_usuario, clave, habilitado, nombre, apellido)" +
+                                                    "VALUES(@nombre_usuario, @clave, @habilitado, @nombre, @apellido)" +
                                                     "Select @@identity", SqlConn);
 
                 cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
@@ -193,7 +189,6 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
                 cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
-                cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.Email;
                 usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
 
             }

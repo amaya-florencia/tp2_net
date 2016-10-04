@@ -51,14 +51,12 @@ namespace Business.Logic
             return ea.GetIdEspecialidadPorDescripcion(descripcion);
         }
         public void Delete(int ID)
-        {
-            
+        { 
             ea.Delete(ID);
         }
 
         public void Save(Especialidad esp)
         {
-           
             ea.Save(esp);
         }
     }

@@ -15,19 +15,23 @@ namespace UI.Desktop
 {
     public partial class PlanAlta : ApplicationForm
     {
-        public PlanAlta()
-        {
-            InitializeComponent();
-        }
-        private Plan _PlanActual;
-        public Plan PlanActual
-        {
-            get { return _PlanActual; }
-            set { _PlanActual = value; }
-        }
+        public Plan PlanActual;
+        EspecialidadLogic esp = new EspecialidadLogic();
         public PlanAlta(ModoForm modo) : this()
         {
             Modo = modo;
+        }
+        public PlanAlta()
+        {
+            InitializeComponent();
+            try
+            {
+                CargarCombo();
+            }
+            catch (Exception e)
+            {
+                this.Notificar("Especialidades", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public PlanAlta(int ID, ModoForm modo) : this()
         {
@@ -44,12 +48,13 @@ namespace UI.Desktop
             }
 
         }
-        EspecialidadLogic esp = new EspecialidadLogic();
-        private void PlanAlta_Load(object sender, EventArgs e)
+       
+        private void CargarCombo()
         {
-            cmbEspecialidad.DataSource = esp.GetAll();
+            EspecialidadLogic el = new EspecialidadLogic();
+            cmbEspecialidad.DataSource = el.GetAll();
             cmbEspecialidad.DisplayMember = "Descripcion";
-            cmbEspecialidad.ValueMember = "IdEspecialidad";
+            cmbEspecialidad.ValueMember = "Id";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -66,7 +71,7 @@ namespace UI.Desktop
             }
             else if (this.Modo == ApplicationForm.ModoForm.Baja)
             {
-                DialogResult rta = MessageBox.Show("Confirma la eliminacion del plan: " + this.PlanActual.Descripcion + " ?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                DialogResult rta = MessageBox.Show("Confirma la eliminacion del usuario" + this.PlanActual.Descripcion + "?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 if (rta == DialogResult.OK)
                 {
                     this.GuardarCambios();
@@ -84,8 +89,7 @@ namespace UI.Desktop
             if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
             {
                 PlanActual.Descripcion = this.txtDescripcion.Text;
-                PlanActual.IdEspecialidad = esp.GetIdEspecialidadPorDescripcion(this.txtEspecialidadSeleccionada.Text).ID;
-              
+                PlanActual.IdEspecialidad = (int)this.cmbEspecialidad.SelectedValue;
             }
             switch (this.Modo)
             {
@@ -100,13 +104,13 @@ namespace UI.Desktop
                     break;
             }
         }
+        
         public override void MapearDeDatos()
         {
 
             this.txtIdPlan.Text = this.PlanActual.ID.ToString();
             this.txtDescripcion.Text = this.PlanActual.Descripcion;
-            this.txtEspecialidadSeleccionada.Text = esp.GetOne(this.PlanActual.IdEspecialidad).Descripcion;
-
+            this.cmbEspecialidad.SelectedValue = this.PlanActual.IdEspecialidad;
 
             switch (this.Modo)
             {
@@ -132,7 +136,7 @@ namespace UI.Desktop
                 try
                 {
                     this.MapearADatos();                 
-                    planLogic.Save(PlanActual);
+                    planLogic.Save(this.PlanActual);
                 }
                 catch (Exception e)
                 {
@@ -152,16 +156,31 @@ namespace UI.Desktop
                 }
             }
         }
-
-        private void cmbEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
+        public override bool Validar()
         {
-           
+            string mensaje = "";
+            if (String.IsNullOrEmpty(this.txtDescripcion.Text.Trim()))
+            {
+                mensaje += "Debe completar la descripcion del plan\n";
+            }
+            else if (this.txtDescripcion.Text.Length > 50)
+            {
+                mensaje += "La descripcion del plan puede tener como máximo 50 caracteres\n";
+            }
+            if (!(this.cmbEspecialidad.SelectedIndex > -1))
+            {
+                mensaje += "Debe seleccionar una especialidad en la lista desplegable";
+            }
+            if (mensaje.Length == 0)
+            {
+                return true;
+            }
+            else
+            {
+                this.Notificar("Advertencia", mensaje, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
         }
-
-        private void btnSeleccionar_Click(object sender, EventArgs e)
-        {
-            txtEspecialidadSeleccionada.Text = cmbEspecialidad.GetItemText(cmbEspecialidad.SelectedItem);
-           
-        }
+        
     }
 }

@@ -71,6 +71,18 @@
     <Compile Include="EspecialidadesAMB.Designer.cs">
       <DependentUpon>EspecialidadesAMB.cs</DependentUpon>
     </Compile>
+    <Compile Include="MateriasABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MateriasABM.Designer.cs">
+      <DependentUpon>MateriasABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MateriasAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MateriasAlta.Designer.cs">
+      <DependentUpon>MateriasAlta.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlanABM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +138,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EspecialidadesAMB.resx">
       <DependentUpon>EspecialidadesAMB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MateriasABM.resx">
+      <DependentUpon>MateriasABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MateriasAlta.resx">
+      <DependentUpon>MateriasAlta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlanABM.resx">
       <DependentUpon>PlanABM.cs</DependentUpon>
@@ -191,6 +209,15 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tsbNuevo.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tsbEditar.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tsbEliminar.Image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

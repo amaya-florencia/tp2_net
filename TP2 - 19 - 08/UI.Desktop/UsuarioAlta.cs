@@ -169,38 +169,6 @@ namespace UI.Desktop
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-            #region
-            /*
-            UsuarioLogic usrLog = new UsuarioLogic();
-            bool valido = this.Validar();
-
-            if (this.txtClave.Text == this.txtConfirmarClave.Text)
-            {
-                Usuario usr = new Usuario();
-                usr.NombreUsuario = this.txtUsuario.Text;
-                usr.Clave = this.txtClave.Text;
-                usr.Habilitado = this.chkHabilitado.Checked;
-                //usr.TipoDocumento = this.cmbTipoDoc.Text;
-                //usr.NroDocumento = this.txtNroDoc.Text;
-                usr.Nombre = this.txtNombre.Text;
-                usr.Apellido = this.txtApellido.Text;
-                usr.Email = this.txtEmail.Text;
-                //usr.Direccion = this.txtDireccion.Text;
-                //usr.Telefono = this.txtTelefono.Text;
-                //usr.Celular = this.txtCelular.Text;
-                //usr.FechaNac = this.dtpFechaNacimiento.Value;
-                
-                usrLog.Save(usr);
-            }
-            else
-            {
-                MessageBox.Show("Las claves no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-           this.Close();
-           */
-            #endregion
-
             if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
             {
                 this.GuardarCambios();

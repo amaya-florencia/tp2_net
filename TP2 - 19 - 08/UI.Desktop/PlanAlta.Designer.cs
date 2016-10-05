@@ -36,14 +36,13 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtEspecialidadSeleccionada = new System.Windows.Forms.TextBox();
-            this.btnSeleccionar = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(267, 256);
+            this.btnAceptar.Location = new System.Drawing.Point(294, 224);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 0;
@@ -53,7 +52,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(401, 256);
+            this.btnCancelar.Location = new System.Drawing.Point(79, 224);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 1;
@@ -64,7 +63,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 53);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 2;
@@ -73,7 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 99);
+            this.label2.Location = new System.Drawing.Point(3, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 3;
@@ -82,7 +81,7 @@
             // txtIdPlan
             // 
             this.txtIdPlan.Enabled = false;
-            this.txtIdPlan.Location = new System.Drawing.Point(267, 53);
+            this.txtIdPlan.Location = new System.Drawing.Point(79, 3);
             this.txtIdPlan.Name = "txtIdPlan";
             this.txtIdPlan.ReadOnly = true;
             this.txtIdPlan.Size = new System.Drawing.Size(209, 20);
@@ -90,77 +89,64 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(267, 96);
+            this.txtDescripcion.Location = new System.Drawing.Point(79, 88);
+            this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(209, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(209, 70);
             this.txtDescripcion.TabIndex = 5;
             // 
             // cmbEspecialidad
             // 
             this.cmbEspecialidad.FormattingEnabled = true;
-            this.cmbEspecialidad.Location = new System.Drawing.Point(267, 146);
+            this.cmbEspecialidad.Location = new System.Drawing.Point(79, 180);
             this.cmbEspecialidad.Name = "cmbEspecialidad";
             this.cmbEspecialidad.Size = new System.Drawing.Size(209, 21);
             this.cmbEspecialidad.TabIndex = 6;
-            this.cmbEspecialidad.SelectedIndexChanged += new System.EventHandler(this.cmbEspecialidad_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 149);
+            this.label3.Location = new System.Drawing.Point(3, 177);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 13);
+            this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Seleccione una especialidad";
+            this.label3.Text = "Especialidad:";
             // 
-            // label4
+            // tableLayoutPanel1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(46, 193);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Especialidad seleccionada:";
-            // 
-            // txtEspecialidadSeleccionada
-            // 
-            this.txtEspecialidadSeleccionada.Location = new System.Drawing.Point(267, 193);
-            this.txtEspecialidadSeleccionada.Name = "txtEspecialidadSeleccionada";
-            this.txtEspecialidadSeleccionada.ReadOnly = true;
-            this.txtEspecialidadSeleccionada.Size = new System.Drawing.Size(209, 20);
-            this.txtEspecialidadSeleccionada.TabIndex = 9;
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(512, 146);
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(94, 23);
-            this.btnSeleccionar.TabIndex = 10;
-            this.btnSeleccionar.Text = "Seleccionar";
-            this.btnSeleccionar.UseVisualStyleBackColor = true;
-            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtIdPlan, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cmbEspecialidad, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 92F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(375, 307);
+            this.tableLayoutPanel1.TabIndex = 11;
             // 
             // PlanAlta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(642, 304);
-            this.Controls.Add(this.btnSeleccionar);
-            this.Controls.Add(this.txtEspecialidadSeleccionada);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cmbEspecialidad);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.txtIdPlan);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAceptar);
+            this.ClientSize = new System.Drawing.Size(388, 319);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PlanAlta";
             this.Text = "PlanAlta";
-            this.Load += new System.EventHandler(this.PlanAlta_Load);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -174,8 +160,6 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.ComboBox cmbEspecialidad;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtEspecialidadSeleccionada;
-        private System.Windows.Forms.Button btnSeleccionar;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

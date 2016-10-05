@@ -97,6 +97,7 @@
             this.tsMaterias.Name = "tsMaterias";
             this.tsMaterias.Size = new System.Drawing.Size(64, 20);
             this.tsMaterias.Text = "Materias";
+            this.tsMaterias.Click += new System.EventHandler(this.tsMaterias_Click);
             // 
             // tsComisiones
             // 

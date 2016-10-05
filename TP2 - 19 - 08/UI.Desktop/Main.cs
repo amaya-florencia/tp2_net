@@ -96,5 +96,11 @@ namespace UI.Desktop
             PlanABM formPlan = new PlanABM();
             formPlan.Show();
         }
+
+        private void tsMaterias_Click(object sender, EventArgs e)
+        {
+            MateriasABM FormMaterias = new MateriasABM();
+            FormMaterias.ShowDialog();
+        }
     }
 }

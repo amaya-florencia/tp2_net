@@ -99,7 +99,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al crear el usuario.", Ex);
+                Exception ExcepcionManejada = new Exception("Error al insertar el plan en la BD.", Ex);
                 throw ExcepcionManejada;
             }
             finally

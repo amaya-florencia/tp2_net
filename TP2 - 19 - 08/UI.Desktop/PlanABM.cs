@@ -34,34 +34,20 @@ namespace UI.Desktop
 
 
         }
-
-       
-
-        private void tsmEliminar_Click(object sender, EventArgs e)
-        {
-
-           // PlanAlta formPlan = new PlanAlta(ApplicationForm.ModoForm.Baja);
-           // formPlan.ShowDialog();
-            
-        }
-
         private void tsmAgregar_Click_1(object sender, EventArgs e)
         {
             PlanAlta formPlan = new PlanAlta(ApplicationForm.ModoForm.Alta);
             formPlan.ShowDialog();
             this.Listar();
         }
-
         private void dgvPlan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             this.dgvPlan.AutoGenerateColumns = false;
         }
-
         private void PlanABM_Load(object sender, EventArgs e)
         {
             this.Listar();
         }
-
         private void tsmEditar_Click(object sender, EventArgs e)
         {
             if (this.dgvPlan.SelectedRows.Count == 1)
@@ -74,11 +60,9 @@ namespace UI.Desktop
             else
             {
                 MessageBox.Show("Advertencia", "Primero seleccione una fila de la grilla", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
             }
 
         }
-
         private void tsmEliminar_Click_1(object sender, EventArgs e)
         {
             if (this.dgvPlan.SelectedRows.Count == 1)

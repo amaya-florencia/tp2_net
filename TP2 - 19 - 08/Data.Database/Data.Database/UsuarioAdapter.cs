@@ -47,9 +47,7 @@ namespace Data.Database
             finally
             {
                 this.CloseConnection();
-            }
-            
-
+            }            
             return usuarios;
         }
         #endregion
@@ -156,23 +154,33 @@ namespace Data.Database
 
         protected void Update(Usuario usuario)
         {
-            
-            this.OpenConnection();
-            SqlCommand cmdSave = new SqlCommand("UPDATE usuarios SET nombre_usuario=@nombre_usuario, clave=@clave," +
-                                                "habilitado=@habilitado, nombre=@nombre, apellido=@apellido " +
-                                                "WHERE id_usuario=@id", SqlConn);
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdSave = new SqlCommand("UPDATE usuarios SET nombre_usuario=@nombre_usuario, clave=@clave," +
+                                                    "habilitado=@habilitado, nombre=@nombre, apellido=@apellido " +
+                                                    "WHERE id_usuario=@id", SqlConn);
 
 
-            cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
-            cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
-            cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
-            cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
-            cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
-            cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
-            
-        
-            cmdSave.ExecuteNonQuery();
-            this.CloseConnection();
+                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
+                cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
+                cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
+                cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
+                cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
+                cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
+
+
+                cmdSave.ExecuteNonQuery();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al modificar usuario", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }          
         } 
 
         protected void Insert(Usuario usuario)

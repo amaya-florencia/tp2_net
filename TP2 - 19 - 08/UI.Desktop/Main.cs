@@ -42,18 +42,14 @@ namespace UI.Desktop
         {
           Enum tipoPersona = Enumeradores.TiposPersonas.Docente;
           PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
-           
-          // PersonaABM formPersonaABM = new PersonaABM();
-           //PersonaAdapter.tipoPersona = Enumeradores.TiposPersonas.Docente;
-           formPersonaABM.ShowDialog();
+          formPersonaABM.ShowDialog();
         }
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           /* Enum tipoPersona = Enumeradores.TiposPersonas.Alumno;
+            Enum tipoPersona = Enumeradores.TiposPersonas.Alumno;
             PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
             formPersonaABM.ShowDialog();
-            */
             
         }
     }

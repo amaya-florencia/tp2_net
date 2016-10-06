@@ -18,14 +18,21 @@ namespace UI.Desktop
         public PersonaAlta(Enum tipoPer) : this()
         {          
             Enum tipoPersona = tipoPer;
+            this.cmbTipoPersona.Text = tipoPer.ToString(); /// qué propiedad setea el texto del combobox??????
+            this.textBox1.Text = tipoPer.ToString();
+            this.cmbTipoPersona.Enabled = false;
+         
         }
         public PersonaAlta()
         {
             InitializeComponent();
         }
 
-       public PersonaAlta(int ID, ModoForm modo) : this()
+       public PersonaAlta(int ID, ModoForm modo, Enum tipoPer) : this()
         {
+            this.cmbTipoPersona.Text = tipoPer.ToString();
+            this.cmbTipoPersona.Enabled = false;
+
             Modo = modo;
             PersonaLogic personaLogic = new PersonaLogic();
             try

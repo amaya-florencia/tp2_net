@@ -17,11 +17,6 @@ namespace UI.Desktop
 
         Enum tipoPersona;
 
-       /* public PersonaABM()
-        {
-            InitializeComponent();
-        }
-        */
         public PersonaABM(Enum tipoPersona)
         {
             this.tipoPersona = tipoPersona;
@@ -67,7 +62,7 @@ namespace UI.Desktop
 
         private void tsbNuevo_Click_1(object sender, EventArgs e)
         {
-            PersonaAlta formPersona = new PersonaAlta();
+            PersonaAlta formPersona = new PersonaAlta(this.tipoPersona);
             formPersona.ShowDialog();
             this.Listar(this.tipoPersona);
         }
@@ -80,7 +75,7 @@ namespace UI.Desktop
                 int idPersona = ((Business.Entities.Persona)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
                
                 //Instancio formulario en modo MODIFICACION
-                PersonaAlta formPersona = new PersonaAlta(idPersona, ApplicationForm.ModoForm.Modificacion);
+                PersonaAlta formPersona = new PersonaAlta(idPersona, ApplicationForm.ModoForm.Modificacion, this.tipoPersona);
 
                 formPersona.ShowDialog();
                 this.Listar(this.tipoPersona);
@@ -98,7 +93,7 @@ namespace UI.Desktop
 
                 int ID = ((Business.Entities.Persona)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
 
-                PersonaAlta formPersona = new PersonaAlta(ID, ApplicationForm.ModoForm.Baja);
+                PersonaAlta formPersona = new PersonaAlta(ID, ApplicationForm.ModoForm.Baja, this.tipoPersona);
                 formPersona.ShowDialog();
 
                 this.Listar(this.tipoPersona);

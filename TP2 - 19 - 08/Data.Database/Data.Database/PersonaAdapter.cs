@@ -80,7 +80,7 @@ namespace Data.Database
 
                 if (drPersonas.Read())
                 {
-                    per.ID = (int)drPersonas["id_personas"];
+                    per.ID = (int)drPersonas["id_persona"];
                     per.Nombre = (string)drPersonas["nombre"];
                     per.Apellido = (string)drPersonas["apellido"];
                     per.Direccion = (string)drPersonas["direccion"];
@@ -135,19 +135,20 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("UPDATE personas SET nombre=@nombre, apellido=@apellido, direccion=@direccion" +
-                                                    "email=@email, telefono=@telefono, fecha_nac=@fecha_nac, legajo=@legajo" +
-                                                    "tipo_persona=@tipo_persona, id_plan=@id_plan WHERE id_usuario=@id", SqlConn);
+                SqlCommand cmdSave = new SqlCommand("UPDATE personas SET nombre=@nombre, apellido=@apellido, direccion=@direccion," +
+                                                    "email=@email, telefono=@telefono, fecha_nac=@fecha_nac, legajo=@legajo," +
+                                                    "tipo_persona=@tipo_persona, id_plan=@id_plan WHERE id_persona=@id", SqlConn);
 
-                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = persona.ID;
+                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = persona.ID;             
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
                 cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
                 cmdSave.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = persona.Direccion;
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
+                cmdSave.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = persona.FechaNac;
                 cmdSave.Parameters.Add("@legajo", SqlDbType.VarChar, 50).Value = persona.Legajo;
-                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.VarChar, 50).Value = persona.TipoPersona.GetHashCode();
-                cmdSave.Parameters.Add("@id_plan", SqlDbType.VarChar, 50).Value = persona.IdPlan;
+                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = persona.TipoPersona;
+                cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IdPlan;
                 cmdSave.ExecuteNonQuery();
             }
             catch (Exception Ex)
@@ -167,19 +168,19 @@ namespace Data.Database
             {   
 
                 this.OpenConnection();
-                SqlCommand cmdSave = new SqlCommand("INSERT INTO personas(nombre, apellido, direccion, email, telefono, legajo, tipo_persona, id_plan)" +
-                                                    "VALUES(@nombre, @apellido, @direccion, @email, @telefono, @legajo, @tipo_persona, @id_plan)" +
+                SqlCommand cmdSave = new SqlCommand("INSERT INTO personas(nombre, apellido, direccion, email, telefono, legajo, fecha_nac, tipo_persona, id_plan)" +
+                                                    "VALUES(@nombre, @apellido, @direccion, @email, @telefono, @legajo, @fecha_nac, @tipo_persona, @id_plan)" +
                                                     "Select @@identity", SqlConn);
 
-              //  cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = persona.ID;
                 cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;
                 cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = persona.Apellido;
                 cmdSave.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = persona.Direccion;
                 cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = persona.Email;
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
                 cmdSave.Parameters.Add("@legajo", SqlDbType.VarChar, 50).Value = persona.Legajo;
-                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.VarChar, 50).Value = tipoPersona.GetHashCode(); //asigno el valor de la variable static ¿?
-                cmdSave.Parameters.Add("@id_plan", SqlDbType.VarChar, 50).Value = persona.IdPlan;
+                cmdSave.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = persona.FechaNac;
+                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = persona.TipoPersona;
+                cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IdPlan;
                 persona.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
 
             }

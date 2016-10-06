@@ -76,6 +76,7 @@
             this.tsbEditar.Name = "tsbEditar";
             this.tsbEditar.Size = new System.Drawing.Size(23, 22);
             this.tsbEditar.Text = "Editar";
+            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click_1);
             // 
             // tsbEliminar
             // 
@@ -85,6 +86,7 @@
             this.tsbEliminar.Name = "tsbEliminar";
             this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
             this.tsbEliminar.Text = "Eliminar";
+            this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
             // toolStripContainer1
             // 
@@ -117,7 +119,6 @@
             this.tlPersonas.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlPersonas.Size = new System.Drawing.Size(647, 310);
             this.tlPersonas.TabIndex = 1;
-            this.tlPersonas.Paint += new System.Windows.Forms.PaintEventHandler(this.tlPersonas_Paint);
             // 
             // btnActualizar
             // 

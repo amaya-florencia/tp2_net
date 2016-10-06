@@ -50,18 +50,19 @@
             this.lblLegajo = new System.Windows.Forms.Label();
             this.txtLegajo = new System.Windows.Forms.TextBox();
             this.lblPlan = new System.Windows.Forms.Label();
-            this.tiposPersonasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmbPlan = new System.Windows.Forms.ComboBox();
             this.planesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.academia2DataSet1 = new UI.Desktop.academia2DataSet1();
+            this.cmbTipoPersona = new System.Windows.Forms.ComboBox();
+            this.tiposPersonasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.academia2DataSet = new UI.Desktop.academia2DataSet();
             this.planesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.planesTableAdapter = new UI.Desktop.academia2DataSetTableAdapters.planesTableAdapter();
             this.planesTableAdapter1 = new UI.Desktop.academia2DataSet1TableAdapters.planesTableAdapter();
             this.tlpProfesor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposPersonasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposPersonasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -97,6 +98,7 @@
             this.tlpProfesor.Controls.Add(this.txtLegajo, 3, 2);
             this.tlpProfesor.Controls.Add(this.lblPlan, 2, 4);
             this.tlpProfesor.Controls.Add(this.cmbPlan, 3, 4);
+            this.tlpProfesor.Controls.Add(this.cmbTipoPersona, 3, 0);
             this.tlpProfesor.ImeMode = System.Windows.Forms.ImeMode.On;
             this.tlpProfesor.Location = new System.Drawing.Point(12, 12);
             this.tlpProfesor.Name = "tlpProfesor";
@@ -127,6 +129,7 @@
             this.btnCancelar.TabIndex = 24;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -280,10 +283,6 @@
             this.lblPlan.TabIndex = 46;
             this.lblPlan.Text = "Plan";
             // 
-            // tiposPersonasBindingSource
-            // 
-            this.tiposPersonasBindingSource.DataSource = typeof(Util.Enumeradores.TiposPersonas);
-            // 
             // cmbPlan
             // 
             this.cmbPlan.DataSource = this.planesBindingSource1;
@@ -304,6 +303,18 @@
             // 
             this.academia2DataSet1.DataSetName = "academia2DataSet1";
             this.academia2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cmbTipoPersona
+            // 
+            this.cmbTipoPersona.FormattingEnabled = true;
+            this.cmbTipoPersona.Location = new System.Drawing.Point(468, 3);
+            this.cmbTipoPersona.Name = "cmbTipoPersona";
+            this.cmbTipoPersona.Size = new System.Drawing.Size(174, 21);
+            this.cmbTipoPersona.TabIndex = 49;
+            // 
+            // tiposPersonasBindingSource
+            // 
+            this.tiposPersonasBindingSource.DataSource = typeof(Util.Enumeradores.TiposPersonas);
             // 
             // academia2DataSet
             // 
@@ -334,9 +345,9 @@
             this.Load += new System.EventHandler(this.PersonaAlta_Load);
             this.tlpProfesor.ResumeLayout(false);
             this.tlpProfesor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposPersonasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tiposPersonasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -374,6 +385,7 @@
         private System.Windows.Forms.BindingSource planesBindingSource1;
         private academia2DataSet1TableAdapters.planesTableAdapter planesTableAdapter1;
         private System.Windows.Forms.BindingSource tiposPersonasBindingSource;
+        private System.Windows.Forms.ComboBox cmbTipoPersona;
 
     }
 }

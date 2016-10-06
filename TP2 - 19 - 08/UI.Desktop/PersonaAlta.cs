@@ -24,9 +24,19 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        public PersonaAlta(int ID, ModoForm modo) : this()
+       public PersonaAlta(int ID, ModoForm modo) : this()
         {
             Modo = modo;
+            PersonaLogic personaLogic = new PersonaLogic();
+            try
+            {
+                this.PersonaActual = personaLogic.GetOne(ID);
+                this.MapearDeDatos();
+            }
+            catch (Exception e)
+            {
+                this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         
@@ -47,6 +57,8 @@ namespace UI.Desktop
             this.txtDireccion.Text = this.PersonaActual.Direccion;
             this.txtTelefono.Text = this.PersonaActual.Telefono;
             this.txtEmail.Text = this.PersonaActual.Email;
+            this.cmbPlan.Text = this.PersonaActual.IdPlan.ToString();
+            this.cmbTipoPersona.Text = this.PersonaActual.TipoPersona.ToString();
 
             if ((Modo == ModoForm.Alta) || (Modo == ModoForm.Modificacion))
             {
@@ -77,8 +89,8 @@ namespace UI.Desktop
                 PersonaActual.Direccion = this.txtDireccion.Text;
                 PersonaActual.Telefono = this.txtTelefono.Text;
                 PersonaActual.Email = this.txtEmail.Text;
-                PersonaActual.IdPlan = this.cmbPlan.SelectedItem.GetHashCode();
-             //   PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)tipoPersona;
+                PersonaActual.IdPlan = Convert.ToInt32(this.cmbPlan.SelectedValue);
+                PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)this.cmbTipoPersona.SelectedItem;
 
                 PersonaActual.State = Usuario.States.New;
             }
@@ -93,8 +105,8 @@ namespace UI.Desktop
                 PersonaActual.Direccion = this.txtDireccion.Text;
                 PersonaActual.Telefono = this.txtTelefono.Text;
                 PersonaActual.Email = this.txtEmail.Text;
-                PersonaActual.IdPlan = this.cmbPlan.SelectedItem.GetHashCode();
-            //    PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)tipoPersona;
+                PersonaActual.IdPlan = Convert.ToInt32(this.cmbPlan.SelectedValue);
+                PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)this.cmbTipoPersona.SelectedItem;
 
                 PersonaActual.State = Usuario.States.Modified;
             }
@@ -111,9 +123,24 @@ namespace UI.Desktop
 
         public virtual void GuardarCambios()
         {
-            this.MapearADatos();
             PersonaLogic personaLog = new PersonaLogic();
-            personaLog.Save(PersonaActual);
+            if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
+            {
+                this.MapearADatos();
+                personaLog.Save(PersonaActual);
+            }
+            else if (this.Modo == ApplicationForm.ModoForm.Baja)
+            {
+                try
+                {
+                    personaLog.Detele(PersonaActual.ID);
+                }
+                catch (Exception e)
+                {
+                    this.Notificar(e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            
         }
 
         public virtual bool Validar()
@@ -160,19 +187,27 @@ namespace UI.Desktop
         }
 
 
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            bool valida = this.Validar();
-            if (valida)
+            if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
             {
-                this.GuardarCambios();
-                this.Close();
+                bool valida = this.Validar();
+                if (valida)
+                {
+                    this.GuardarCambios();
+                    this.Close();
+                }
             }
-        }
+            else if (this.Modo == ApplicationForm.ModoForm.Baja)
+            {
+                DialogResult rta = MessageBox.Show("Confirma la eliminación de " + this.PersonaActual.Nombre + " " + this.PersonaActual.Apellido + "?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
 
-        private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)
-        {
+                if (rta == DialogResult.OK)
+                {
+                    this.GuardarCambios();
+                    this.Close();
+                }
+            }
 
         }
 
@@ -183,6 +218,13 @@ namespace UI.Desktop
             // TODO: esta línea de código carga datos en la tabla 'academia2DataSet.planes' Puede moverla o quitarla según sea necesario.
             this.planesTableAdapter.Fill(this.academia2DataSet.planes);
 
+            cmbTipoPersona.DataSource = Enum.GetValues(typeof(Util.Enumeradores.TiposPersonas));
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -43,13 +43,10 @@ namespace UI.Desktop
         }
         private void PersonaABM_Load(object sender, EventArgs e)
         {
+            
             this.Listar(this.tipoPersona);
         }
 
-        private void tlPersonas_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
@@ -67,21 +64,21 @@ namespace UI.Desktop
             this.dgvPersonas.AutoGenerateColumns = false;
         }
 
-        private void tsbNuevo_Click(object sender, EventArgs e)
+
+        private void tsbNuevo_Click_1(object sender, EventArgs e)
         {
-            PersonaAlta formPersona = new PersonaAlta(this.tipoPersona); 
+            PersonaAlta formPersona = new PersonaAlta();
             formPersona.ShowDialog();
             this.Listar(this.tipoPersona);
         }
 
-        private void tsbEditar_Click(object sender, EventArgs e)
+        private void tsbEditar_Click_1(object sender, EventArgs e)
         {
-
             if (this.dgvPersonas.SelectedRows.Count == 1)
             {
                 //Obtengo el ID de la fila seleccionada
-                int idPersona = Int32.Parse(((DataRowView)this.dgvPersonas.SelectedRows[0].DataBoundItem)["id_usuario"].ToString());
-
+                int idPersona = ((Business.Entities.Persona)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
+               
                 //Instancio formulario en modo MODIFICACION
                 PersonaAlta formPersona = new PersonaAlta(idPersona, ApplicationForm.ModoForm.Modificacion);
 
@@ -96,17 +93,24 @@ namespace UI.Desktop
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            /* int id = ((Business.Entities.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
-             AlumnoAlta formUsuario = new AlumnoAlta(id, ApplicationForm.ModoForm.Baja);
-             formUsuario.ShowDialog();
-             this.Listar();*/
-        }
+            if (this.dgvPersonas.SelectedRows.Count == 1)
+            {
 
-        private void tsbNuevo_Click_1(object sender, EventArgs e)
-        {
-            PersonaAlta formPersona = new PersonaAlta();
-            formPersona.ShowDialog();
-            this.Listar(this.tipoPersona);
+                int ID = ((Business.Entities.Persona)this.dgvPersonas.SelectedRows[0].DataBoundItem).ID;
+
+                PersonaAlta formPersona = new PersonaAlta(ID, ApplicationForm.ModoForm.Baja);
+                formPersona.ShowDialog();
+
+                this.Listar(this.tipoPersona);
+
+            }
+
+            else
+            {
+
+                MessageBox.Show("Advertencia", "Primero seleccione una fila de la grilla", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
         }
     }
 }

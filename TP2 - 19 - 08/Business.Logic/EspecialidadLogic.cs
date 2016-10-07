@@ -12,16 +12,8 @@ namespace Business.Logic
 {
     public class EspecialidadLogic:BusinessLogic
     {
-        #region Propiedades
-        EspecialidadAdapter _EspecialidadData;
-        public EspecialidadAdapter EspecialidadData
-        {
-            get { return _EspecialidadData; }
-            set { _EspecialidadData = value; }
-        }
+        
         EspecialidadAdapter ea = new EspecialidadAdapter();
-
-        #endregion
 
         #region Constructores
         public EspecialidadLogic()

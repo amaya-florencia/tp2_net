@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CursosABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CursosABM.Designer.cs">
+      <DependentUpon>CursosABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CursosAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CursosAlta.Designer.cs">
+      <DependentUpon>CursosAlta.cs</DependentUpon>
+    </Compile>
     <Compile Include="EspecialidadAlta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +139,12 @@
     <Compile Include="UsuariosABM.designer.cs">
       <DependentUpon>UsuariosABM.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CursosABM.resx">
+      <DependentUpon>CursosABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CursosAlta.resx">
+      <DependentUpon>CursosAlta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EspecialidadAlta.resx">
       <DependentUpon>EspecialidadAlta.cs</DependentUpon>
     </EmbeddedResource>

@@ -40,7 +40,7 @@
             this.tsUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsInscripcion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsCursos = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +56,8 @@
             this.tsDocentes,
             this.tsUsuarios,
             this.tsInscripcion,
-            this.tsCursos});
+            this.tsCursos,
+            this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(884, 24);
@@ -135,19 +136,17 @@
             this.tsCursos.Name = "tsCursos";
             this.tsCursos.Size = new System.Drawing.Size(55, 20);
             this.tsCursos.Text = "Cursos";
+            this.tsCursos.Click += new System.EventHandler(this.tsCursos_Click);
             // 
-            // toolStrip1
+            // reportesToolStripMenuItem
             // 
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(884, 25);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // Main
             // 
             this.ClientSize = new System.Drawing.Size(884, 404);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -177,7 +176,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsDocentes;
         private System.Windows.Forms.ToolStripMenuItem tsUsuarios;
         private System.Windows.Forms.ToolStripMenuItem tsInscripcion;
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsCursos;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
     }
 }

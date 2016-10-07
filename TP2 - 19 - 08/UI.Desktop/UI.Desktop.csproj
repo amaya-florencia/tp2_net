@@ -113,12 +113,6 @@
     <Compile Include="UsuarioAlta.Designer.cs">
       <DependentUpon>UsuarioAlta.cs</DependentUpon>
     </Compile>
-    <Compile Include="AlumnoAlta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AlumnoAlta.Designer.cs">
-      <DependentUpon>AlumnoAlta.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,9 +165,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UsuarioAlta.resx">
       <DependentUpon>UsuarioAlta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AlumnoAlta.resx">
-      <DependentUpon>AlumnoAlta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

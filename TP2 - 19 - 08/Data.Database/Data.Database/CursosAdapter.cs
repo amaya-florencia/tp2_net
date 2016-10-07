@@ -92,17 +92,17 @@ namespace Data.Database
         #region Transacciones
         protected void Insert(Curso cur)
         {
-            Curso curso = new Curso();
+            
             try
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("INSERT INTO cursos(anio_calendario,cupo,id_comision,id_materia,descripcion) VALUES" +
                 "(@anio,@cupo,@id_comision,@id_materia,@desc)" + " SELECT @@identity", SqlConn);
-                cmdSave.Parameters.Add("@anio", SqlDbType.VarChar, 50).Value = curso.AnioCalendario;
-                cmdSave.Parameters.Add("@cupo", SqlDbType.Int, 50).Value = curso.Cupo;
-                cmdSave.Parameters.Add("@id_comision", SqlDbType.Int, 50).Value = curso.IdComision;
-                cmdSave.Parameters.Add("@id_materia", SqlDbType.Int, 50).Value = curso.IdMAteria;
-                cmdSave.Parameters.Add("@desc", SqlDbType.VarChar, 50).Value = curso.Descripcion;
+                cmdSave.Parameters.Add("@anio", SqlDbType.VarChar, 50).Value = cur.AnioCalendario;
+                cmdSave.Parameters.Add("@cupo", SqlDbType.Int, 50).Value = cur.Cupo;
+                cmdSave.Parameters.Add("@id_comision", SqlDbType.Int, 50).Value = cur.IdComision;
+                cmdSave.Parameters.Add("@id_materia", SqlDbType.Int, 50).Value = cur.IdMAteria;
+                cmdSave.Parameters.Add("@desc", SqlDbType.VarChar, 50).Value = cur.Descripcion;
                 cur.ID = Convert.ToInt32(cmdSave.ExecuteScalar());
             }
             catch (Exception ex)

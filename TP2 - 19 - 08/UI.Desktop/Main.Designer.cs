@@ -105,18 +105,21 @@
             this.tsComisiones.Name = "tsComisiones";
             this.tsComisiones.Size = new System.Drawing.Size(81, 20);
             this.tsComisiones.Text = "Comisiones";
+            this.tsComisiones.Click += new System.EventHandler(this.tsComisiones_Click);
             // 
             // tsAlumnos
             // 
             this.tsAlumnos.Name = "tsAlumnos";
             this.tsAlumnos.Size = new System.Drawing.Size(67, 20);
             this.tsAlumnos.Text = "Alumnos";
+            this.tsAlumnos.Click += new System.EventHandler(this.tsAlumnos_Click);
             // 
             // tsDocentes
             // 
             this.tsDocentes.Name = "tsDocentes";
             this.tsDocentes.Size = new System.Drawing.Size(68, 20);
             this.tsDocentes.Text = "Docentes";
+            this.tsDocentes.Click += new System.EventHandler(this.tsDocentes_Click);
             // 
             // tsUsuarios
             // 

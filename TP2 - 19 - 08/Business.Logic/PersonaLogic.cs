@@ -1,90 +1,54 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using Data.Database;
 using Business.Entities;
-using System.Data;
-
 
 namespace Business.Logic
 {
-   /* class PersonaLogic
+    public class PersonaLogic : BusinessLogic
     {
-        public PersonaAdapter PersonaData { get; set; }
+        PersonaAdapter _PersonaData;
+        /* public PersonaAdapter PersonaData
+         {
+             get { return _PersonaData; }
+             set { _PersonaData = value; }
+         }*/
+
         public PersonaLogic()
         {
-            this.PersonaData = new PersonaAdapter();
+
         }
 
-        public Persona GetOnePorPersona(int idPersona)
+        PersonaAdapter PersonaData = new PersonaAdapter();
+        public List<Persona> GetAll(Enum tipoPersona)
         {
-            return PersonaData.GetOnePorPersona(idPersona);
-        }
-
-        public Persona GetOnePorUsuario(int idUsuario)
-        {
-            return PersonaData.GetOnePorUsuario(idUsuario);
-        }
-
-        public DataTable GetAllTabla()
-        {
-            return PersonaData.GetAllTabla();
-        }
-
-        public List<Persona> GetAllLista()
-        {
-            return PersonaData.GetAllLista();
-        }
-
-        public DataTable GetAll(Enumeradores.TiposPersonas tipoPersona)
-        {
-            return PersonaData.GetAll(tipoPersona);
-        }
-
-        public DataTable GetAllConPlanes()
-        {
-            return PersonaData.GetAllConPlanes();
-        }
-
-        public void Save(Persona persona)
-        {
-            if (persona.State == BusinessEntity.States.New || persona.State == BusinessEntity.States.Modified)
+            try
             {
-                if (this.ValidarLegajo(persona))
-                {
-                    this.PersonaData.Save(persona);
-                }
-                else throw new Exception("El legajo ingresado ya existe.");
+                PersonaAdapter pa = new PersonaAdapter();
+                return pa.GetAll(tipoPersona);
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar la lista de personas.", Ex);
+                throw ExcepcionManejada;
             }
         }
-
-        public bool ValidarLegajo(Persona persona)
+        public Persona GetOne(int id)
         {
-            bool valido = true;
-            List<Persona> personas = this.GetAllLista();
-            foreach (Persona p in personas)
-            {
-                if (p.Legajo == persona.Legajo && p.Id != persona.Id)
-                {
-                    valido = false;
-                    break;
-                }
-            }
-            return valido;
+            return PersonaData.GetOne(id);
+        }
+        public void Detele(int id)
+        {
+            PersonaData.Delete(id);
         }
 
-        public void Delete(int ID)
+        public void Save(Persona per)
         {
-            this.PersonaData.Delete(ID);
-        }
-
-        public Persona GetOnePorLegajo(int legajo)
-        {
-            return PersonaData.GetOnePorLegajo(legajo);
+            PersonaData.Save(per);
         }
     }
-}*/
 }

@@ -108,5 +108,25 @@ namespace UI.Desktop
             CursosABM formCursos = new CursosABM();
             formCursos.ShowDialog();
         }
+
+        private void tsComisiones_Click(object sender, EventArgs e)
+        {
+            ComisionesABM formComisiones = new ComisionesABM();
+            formComisiones.ShowDialog();
+        }
+
+        private void tsDocentes_Click(object sender, EventArgs e)
+        {
+            Enum tipoPersona = Enumeradores.TiposPersonas.Docente;
+            PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
+            formPersonaABM.ShowDialog();
+        }
+
+        private void tsAlumnos_Click(object sender, EventArgs e)
+        {
+            Enum tipoPersona = Enumeradores.TiposPersonas.Alumno;
+            PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
+            formPersonaABM.ShowDialog();
+        }
     }
 }

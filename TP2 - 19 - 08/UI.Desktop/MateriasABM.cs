@@ -46,8 +46,17 @@ namespace UI.Desktop
 
         private void tsmEliminar_Click(object sender, EventArgs e)
         {
-            MateriasAlta formMateria = new MateriasAlta(ApplicationForm.ModoForm.Modificacion);
-            formMateria.ShowDialog();
+            if (this.dgvMaterias.SelectedRows.Count == 1)
+            {
+                int idMateria = ((Business.Entities.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
+                MateriasAlta formMateria = new MateriasAlta(idMateria, ApplicationForm.ModoForm.Baja);
+                formMateria.ShowDialog();
+                this.Listar();
+            }
+            else
+            {
+                MessageBox.Show("Advertencia", "Primero seleccione una fila de la grilla", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         public void Listar()
         {

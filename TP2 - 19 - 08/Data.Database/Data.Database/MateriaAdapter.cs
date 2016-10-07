@@ -181,13 +181,13 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdDelete = new SqlCommand("DELETE FROM materias WHERE id_umateria=@id", SqlConn);
+                SqlCommand cmdDelete = new SqlCommand("DELETE FROM materias WHERE id_materia=@id", SqlConn);
                 cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDelete.ExecuteNonQuery();
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al eliminar el usuario.", Ex);
+                Exception ExcepcionManejada = new Exception("Error al eliminar la materia.", Ex);
                 throw ExcepcionManejada;
             }
             finally

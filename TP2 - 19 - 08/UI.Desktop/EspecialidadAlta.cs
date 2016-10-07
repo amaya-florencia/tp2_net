@@ -15,6 +15,8 @@ namespace UI.Desktop
 {
     public partial class EspecialidadAlta : ApplicationForm
     {
+        #region Constructores
+
         public EspecialidadAlta()
         {
             InitializeComponent();
@@ -38,6 +40,8 @@ namespace UI.Desktop
             }
 
         }
+        #endregion
+       
         #region Propiedades
         private Especialidad _EspecialidadActual;
         public Especialidad EspecialidadActual
@@ -46,6 +50,8 @@ namespace UI.Desktop
             set { _EspecialidadActual = value; }
         }
         #endregion
+
+        #region Metodos
         public override void MapearADatos()
         {
             if (this.Modo == ApplicationForm.ModoForm.Alta)
@@ -54,7 +60,6 @@ namespace UI.Desktop
             }
             if (this.Modo == ApplicationForm.ModoForm.Modificacion || this.Modo == ApplicationForm.ModoForm.Alta)
             {
-               // EspecialidadActual.ID = Convert.ToInt32(this.txtID.Text);
                 EspecialidadActual.Descripcion = this.txtDescripcion.Text;                
             }            
             switch (this.Modo)
@@ -108,30 +113,34 @@ namespace UI.Desktop
                 }
             }
         }
-        
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        #endregion
+
+        #region Eventos
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-            if(this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
+            if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
             {
                 this.GuardarCambios();
                 this.Close();
             }
             else if (this.Modo == ApplicationForm.ModoForm.Baja)
             {
-                DialogResult rta=  MessageBox.Show("Confirma la eliminacion de la especialidad" + this.EspecialidadActual.Descripcion + "?","", MessageBoxButtons.OKCancel,MessageBoxIcon.Exclamation);
+                DialogResult rta = MessageBox.Show("Confirma la eliminacion de la especialidad" + this.EspecialidadActual.Descripcion + "?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 if (rta == DialogResult.OK)
                 {
                     this.GuardarCambios();
                     this.Close();
                 }
             }
-           
+
         }
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+
     }
 }

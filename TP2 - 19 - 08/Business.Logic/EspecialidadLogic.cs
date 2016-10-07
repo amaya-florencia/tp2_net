@@ -12,16 +12,8 @@ namespace Business.Logic
 {
     public class EspecialidadLogic:BusinessLogic
     {
-        #region Propiedades
-        EspecialidadAdapter _EspecialidadData;
-        public EspecialidadAdapter EspecialidadData
-        {
-            get { return _EspecialidadData; }
-            set { _EspecialidadData = value; }
-        }
+        
         EspecialidadAdapter ea = new EspecialidadAdapter();
-
-        #endregion
 
         #region Constructores
         public EspecialidadLogic()
@@ -34,7 +26,6 @@ namespace Business.Logic
         {
             try
             {
-                EspecialidadAdapter ea = new EspecialidadAdapter();
                 return ea.GetAll();
             }
             catch (Exception Ex)
@@ -45,18 +36,19 @@ namespace Business.Logic
         }
         public Especialidad GetOne (int ID)
         {
-            
             return ea.GetOne(ID);
         }
-        public void Delete(int ID)
+        public Especialidad GetIdEspecialidadPorDescripcion(String descripcion)
         {
-            
+            return ea.GetIdEspecialidadPorDescripcion(descripcion);
+        }
+        public void Delete(int ID)
+        { 
             ea.Delete(ID);
         }
 
         public void Save(Especialidad esp)
         {
-           
             ea.Save(esp);
         }
     }

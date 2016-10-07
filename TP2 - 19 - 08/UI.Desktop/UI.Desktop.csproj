@@ -47,6 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CursosABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CursosABM.Designer.cs">
+      <DependentUpon>CursosABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CursosAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CursosAlta.Designer.cs">
+      <DependentUpon>CursosAlta.cs</DependentUpon>
+    </Compile>
     <Compile Include="EspecialidadAlta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,17 +83,29 @@
     <Compile Include="EspecialidadesAMB.Designer.cs">
       <DependentUpon>EspecialidadesAMB.cs</DependentUpon>
     </Compile>
-    <Compile Include="PersonaAlta.cs">
+    <Compile Include="MateriasABM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PersonaAlta.Designer.cs">
-      <DependentUpon>PersonaAlta.cs</DependentUpon>
+    <Compile Include="MateriasABM.Designer.cs">
+      <DependentUpon>MateriasABM.cs</DependentUpon>
     </Compile>
-    <Compile Include="PersonaABM.cs">
+    <Compile Include="MateriasAlta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PersonaABM.Designer.cs">
-      <DependentUpon>PersonaABM.cs</DependentUpon>
+    <Compile Include="MateriasAlta.Designer.cs">
+      <DependentUpon>MateriasAlta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanABM.Designer.cs">
+      <DependentUpon>PlanABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanAlta.Designer.cs">
+      <DependentUpon>PlanAlta.cs</DependentUpon>
     </Compile>
     <Compile Include="UsuarioAlta.cs">
       <SubType>Form</SubType>
@@ -115,6 +139,12 @@
     <Compile Include="UsuariosABM.designer.cs">
       <DependentUpon>UsuariosABM.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CursosABM.resx">
+      <DependentUpon>CursosABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CursosAlta.resx">
+      <DependentUpon>CursosAlta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EspecialidadAlta.resx">
       <DependentUpon>EspecialidadAlta.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,11 +157,17 @@
     <EmbeddedResource Include="EspecialidadesAMB.resx">
       <DependentUpon>EspecialidadesAMB.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PersonaABM.resx">
-      <DependentUpon>PersonaABM.cs</DependentUpon>
+    <EmbeddedResource Include="MateriasABM.resx">
+      <DependentUpon>MateriasABM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PersonaAlta.resx">
-      <DependentUpon>PersonaAlta.cs</DependentUpon>
+    <EmbeddedResource Include="MateriasAlta.resx">
+      <DependentUpon>MateriasAlta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanABM.resx">
+      <DependentUpon>PlanABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanAlta.resx">
+      <DependentUpon>PlanAlta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsuarioAlta.resx">
       <DependentUpon>UsuarioAlta.cs</DependentUpon>
@@ -158,8 +194,6 @@
     <EmbeddedResource Include="UsuariosABM.resx">
       <DependentUpon>UsuariosABM.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\DataSources\Util.Enumeradores+TiposPersonas.datasource" />
-    <None Include="Properties\DataSources\Util.Enumeradores.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -190,6 +224,18 @@
       <Project>{d295dc4b-51de-44e7-8df5-803644f5950f}</Project>
       <Name>Util</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tsbNuevo.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tsbEditar.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tsbEliminar.Image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

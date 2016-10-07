@@ -16,21 +16,16 @@ namespace UI.Desktop
     {
         public UsuariosABM()
         {
-            InitializeComponent(); ////////
+            InitializeComponent();
         }
 
-        /* private void Form1_Load(object sender, EventArgs e)
-         {
-
-         }*/
         public void Listar()
         {
             
             UsuarioLogic ul = new UsuarioLogic();
             try 
             { 
-                this.dgvUsuarios.DataSource = ul.GetAll(); 
-                //this.dgvUsuarios.DataSource = new UsuarioLogic().GetAll();
+                this.dgvUsuarios.DataSource = ul.GetAll();                
             }
             catch (Exception Ex)
             {

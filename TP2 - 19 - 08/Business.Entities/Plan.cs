@@ -21,5 +21,6 @@ namespace Business.Entities
             get { return _IdEspecialidad; }
             set { _IdEspecialidad = value; }
         }
+        
     }
 }

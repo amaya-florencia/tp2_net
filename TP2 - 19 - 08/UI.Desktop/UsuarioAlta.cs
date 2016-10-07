@@ -45,15 +45,9 @@ namespace UI.Desktop
         }         
         public override void MapearDeDatos()
         {
-            this.txtId.Text = this.UsuarioActual.ID.ToString();
-            this.cmbTipoDoc.Text = this.UsuarioActual.TipoDocumento;
-           // this.dtpFechaNacimiento.Value = this.UsuarioActual.FechaNac;            
+            this.txtId.Text = this.UsuarioActual.ID.ToString();     
             this.txtNombre.Text = this.UsuarioActual.Nombre;
             this.txtApellido.Text = this.UsuarioActual.Apellido;
-            this.txtDireccion.Text = this.UsuarioActual.Direccion;
-            this.txtTelefono.Text = this.UsuarioActual.Telefono;
-            this.txtCelular.Text = this.UsuarioActual.Celular;
-            this.txtEmail.Text = this.UsuarioActual.Email;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
@@ -85,16 +79,9 @@ namespace UI.Desktop
             {                  
                 UsuarioActual.Apellido = this.txtApellido.Text;
                 UsuarioActual.Nombre = this.txtNombre.Text;
-                UsuarioActual.Email = this.txtEmail.Text;
                 UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                 UsuarioActual.Clave = this.txtClave.Text;
-                UsuarioActual.Clave = this.txtConfirmarClave.Text;
-                UsuarioActual.TipoDocumento = this.cmbTipoDoc.Text;
-                UsuarioActual.NroDocumento = this.txtNroDoc.Text;               
-                UsuarioActual.FechaNac = this.dtpFechaNacimiento.Value;
-                UsuarioActual.Direccion = this.txtDireccion.Text;
-                UsuarioActual.Telefono = this.txtTelefono.Text;
-                UsuarioActual.Celular = this.txtCelular.Text;                
+                UsuarioActual.Clave = this.txtConfirmarClave.Text;               
             }           
             switch (this.Modo)
             {
@@ -152,10 +139,6 @@ namespace UI.Desktop
                 mensaje += "El nombre no puede estar en blanco." + "\n";
             if (string.IsNullOrEmpty(txtUsuario.Text.Trim()))
                 mensaje += "El usuario no puede estar en blanco." + "\n";
-            if (string.IsNullOrEmpty(txtEmail.Text.Trim()))
-                mensaje += "El email no puede estar en blanco." + "\n";
-            if (!util.validarMail(txtEmail.Text))
-                mensaje += "El mail no tiene el formato correcto" + "\n";
             if (string.IsNullOrEmpty(txtClave.Text.Trim()))
                 mensaje += "La clave no puede estar en blanco." + "\n";
             if (string.IsNullOrEmpty(txtConfirmarClave.Text.Trim()))
@@ -164,24 +147,6 @@ namespace UI.Desktop
                 mensaje += "Las claves no coinciden." + "\n";
             if (txtClave.Text.Length < 8)
                 mensaje += "La clave debe contener al menos 8 caracteres." + "\n";
-            if (string.IsNullOrEmpty(txtDireccion.Text.Trim()))
-                mensaje += "La direccion no puede estar en blanco." + "\n";
-            if (string.IsNullOrEmpty(txtTelefono.Text.Trim()))
-                mensaje += "el telefono no puede estar en blanco." + "\n";
-            if (string.IsNullOrEmpty(txtCelular.Text.Trim()))
-                mensaje += "El celular  no puede estar en blanco." + "\n";
-            /* if (string.IsNullOrEmpty(txtFechaNac.Text.Trim()))
-                 mensaje += "La fecha de naciomiento no puede estar en blanco." + "\n";*/
-            if (String.IsNullOrEmpty(this.dtpFechaNacimiento.Text))
-            {
-                mensaje += "- Complete la fecha de nacimiento\n";
-            }
-            if (string.IsNullOrEmpty(cmbTipoDoc.Text.Trim()))
-                mensaje += "El tipo de documento no puede estar en blanco." + "\n";
-            if (string.IsNullOrEmpty(txtNroDoc.Text.Trim()))
-                mensaje += "El numero de documento no puede estar en blanco." + "\n";
-            if (txtNroDoc.Text.Length < 7 || txtNroDoc.Text.Length >8)
-                mensaje += "El numero de documento esta mal ingresado." + "\n";
 
             if (!string.IsNullOrEmpty(mensaje))
             {
@@ -204,38 +169,6 @@ namespace UI.Desktop
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-            #region
-            /*
-            UsuarioLogic usrLog = new UsuarioLogic();
-            bool valido = this.Validar();
-
-            if (this.txtClave.Text == this.txtConfirmarClave.Text)
-            {
-                Usuario usr = new Usuario();
-                usr.NombreUsuario = this.txtUsuario.Text;
-                usr.Clave = this.txtClave.Text;
-                usr.Habilitado = this.chkHabilitado.Checked;
-                //usr.TipoDocumento = this.cmbTipoDoc.Text;
-                //usr.NroDocumento = this.txtNroDoc.Text;
-                usr.Nombre = this.txtNombre.Text;
-                usr.Apellido = this.txtApellido.Text;
-                usr.Email = this.txtEmail.Text;
-                //usr.Direccion = this.txtDireccion.Text;
-                //usr.Telefono = this.txtTelefono.Text;
-                //usr.Celular = this.txtCelular.Text;
-                //usr.FechaNac = this.dtpFechaNacimiento.Value;
-                
-                usrLog.Save(usr);
-            }
-            else
-            {
-                MessageBox.Show("Las claves no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-           this.Close();
-           */
-            #endregion
-
             if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
             {
                 this.GuardarCambios();
@@ -252,7 +185,5 @@ namespace UI.Desktop
             }
 
         }
-
-
     }
 }

@@ -39,8 +39,8 @@
             this.tsDocentes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsInscripcion = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsCursos = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +56,8 @@
             this.tsDocentes,
             this.tsUsuarios,
             this.tsInscripcion,
-            this.tsCursos});
+            this.tsCursos,
+            this.reportesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(884, 24);
@@ -90,12 +91,14 @@
             this.tsPlanes.Name = "tsPlanes";
             this.tsPlanes.Size = new System.Drawing.Size(53, 20);
             this.tsPlanes.Text = "Planes";
+            this.tsPlanes.Click += new System.EventHandler(this.tsPlanes_Click);
             // 
             // tsMaterias
             // 
             this.tsMaterias.Name = "tsMaterias";
             this.tsMaterias.Size = new System.Drawing.Size(64, 20);
             this.tsMaterias.Text = "Materias";
+            this.tsMaterias.Click += new System.EventHandler(this.tsMaterias_Click);
             // 
             // tsComisiones
             // 
@@ -128,24 +131,22 @@
             this.tsInscripcion.Size = new System.Drawing.Size(77, 20);
             this.tsInscripcion.Text = "Inscripción";
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(884, 25);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
             // tsCursos
             // 
             this.tsCursos.Name = "tsCursos";
             this.tsCursos.Size = new System.Drawing.Size(55, 20);
             this.tsCursos.Text = "Cursos";
+            this.tsCursos.Click += new System.EventHandler(this.tsCursos_Click);
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.reportesToolStripMenuItem.Text = "Reportes";
             // 
             // Main
             // 
             this.ClientSize = new System.Drawing.Size(884, 404);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -175,7 +176,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsDocentes;
         private System.Windows.Forms.ToolStripMenuItem tsUsuarios;
         private System.Windows.Forms.ToolStripMenuItem tsInscripcion;
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsCursos;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
     }
 }

@@ -99,8 +99,14 @@ namespace UI.Desktop
 
         private void tsMaterias_Click(object sender, EventArgs e)
         {
-            MateriasABM FormMaterias = new MateriasABM();
-            FormMaterias.ShowDialog();
+            MateriasABM formMaterias = new MateriasABM();
+            formMaterias.ShowDialog();
+        }
+
+        private void tsCursos_Click(object sender, EventArgs e)
+        {
+            CursosABM formCursos = new CursosABM();
+            formCursos.ShowDialog();
         }
     }
 }

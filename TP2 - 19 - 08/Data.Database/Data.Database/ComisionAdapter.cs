@@ -58,7 +58,7 @@ namespace Data.Database
                 if (drComisiones.Read())
                 {
                     com.ID = (int)drComisiones["id_comisiones"];
-                    com.Descripcion = drComisiones["desc_comisiones"].ToString();
+                    com.Descripcion = (string)drComisiones["desc_comisiones"];
                     com.AnioEspecialidad = (int)drComisiones["anio_especialidad"];
                     com.IdPlan = (int)drComisiones["id_plan"];
                 }
@@ -94,7 +94,7 @@ namespace Data.Database
         protected void Insert(Comision com)
         {
             try
-            {
+            { // ver como esta en la base de datoy ver si es save o insert 
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("INSERT INTO comisiones(desc_comision,anio_especialidad,id_plan)"+
                 " VALUES (@desc_comision,@anio_especialidad,@id_plan)" + 
@@ -116,7 +116,7 @@ namespace Data.Database
             }
         }
         private void Update(Comision com)
-        {
+        { 
 
             try
             {

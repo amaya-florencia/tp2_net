@@ -13,7 +13,7 @@ using Util;
 
 namespace UI.Desktop
 {
-    public partial class EspecialidadesAMB : Form
+    public partial class ComisionesABM : Form
     {
         private Usuario _usuarioActual;
         public Usuario UsuarioActual
@@ -21,31 +21,38 @@ namespace UI.Desktop
             get { return _usuarioActual; }
             set { _usuarioActual = value; }
         }
-        public EspecialidadesAMB()
+        public ComisionesABM()
         {
-            InitializeComponent();           
+            InitializeComponent();
             this.Listar();
         }
-        public EspecialidadesAMB(Usuario u) : this() {
+        public ComisionesABM(Usuario u) : this() {
             UsuarioActual = u;
         }
-        private void Especialidades_Load(object sender, EventArgs e)
+
+        private void Comisiones_Load(object sender, EventArgs e)
         {
             VerificarABMC();
             this.Listar();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            EspecialidadAlta formEspec = new EspecialidadAlta();
-            formEspec.ShowDialog();
+            ComisionAlta formComi = new ComisionAlta();
+            formComi.ShowDialog();
             this.Listar();
         }
-        private void Listar()
+        public void Listar()
         {
-            EspecialidadLogic el = new EspecialidadLogic();
+           ComisionLogic el = new ComisionLogic();
             try
             {
-                this.dgvEspecialidades.DataSource = el.GetAll();
+                this.dgvComisiones.DataSource = el.GetAll();
             }
             catch (Exception Ex)
             {
@@ -64,24 +71,24 @@ namespace UI.Desktop
         {
             foreach (ModuloUsuario mu in UsuarioActual.ModulosUsuario)
             {
-                if (mu.Modulo.Descripcion == "Especialidades")
+                if (mu.Modulo.Descripcion == "Comisiones")
                 {
-                    this.dgvEspecialidades.Visible = mu.PermiteConsulta;
+                    this.dgvComisiones.Visible = mu.PermiteConsulta;
                     this.tsbNuevo.Visible = mu.PermiteAlta;
                     this.tsbEliminar.Visible = mu.PermiteBaja;
                     this.tsbEditar.Visible = mu.PermiteModificacion;
                 }
             }
-        }
+         }
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            if (this.dgvEspecialidades.SelectedRows.Count == 1)
+            if (this.dgvComisiones.SelectedRows.Count == 1)
             {
-               
-                int ID = ((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID;               
-                
-                EspecialidadAlta formEspecialidad = new EspecialidadAlta(ID, ApplicationForm.ModoForm.Modificacion);
-                formEspecialidad.ShowDialog();
+
+                int ID = ((Business.Entities.Comision)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
+
+                ComisionAlta formComision = new ComisionAlta (ID, ApplicationForm.ModoForm.Modificacion);
+                formComision.ShowDialog();
                 this.Listar();
             }
             else
@@ -91,11 +98,11 @@ namespace UI.Desktop
         }
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            if (this.dgvEspecialidades.SelectedRows.Count == 1)
-            {                
-                int ID = ((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID;                
-                EspecialidadAlta formEspecialidad = new EspecialidadAlta(ID, ApplicationForm.ModoForm.Baja);
-                formEspecialidad.ShowDialog();
+            if (this.dgvComisiones.SelectedRows.Count == 1)
+            {
+                int ID = ((Business.Entities.Especialidad)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
+                ComisionAlta formComision = new ComisionAlta(ID, ApplicationForm.ModoForm.Baja);
+                formComision.ShowDialog();
                 this.Listar();
             }
             else

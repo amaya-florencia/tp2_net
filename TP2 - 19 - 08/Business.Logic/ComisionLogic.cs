@@ -33,8 +33,8 @@ namespace Business.Logic
         {
             try
             {
-                ComisionAdapter cm = new ComisionAdapter();
-                return cm.GetAll();
+                ComisionAdapter ca = new ComisionAdapter();
+                return ca.GetAll();
             }
             catch (Exception Ex)
             {
@@ -58,8 +58,6 @@ namespace Business.Logic
 
            ca.Save(com);
         }
-
-
 
 
     }

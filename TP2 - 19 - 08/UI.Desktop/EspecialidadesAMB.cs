@@ -23,22 +23,23 @@ namespace UI.Desktop
         }
         public EspecialidadesAMB()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            this.dgvEspecialidades.AutoGenerateColumns = false;
             this.Listar();
         }
-        public EspecialidadesAMB(Usuario u) : this() {
+        public EspecialidadesAMB(Usuario u) : this()
+        {
             UsuarioActual = u;
         }
         private void Especialidades_Load(object sender, EventArgs e)
         {
             VerificarABMC();
-            this.Listar();
+            // this.Listar();
         }
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
             EspecialidadAlta formEspec = new EspecialidadAlta();
             formEspec.ShowDialog();
-            this.Listar();
         }
         private void Listar()
         {
@@ -77,12 +78,12 @@ namespace UI.Desktop
         {
             if (this.dgvEspecialidades.SelectedRows.Count == 1)
             {
-               
-                int ID = ((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID;               
-                
+
+                int ID = ((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID;
+
                 EspecialidadAlta formEspecialidad = new EspecialidadAlta(ID, ApplicationForm.ModoForm.Modificacion);
                 formEspecialidad.ShowDialog();
-                this.Listar();
+                //this.Listar();
             }
             else
             {
@@ -92,16 +93,17 @@ namespace UI.Desktop
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
             if (this.dgvEspecialidades.SelectedRows.Count == 1)
-            {                
-                int ID = ((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID;                
+            {
+                int ID = ((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID;
                 EspecialidadAlta formEspecialidad = new EspecialidadAlta(ID, ApplicationForm.ModoForm.Baja);
                 formEspecialidad.ShowDialog();
-                this.Listar();
+                // this.Listar();
             }
             else
             {
                 MessageBox.Show("Advertencia", "Primero seleccione una fila de la grilla", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
     }
 }

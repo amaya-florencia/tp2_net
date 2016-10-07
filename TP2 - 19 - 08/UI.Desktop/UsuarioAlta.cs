@@ -23,7 +23,7 @@ namespace UI.Desktop
         }
         public UsuarioAlta(ModoForm modo) : this()
         {
-            Modo = modo;
+            Modo = modo;           
         }
         public UsuarioAlta()
         {
@@ -31,21 +31,21 @@ namespace UI.Desktop
         }
         public UsuarioAlta(int ID, ModoForm modo) : this()
         {
-            this.Modo = modo;
+            this.Modo = modo;            
             UsuarioLogic usuarioLogic = new UsuarioLogic();
             try
             {
                 this.UsuarioActual = usuarioLogic.GetOne(ID);
-                this.MapearDeDatos();
+                this.MapearDeDatos();                
             }
             catch (Exception e)
             {
                 this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+        }         
         public override void MapearDeDatos()
         {
-            this.txtId.Text = this.UsuarioActual.ID.ToString();
+            this.txtId.Text = this.UsuarioActual.ID.ToString();     
             this.txtNombre.Text = this.UsuarioActual.Nombre;
             this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
@@ -59,11 +59,11 @@ namespace UI.Desktop
                     break;
                 case ModoForm.Baja:
                     this.Text = "Baja de Usuario";
-                    btnAceptar.Text = "Eliminar";
+                    btnAceptar.Text = "Eliminar";                    
                     break;
                 case ModoForm.Consulta:
                     this.Text = "Consulta de Usuario";
-                    btnAceptar.Text = "Aceptar";
+                    btnAceptar.Text = "Aceptar";                    
                     break;
             }
         }
@@ -75,14 +75,14 @@ namespace UI.Desktop
                 Usuario usr = new Usuario();
                 this.UsuarioActual = usr;
             }
-            if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
-            {
+            if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo==ApplicationForm.ModoForm.Modificacion)
+            {                  
                 UsuarioActual.Apellido = this.txtApellido.Text;
                 UsuarioActual.Nombre = this.txtNombre.Text;
                 UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                 UsuarioActual.Clave = this.txtClave.Text;
-                UsuarioActual.Clave = this.txtConfirmarClave.Text;
-            }
+                UsuarioActual.Clave = this.txtConfirmarClave.Text;               
+            }           
             switch (this.Modo)
             {
                 case ModoForm.Alta:
@@ -159,8 +159,8 @@ namespace UI.Desktop
 
             return valida;
         }
-
-
+             
+              
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {

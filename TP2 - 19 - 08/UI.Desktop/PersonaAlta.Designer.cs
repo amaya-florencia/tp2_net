@@ -53,13 +53,13 @@
             this.cmbPlan = new System.Windows.Forms.ComboBox();
             this.planesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.academia2DataSet1 = new UI.Desktop.academia2DataSet1();
-            this.cmbTipoPersona = new System.Windows.Forms.ComboBox();
+            this.txtTipoPersona = new System.Windows.Forms.TextBox();
             this.tiposPersonasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.academia2DataSet = new UI.Desktop.academia2DataSet();
             this.planesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.planesTableAdapter = new UI.Desktop.academia2DataSetTableAdapters.planesTableAdapter();
             this.planesTableAdapter1 = new UI.Desktop.academia2DataSet1TableAdapters.planesTableAdapter();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cmbTipoPersona = new System.Windows.Forms.ComboBox();
             this.tlpProfesor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet1)).BeginInit();
@@ -99,8 +99,8 @@
             this.tlpProfesor.Controls.Add(this.txtLegajo, 3, 2);
             this.tlpProfesor.Controls.Add(this.lblPlan, 2, 4);
             this.tlpProfesor.Controls.Add(this.cmbPlan, 3, 4);
+            this.tlpProfesor.Controls.Add(this.txtTipoPersona, 1, 5);
             this.tlpProfesor.Controls.Add(this.cmbTipoPersona, 3, 0);
-            this.tlpProfesor.Controls.Add(this.textBox1, 1, 5);
             this.tlpProfesor.ImeMode = System.Windows.Forms.ImeMode.On;
             this.tlpProfesor.Location = new System.Drawing.Point(12, 12);
             this.tlpProfesor.Name = "tlpProfesor";
@@ -306,13 +306,12 @@
             this.academia2DataSet1.DataSetName = "academia2DataSet1";
             this.academia2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cmbTipoPersona
+            // txtTipoPersona
             // 
-            this.cmbTipoPersona.FormattingEnabled = true;
-            this.cmbTipoPersona.Location = new System.Drawing.Point(468, 3);
-            this.cmbTipoPersona.Name = "cmbTipoPersona";
-            this.cmbTipoPersona.Size = new System.Drawing.Size(174, 21);
-            this.cmbTipoPersona.TabIndex = 49;
+            this.txtTipoPersona.Location = new System.Drawing.Point(136, 208);
+            this.txtTipoPersona.Name = "txtTipoPersona";
+            this.txtTipoPersona.Size = new System.Drawing.Size(174, 20);
+            this.txtTipoPersona.TabIndex = 50;
             // 
             // tiposPersonasBindingSource
             // 
@@ -336,12 +335,13 @@
             // 
             this.planesTableAdapter1.ClearBeforeFill = true;
             // 
-            // textBox1
+            // cmbTipoPersona
             // 
-            this.textBox1.Location = new System.Drawing.Point(136, 208);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 50;
+            this.cmbTipoPersona.FormattingEnabled = true;
+            this.cmbTipoPersona.Location = new System.Drawing.Point(468, 3);
+            this.cmbTipoPersona.Name = "cmbTipoPersona";
+            this.cmbTipoPersona.Size = new System.Drawing.Size(174, 21);
+            this.cmbTipoPersona.TabIndex = 51;
             // 
             // PersonaAlta
             // 
@@ -394,8 +394,8 @@
         private System.Windows.Forms.BindingSource planesBindingSource1;
         private academia2DataSet1TableAdapters.planesTableAdapter planesTableAdapter1;
         private System.Windows.Forms.BindingSource tiposPersonasBindingSource;
+        private System.Windows.Forms.TextBox txtTipoPersona;
         private System.Windows.Forms.ComboBox cmbTipoPersona;
-        private System.Windows.Forms.TextBox textBox1;
 
     }
 }

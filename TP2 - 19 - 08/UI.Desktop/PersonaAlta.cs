@@ -18,10 +18,15 @@ namespace UI.Desktop
         public PersonaAlta(Enum tipoPer) : this()
         {          
             Enum tipoPersona = tipoPer;
-            this.cmbTipoPersona.Text = tipoPer.ToString(); /// qué propiedad setea el texto del combobox??????
-            this.textBox1.Text = tipoPer.ToString();
-            this.cmbTipoPersona.Enabled = false;
-         
+            //this.cmbTipoPersona.DisplayMember = tipoPer.ToString();
+            this.cmbTipoPersona.Text = tipoPer.ToString();
+
+            this.txtTipoPersona.Text = tipoPer.ToString();
+
+          // this.cmbTipoPersona.Enabled = false;
+            this.txtTipoPersona.Text = tipoPer.ToString();
+            this.txtTipoPersona.Enabled = false;
+           
         }
         public PersonaAlta()
         {
@@ -98,6 +103,7 @@ namespace UI.Desktop
                 PersonaActual.Email = this.txtEmail.Text;
                 PersonaActual.IdPlan = Convert.ToInt32(this.cmbPlan.SelectedValue);
                 PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)this.cmbTipoPersona.SelectedItem;
+                
 
                 PersonaActual.State = Usuario.States.New;
             }

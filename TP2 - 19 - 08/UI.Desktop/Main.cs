@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Business.Entities;
-using Business.Logic;
-using Util;
 
 namespace UI.Desktop
 {
@@ -93,6 +91,21 @@ namespace UI.Desktop
         {
             UsuariosABM formUsuarios = new UsuariosABM();
             formUsuarios.Show();
+        }
+
+        private void docentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          Enum tipoPersona = Enumeradores.TiposPersonas.Docente;
+          PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
+          formPersonaABM.ShowDialog();
+        }
+
+        private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Enum tipoPersona = Enumeradores.TiposPersonas.Alumno;
+            PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
+            formPersonaABM.ShowDialog();
+            
         }
     }
 }

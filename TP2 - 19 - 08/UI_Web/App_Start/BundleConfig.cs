@@ -34,13 +34,11 @@ namespace UI_Web
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                             "~/Scripts/modernizr-*"));
 
-            ScriptManager.ScriptResourceMapping.AddDefinition(
-                "respond",
-                new ScriptResourceDefinition
+          /*ScriptManager.ScriptResourceMapping.AddDefinition("respond", new ScriptResourceDefinition
                 {
                     Path = "~/Scripts/respond.min.js",
                     DebugPath = "~/Scripts/respond.js",
-                });
+                });*/
         }
     }
 }

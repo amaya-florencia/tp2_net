@@ -22,5 +22,15 @@ namespace UI.Desktop.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BELÉNRC;Initial Catalog=academia2;Integrated Security=True")]
+        public string academia2ConnectionString {
+            get {
+                return ((string)(this["academia2ConnectionString"]));
+            }
+        }
     }
 }

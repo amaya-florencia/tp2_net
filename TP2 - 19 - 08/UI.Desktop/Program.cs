@@ -22,6 +22,8 @@ namespace UI.Desktop
             //Application.Run(new UsuariosABM());
             ///Application.Run(new Login());
             //Application.Run(new UsuarioAlta());
+            Application.Run(new ComisionesABM());
+            Application.Run(new ComisionAlta());
            Application.Run(new Main());
         }
     }

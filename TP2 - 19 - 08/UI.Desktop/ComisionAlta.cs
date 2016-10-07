@@ -15,27 +15,29 @@ namespace UI.Desktop
 {
     public partial class ComisionAlta : ApplicationForm
     {
-        public Comision ComisionActual;
+        private Comision _ComisionActual;
+        public Comision ComisionActual
+        {
+            get { return _ComisionActual; }
+            set { _ComisionActual = value; }
+        }
 
-        //PlanLogic plan = new PlanLogic(); (Dudo de esto)
-        EspecialidadLogic esp = new EspecialidadLogic();
         public ComisionAlta()
         {
             InitializeComponent();
             try
             {
-                CargarCombo();
+                //CargarCombo();
             }
             catch (Exception e)
             {
-                this.Notificar("Especialidades", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Notificar("PLan", e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public ComisionAlta(ModoForm modo) : this()
         {
             Modo = modo;
         }
-
         public ComisionAlta(int ID, ModoForm modo) : this()
         {
             this.Modo = modo;
@@ -50,7 +52,6 @@ namespace UI.Desktop
                 this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         public override void MapearADatos()
         {
             if (this.Modo == ApplicationForm.ModoForm.Alta)
@@ -60,8 +61,8 @@ namespace UI.Desktop
             if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
             {
                 ComisionActual.Descripcion = this.txtDescripcion.Text;
-                ComisionActual.AnioEspecialidad = (int)this.cmbAnioEspecialidad.SelectedValue;
-                ComisionActual.IdPlan = Convert.ToInt32(this.txtIdPlan.Text);
+                //ComisionActual.AnioEspecialidad = this.txtAnioEspecialidad.Text;
+                ComisionActual.IdPlan = (int)this.cmbIdPlan.SelectedValue;
             }
             switch (this.Modo)
             {
@@ -78,10 +79,10 @@ namespace UI.Desktop
         }
         public override void MapearDeDatos()
         {
-            this.lblID.Text = this.ComisionActual.ID.ToString();
+            this.txtId.Text = this.ComisionActual.ID.ToString();
             this.txtDescripcion.Text = this.ComisionActual.Descripcion.ToString();
-            this.cmbAnioEspecialidad.Text = this.ComisionActual.AnioEspecialidad.ToString();
-            this.txtIdPlan.Text = this.ComisionActual.IdPlan.ToString();
+            this.txtAnioEspecialidad.Text = this.ComisionActual.AnioEspecialidad.ToString();
+            this.cmbIdPlan.Text = this.ComisionActual.IdPlan.ToString();
             switch (this.Modo)
             {
 
@@ -97,7 +98,6 @@ namespace UI.Desktop
                     break;
             }
         }
-
         public override void GuardarCambios()
         {
             ComisionLogic comisionLogic = new ComisionLogic();
@@ -126,17 +126,6 @@ namespace UI.Desktop
                 }
             }
         }
-       
-        private void CargarCombo()
-        {
-            EspecialidadLogic el = new EspecialidadLogic();
-            //cmbEspecialidad.DataSource = el.GetAll();
-            //cmbEspecialidad.DisplayMember = "Descripcion";
-            //cmbEspecialidad.ValueMember = "Id";
-        }
-
-
-        #region Eventos
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
@@ -159,7 +148,22 @@ namespace UI.Desktop
             this.Close();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAnioEspecialidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+       //private void CargarCombo()
+       // {
+        //  PlanLogic pl = new PlanLogic();
+        // cmbPlan.DataSource = plGetAll();
+       //  cmbPlan.DisplayMember = "Descripcion";
+         //cmbPlan.ValueMember = "Id";
+        // }
 
     }
 }
-#endregion

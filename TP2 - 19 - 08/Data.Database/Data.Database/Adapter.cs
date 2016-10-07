@@ -12,8 +12,8 @@ namespace Data.Database
 
         //Clave por defecto a utlizar para la cadena de conexion
         //const string consKeyDefaultCnnString = "ConnStringLocal";
-        const string consKeyDefaultCnnString = "ConnStringFlor";
-
+       // const string consKeyDefaultCnnString = "ConnStringFlor";
+       const string consKeyDefaultCnnString = "ConnStringOrnella";
         private SqlConnection sqlConn;
         public SqlConnection SqlConn
             { get { return sqlConn; }

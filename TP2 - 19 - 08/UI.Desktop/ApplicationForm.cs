@@ -28,8 +28,8 @@ namespace UI.Desktop
         private ModoForm _modo;
         public ModoForm Modo
         {
-            get {return _modo; }
-            set {_modo = value; }
+            get { return _modo; }
+            set { _modo = value; }
         }
 
         public virtual void MapearDeDatos()

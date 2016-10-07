@@ -92,6 +92,7 @@ namespace UI.Desktop
             this.udHorasSemanales.Value = this.MateriaActual.HsSemanales;
             this.udHorasTotales.Value = this.MateriaActual.HsTotales;
             this.cmbPlanes.SelectedValue = this.MateriaActual.IdPlan;
+            
             switch (this.Modo)
             {
                 case ModoForm.Modificacion:

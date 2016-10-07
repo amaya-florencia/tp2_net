@@ -52,19 +52,19 @@
             this.lblPlan = new System.Windows.Forms.Label();
             this.cmbPlan = new System.Windows.Forms.ComboBox();
             this.planesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.academia2DataSet1 = new UI.Desktop.academia2DataSet1();
+        //    this.academia2DataSet1 = new UI.Desktop.academia2DataSet1();
             this.txtTipoPersona = new System.Windows.Forms.TextBox();
             this.tiposPersonasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.academia2DataSet = new UI.Desktop.academia2DataSet();
+       //     this.academia2DataSet = new UI.Desktop.academia2DataSet();
             this.planesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.planesTableAdapter = new UI.Desktop.academia2DataSetTableAdapters.planesTableAdapter();
-            this.planesTableAdapter1 = new UI.Desktop.academia2DataSet1TableAdapters.planesTableAdapter();
+      //      this.planesTableAdapter = new UI.Desktop.academia2DataSetTableAdapters.planesTableAdapter();
+      //      this.planesTableAdapter1 = new UI.Desktop.academia2DataSet1TableAdapters.planesTableAdapter();
             this.cmbTipoPersona = new System.Windows.Forms.ComboBox();
             this.tlpProfesor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet1)).BeginInit();
+        //    ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposPersonasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet)).BeginInit();
+       //     ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -298,13 +298,13 @@
             // 
             // planesBindingSource1
             // 
-            this.planesBindingSource1.DataMember = "planes";
-            this.planesBindingSource1.DataSource = this.academia2DataSet1;
+       //     this.planesBindingSource1.DataMember = "planes";
+          //  this.planesBindingSource1.DataSource = this.academia2DataSet1;
             // 
             // academia2DataSet1
             // 
-            this.academia2DataSet1.DataSetName = "academia2DataSet1";
-            this.academia2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+          //  this.academia2DataSet1.DataSetName = "academia2DataSet1";
+           // this.academia2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtTipoPersona
             // 
@@ -319,21 +319,21 @@
             // 
             // academia2DataSet
             // 
-            this.academia2DataSet.DataSetName = "academia2DataSet";
-            this.academia2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
+       //     this.academia2DataSet.DataSetName = "academia2DataSet";
+      //      this.academia2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+      //      // 
             // planesBindingSource
             // 
-            this.planesBindingSource.DataMember = "planes";
-            this.planesBindingSource.DataSource = this.academia2DataSet;
-            // 
+     //       this.planesBindingSource.DataMember = "planes";
+   //         this.planesBindingSource.DataSource = this.academia2DataSet;
+    //        // 
             // planesTableAdapter
             // 
-            this.planesTableAdapter.ClearBeforeFill = true;
+      //      this.planesTableAdapter.ClearBeforeFill = true;
             // 
             // planesTableAdapter1
             // 
-            this.planesTableAdapter1.ClearBeforeFill = true;
+    //        this.planesTableAdapter1.ClearBeforeFill = true;
             // 
             // cmbTipoPersona
             // 
@@ -355,9 +355,9 @@
             this.tlpProfesor.ResumeLayout(false);
             this.tlpProfesor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet1)).EndInit();
+         //   ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tiposPersonasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet)).EndInit();
+        //    ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -387,12 +387,12 @@
         private System.Windows.Forms.TextBox txtLegajo;
         private System.Windows.Forms.Label lblPlan;
         private System.Windows.Forms.ComboBox cmbPlan;
-        private academia2DataSet academia2DataSet;
+    //    private academia2DataSet academia2DataSet;
         private System.Windows.Forms.BindingSource planesBindingSource;
-        private academia2DataSetTableAdapters.planesTableAdapter planesTableAdapter;
-        private academia2DataSet1 academia2DataSet1;
+    //    private academia2DataSetTableAdapters.planesTableAdapter planesTableAdapter;
+   //     private academia2DataSet1 academia2DataSet1;
         private System.Windows.Forms.BindingSource planesBindingSource1;
-        private academia2DataSet1TableAdapters.planesTableAdapter planesTableAdapter1;
+  //      private academia2DataSet1TableAdapters.planesTableAdapter planesTableAdapter1;
         private System.Windows.Forms.BindingSource tiposPersonasBindingSource;
         private System.Windows.Forms.TextBox txtTipoPersona;
         private System.Windows.Forms.ComboBox cmbTipoPersona;

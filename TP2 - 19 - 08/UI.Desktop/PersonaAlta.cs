@@ -227,9 +227,9 @@ namespace UI.Desktop
         private void PersonaAlta_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'academia2DataSet1.planes' Puede moverla o quitarla según sea necesario.
-            this.planesTableAdapter1.Fill(this.academia2DataSet1.planes);
+         //   this.planesTableAdapter1.Fill(this.academia2DataSet1.planes);
             // TODO: esta línea de código carga datos en la tabla 'academia2DataSet.planes' Puede moverla o quitarla según sea necesario.
-            this.planesTableAdapter.Fill(this.academia2DataSet.planes);
+     //       this.planesTableAdapter.Fill(this.academia2DataSet.planes);
 
             cmbTipoPersona.DataSource = Enum.GetValues(typeof(Util.Enumeradores.TiposPersonas));
 

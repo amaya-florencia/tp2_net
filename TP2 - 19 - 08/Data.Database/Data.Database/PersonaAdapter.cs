@@ -42,11 +42,6 @@ namespace Data.Database
                     per.TipoPersona = (Util.Enumeradores.TiposPersonas)drPersonas["tipo_persona"];
                     per.IdPlan = (int)drPersonas["id_plan"];
 
-                   /* per.NombreUsuario = (string)drPersonas["nombre_usuario"];
-                    per.Clave = (string)drPersonas["clave"];
-                    per.Habilitado = (bool)drPersonas["habilitado"];
-                    */
-
                     personas.Add(per);
                 }
 

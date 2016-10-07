@@ -125,7 +125,7 @@ namespace UI.Desktop
             {
                 try
                 {
-                    materiaLogic.Delete(MateriaActual.ID);
+                    materiaLogic.Save(this.MateriaActual);
                     this.Close();
                 }
                 catch (Exception e)

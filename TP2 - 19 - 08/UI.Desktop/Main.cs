@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Business.Entities;
-using Business.Logic;
-using Util;
 
 namespace UI.Desktop
 {
@@ -27,15 +25,19 @@ namespace UI.Desktop
         {
             InitializeComponent();
         }
-        public Main (Usuario usuarioLog): this()
-        {
-            this.UsuarioActual = usuarioLog;
-           // this.PersonaActual = new PersonaLogic().GetOnePorPersona(this.UsuarioActual.IdPersona);
-        }
 
         private void mnuSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+        private void formMain_Shown(object sender, EventArgs e)
+        {
+            Login appLogin = new Login();
+            if (appLogin.ShowDialog() != DialogResult.OK)
+            {
+                this.Dispose();
+            }
+
         }
 
         private void especialidadesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -91,22 +93,19 @@ namespace UI.Desktop
             formUsuarios.Show();
         }
 
-        private void tsPlanes_Click(object sender, EventArgs e)
+        private void docentesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PlanABM formPlan = new PlanABM();
-            formPlan.Show();
+          Enum tipoPersona = Enumeradores.TiposPersonas.Docente;
+          PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
+          formPersonaABM.ShowDialog();
         }
 
-        private void tsMaterias_Click(object sender, EventArgs e)
+        private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MateriasABM formMaterias = new MateriasABM();
-            formMaterias.ShowDialog();
-        }
-
-        private void tsCursos_Click(object sender, EventArgs e)
-        {
-            CursosABM formCursos = new CursosABM();
-            formCursos.ShowDialog();
+            Enum tipoPersona = Enumeradores.TiposPersonas.Alumno;
+            PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
+            formPersonaABM.ShowDialog();
+            
         }
     }
 }

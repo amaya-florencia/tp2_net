@@ -25,5 +25,10 @@ namespace UI.Desktop
             this.id = id;
             this.modificacion = modificacion;
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.dgvMaterias = new System.Windows.Forms.DataGridView();
             this.tsmNuevo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEliminar = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvMaterias = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             this.SuspendLayout();
@@ -45,18 +45,10 @@
             this.tsmEliminar});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.Size = new System.Drawing.Size(652, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // dgvMaterias
-            // 
-            this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMaterias.Location = new System.Drawing.Point(0, 24);
-            this.dgvMaterias.Name = "dgvMaterias";
-            this.dgvMaterias.Size = new System.Drawing.Size(652, 292);
-            this.dgvMaterias.TabIndex = 1;
             // 
             // tsmNuevo
             // 
@@ -78,6 +70,15 @@
             this.tsmEliminar.Name = "tsmEliminar";
             this.tsmEliminar.Size = new System.Drawing.Size(28, 20);
             this.tsmEliminar.Click += new System.EventHandler(this.tsmEliminar_Click);
+            // 
+            // dgvMaterias
+            // 
+            this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMaterias.Location = new System.Drawing.Point(0, 24);
+            this.dgvMaterias.Name = "dgvMaterias";
+            this.dgvMaterias.Size = new System.Drawing.Size(652, 292);
+            this.dgvMaterias.TabIndex = 1;
             // 
             // MateriasABM
             // 

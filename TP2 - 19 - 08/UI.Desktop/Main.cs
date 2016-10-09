@@ -117,15 +117,14 @@ namespace UI.Desktop
 
         private void tsDocentes_Click(object sender, EventArgs e)
         {
-            Enum tipoPersona = Enumeradores.TiposPersonas.Docente;
-            PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
+            
+            PersonaABM formPersonaABM = new PersonaABM(Enumeradores.TiposPersonas.Docente);
             formPersonaABM.ShowDialog();
         }
 
         private void tsAlumnos_Click(object sender, EventArgs e)
         {
-            Enum tipoPersona = Enumeradores.TiposPersonas.Alumno;
-            PersonaABM formPersonaABM = new PersonaABM(tipoPersona);
+            PersonaABM formPersonaABM = new PersonaABM(Enumeradores.TiposPersonas.Alumno);
             formPersonaABM.ShowDialog();
         }
     }

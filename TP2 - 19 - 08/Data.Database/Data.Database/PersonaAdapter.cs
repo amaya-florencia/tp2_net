@@ -12,7 +12,7 @@ namespace Data.Database
 {
     public class PersonaAdapter : Adapter
     {
-        static public Enum tipoPersona;
+        //static public Enum tipoPersona;
         public List<Persona> GetAll(Enum tipoPersona)
         // public List<Persona> GetAll()
         {
@@ -147,7 +147,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
                 cmdSave.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = persona.FechaNac;
                 cmdSave.Parameters.Add("@legajo", SqlDbType.VarChar, 50).Value = persona.Legajo;
-                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = persona.TipoPersona;
+                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = (int)persona.TipoPersona;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IdPlan;
                 cmdSave.ExecuteNonQuery();
             }
@@ -179,7 +179,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@telefono", SqlDbType.VarChar, 50).Value = persona.Telefono;
                 cmdSave.Parameters.Add("@legajo", SqlDbType.VarChar, 50).Value = persona.Legajo;
                 cmdSave.Parameters.Add("@fecha_nac", SqlDbType.VarChar, 50).Value = persona.FechaNac;
-                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = persona.TipoPersona;
+                cmdSave.Parameters.Add("@tipo_persona", SqlDbType.Int).Value = (int)persona.TipoPersona;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = persona.IdPlan;
                 persona.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
 

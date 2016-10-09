@@ -15,11 +15,10 @@ namespace UI.Desktop
 {
     public partial class PersonaAlta : ApplicationForm
     {
-        public PersonaAlta(Enum tipoPer) : this()
+        public PersonaAlta(Enumeradores.TiposPersonas tipoPer) : this()
         {
-            Enum tipoPersona = tipoPer;
-            //this.cmbTipoPersona.DisplayMember = tipoPer.ToString();
-            this.cmbTipoPersona.Text = tipoPer.ToString();
+            
+            //this.cmbTipoPersona.Text = tipoPer.ToString();
 
             this.txtTipoPersona.Text = tipoPer.ToString();
 
@@ -31,15 +30,18 @@ namespace UI.Desktop
         public PersonaAlta()
         {
             InitializeComponent();
+            cargarCombos();
         }
 
-        public PersonaAlta(int ID, ModoForm modo, Enum tipoPer) : this()
+        private void cargarCombos()
+        {
+            cmbTipoPersona.DataSource = Enum.GetNames(typeof(Util.Enumeradores.TiposPersonas));
+        }
+
+        public PersonaAlta(int ID, ModoForm modo, Enumeradores.TiposPersonas tipoPer) : this()
         {
             if (modo == ModoForm.Modificacion || modo == ModoForm.Baja)
-            {
-                cmbTipoPersona.Visible = false;
-                
-
+            {                
                 Modo = modo;
                 PersonaLogic personaLogic = new PersonaLogic();
                 try
@@ -54,7 +56,6 @@ namespace UI.Desktop
             }
            
         }
-
 
         private Persona _personaActual;
         public Persona PersonaActual
@@ -75,6 +76,7 @@ namespace UI.Desktop
             this.txtEmail.Text = this.PersonaActual.Email;
             this.cmbPlan.Text = this.PersonaActual.IdPlan.ToString();
             this.txtTipoPersona.Text = this.PersonaActual.TipoPersona.ToString();
+            this.cmbTipoPersona.SelectedIndex = (int)this.PersonaActual.TipoPersona;
 
             if ((Modo == ModoForm.Alta) || (Modo == ModoForm.Modificacion))
             {
@@ -96,7 +98,7 @@ namespace UI.Desktop
             if (Modo == ModoForm.Alta)
             {
                 PersonaActual = new Persona();
-                PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)this.cmbTipoPersona.SelectedItem;
+                PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)this.cmbTipoPersona.SelectedIndex;
 
             }
 
@@ -110,9 +112,7 @@ namespace UI.Desktop
                 PersonaActual.Telefono = this.txtTelefono.Text;
                 PersonaActual.Email = this.txtEmail.Text;
                 PersonaActual.IdPlan = Convert.ToInt32(this.cmbPlan.SelectedValue);
-                PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)this.cmbTipoPersona.SelectedValue;
-
-
+                PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)this.cmbTipoPersona.SelectedIndex;
             }
             switch (this.Modo)
             {
@@ -182,7 +182,6 @@ namespace UI.Desktop
         private void PersonaAlta_Load_1(object sender, EventArgs e)
         {
             PlanLogic pl = new PlanLogic();
-            cmbTipoPersona.DataSource = Enum.GetValues(typeof(Util.Enumeradores.TiposPersonas));
             cmbPlan.DataSource = pl.GetAll();
             cmbPlan.DisplayMember = "Descripcion";
             cmbPlan.ValueMember = "Id";

@@ -127,5 +127,11 @@ namespace UI.Desktop
             PersonaABM formPersonaABM = new PersonaABM(Enumeradores.TiposPersonas.Alumno);
             formPersonaABM.ShowDialog();
         }
+
+        private void mnuCambiaClave_Click(object sender, EventArgs e)
+        {
+            CambioContraseña formCambio = new CambioContraseña(UsuarioActual);
+            formCambio.ShowDialog();
+        }
     }
 }

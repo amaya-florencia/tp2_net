@@ -41,6 +41,7 @@
             this.tsInscripcion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsCursos = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuCambiaClave = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +68,7 @@
             // mnuArchivo
             // 
             this.mnuArchivo.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuCambiaClave,
             this.mnuSalir});
             this.mnuArchivo.Name = "mnuArchivo";
             this.mnuArchivo.Size = new System.Drawing.Size(60, 20);
@@ -75,7 +77,7 @@
             // mnuSalir
             // 
             this.mnuSalir.Name = "mnuSalir";
-            this.mnuSalir.Size = new System.Drawing.Size(96, 22);
+            this.mnuSalir.Size = new System.Drawing.Size(152, 22);
             this.mnuSalir.Text = "Salir";
             this.mnuSalir.Click += new System.EventHandler(this.mnuSalir_Click);
             // 
@@ -147,6 +149,13 @@
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
+            // mnuCambiaClave
+            // 
+            this.mnuCambiaClave.Name = "mnuCambiaClave";
+            this.mnuCambiaClave.Size = new System.Drawing.Size(152, 22);
+            this.mnuCambiaClave.Text = "Cambiar Clave";
+            this.mnuCambiaClave.Click += new System.EventHandler(this.mnuCambiaClave_Click);
+            // 
             // Main
             // 
             this.ClientSize = new System.Drawing.Size(884, 404);
@@ -181,5 +190,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsInscripcion;
         private System.Windows.Forms.ToolStripMenuItem tsCursos;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuCambiaClave;
     }
 }

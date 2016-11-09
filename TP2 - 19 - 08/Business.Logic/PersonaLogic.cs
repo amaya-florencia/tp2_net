@@ -22,7 +22,7 @@ namespace Business.Logic
         {
 
         }
-
+     
         PersonaAdapter PersonaData = new PersonaAdapter();
         public List<Persona> GetAll(Enum tipoPersona)
         {
@@ -49,6 +49,10 @@ namespace Business.Logic
         public void Save(Persona per)
         {
             PersonaData.Save(per);
+        }
+        public Persona GetOnebyLegajo(int legajo)
+        {
+            return PersonaData.GetOnebyLegajo(legajo);
         }
     }
 }

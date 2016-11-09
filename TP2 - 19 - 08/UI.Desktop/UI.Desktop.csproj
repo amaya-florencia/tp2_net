@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumosInscripcionesAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlumosInscripcionesAlta.Designer.cs">
+      <DependentUpon>AlumosInscripcionesAlta.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComisionAlta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     <Compile Include="UsuariosABM.designer.cs">
       <DependentUpon>UsuariosABM.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AlumosInscripcionesAlta.resx">
+      <DependentUpon>AlumosInscripcionesAlta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ComisionAlta.resx">
       <DependentUpon>ComisionAlta.cs</DependentUpon>
     </EmbeddedResource>

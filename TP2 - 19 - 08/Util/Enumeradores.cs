@@ -14,5 +14,12 @@ namespace Util
             Docente,
             Administrador
         }
+        public enum TiposCargos
+        {
+            Titular,
+            Auxiliar,
+            Ayudante
+        }
+
     }
 }

@@ -59,9 +59,8 @@ namespace Data.Database
                 this.CloseConnection();
             }
             return materias;
-            
-        }
 
+        } 
         public List<Materia> GetAll()
         {
             List<Materia> materias = new List<Materia>();

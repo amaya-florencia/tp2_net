@@ -4,6 +4,7 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Configuration;
 
+
 namespace Data.Database
 {
     public class Adapter
@@ -30,13 +31,9 @@ namespace Data.Database
 
         protected void CloseConnection()
         {
-            sqlConn.Close();
-            sqlConn = null;
+            SqlConn.Close();
+            SqlConn = null;
         }
 
-        protected SqlDataReader ExecuteReader(String commandText)
-        {
-            throw new Exception("Metodo no implementado");
-        }
     }
 }

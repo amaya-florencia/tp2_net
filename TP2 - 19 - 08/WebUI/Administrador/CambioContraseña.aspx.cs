@@ -54,7 +54,12 @@ namespace WebUI.Administrador
             }
             catch (Exception e)
             {
-                ClientScript.RegisterStartupScript(GetType(), "mostrarMensaje", "Notificar(mensaje);", true);
+                string script = @"<script type='text/javascript'>
+                            alert('Error al guardar cambios');
+                        </script>";
+
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, false);
+               // ClientScript.RegisterStartupScript(GetType(), "mostrarMensaje", "Notificar(mensaje);", true);
             }
         }
 
@@ -89,7 +94,11 @@ namespace WebUI.Administrador
             }
             else
             {
-                //ClientScript.RegisterStartupScript(GetType(), "mostrarMensaje", "Notificar();", true);
+                string script = @"<script type='text/javascript'>
+                            alert('Las claves no coinciden');
+                        </script>";
+
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, false);
 
                 return false;
             }

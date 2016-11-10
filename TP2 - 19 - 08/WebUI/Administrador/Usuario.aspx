@@ -34,4 +34,16 @@
             <td>&nbsp;<asp:Button ID="btnCancelar" runat="server" Text="Cancelar" /></td>
         </tr>
     </table>
+    <asp:Panel ID="Panel1" runat="server">
+        <asp:GridView ID="dgvUsuarios" runat="server" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="id" HeaderText="ID Usuario" />
+                <asp:BoundField DataField="nombreUsuario" HeaderText="Nombre Usuario" />
+                <asp:BoundField DataField="clave" HeaderText="Clave" />
+                <asp:BoundField DataField="nombre" HeaderText="Nombre" />
+                <asp:BoundField DataField="apellido" HeaderText="Apellido" />
+                <asp:CheckBoxField DataField="habilitado" ReadOnly="True" Text="Habilitado" />
+            </Columns>
+        </asp:GridView>
+    </asp:Panel>
 </asp:Content>

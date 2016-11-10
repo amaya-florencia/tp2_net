@@ -12,15 +12,33 @@ namespace WebUI.Administrador
 {
     public partial class Usuario : ABMBase
     {
+        #region Propiedades
+        UsuarioLogic _usrLogic;
+        private UsuarioLogic Logic
+        {
+            get
+            {
+                if (_usrLogic == null)
+                {
+                    _usrLogic = new UsuarioLogic();
+                }
+                return _usrLogic;
+            }
+        }
+
+        #endregion
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.CargarGrilla();
         }
-        private Usuario _usuarioActual;
-        public Usuario UsuarioActual
+
+        private void CargarGrilla()
         {
-            get { return _usuarioActual; }
-            set { _usuarioActual = value; }
+            this.dgvUsuarios.DataSource = this.Logic.GetAll();
+            this.dgvUsuarios.DataBind();
         }
-       
+
+
     }
 }

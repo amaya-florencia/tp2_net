@@ -39,8 +39,20 @@
               </td>     
         </tr>
 
-
+          
 
 
     </table>
+    <asp:Panel ID="Panel1" runat="server">
+        <asp:GridView ID="dgvCursos" runat="server" AutoGenerateColumns="False">
+            <Columns>
+                <asp:BoundField DataField="ID" HeaderText="ID Curso" />
+                <asp:BoundField DataField="descripcion" HeaderText="Descripcion" />
+                <asp:BoundField DataField="idMateria" HeaderText="Materia" />
+                <asp:BoundField DataField="idComision" HeaderText="Comision" />
+                <asp:BoundField DataField="anioCalendario" HeaderText="Año" />
+                <asp:BoundField DataField="cupo" HeaderText="Cupo" />
+            </Columns>
+        </asp:GridView>
+    </asp:Panel>
 </asp:Content>

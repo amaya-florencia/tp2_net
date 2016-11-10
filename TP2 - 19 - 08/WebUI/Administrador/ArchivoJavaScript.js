@@ -1,3 +1,3 @@
-﻿function Notificar() {
-    alert("asdfas");
+﻿function Notificar(mensaje) {
+    alert(mensaje);
 }

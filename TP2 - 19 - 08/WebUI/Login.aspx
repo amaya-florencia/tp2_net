@@ -24,7 +24,7 @@
             <td class="auto-style1"><asp:Label ID="lblPass" runat="server" Text="Contraseña: "></asp:Label></td>
             <td>
                 <asp:TextBox ID="txtPass" runat="server" Width="160px"></asp:TextBox>
-                <asp:LinkButton ID="lkbOlvidePass" runat="server">Olvide mi contraseña</asp:LinkButton>
+                <asp:LinkButton ID="lkbOlvidePass" runat="server" OnClick="lkbOlvidePass_Click">Olvide mi contraseña</asp:LinkButton>
             </td>
             
         </tr>
@@ -32,7 +32,7 @@
         <tr>
             <td> </td>
             <td  class="auto-style2" colspan="2">
-                <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" /><asp:Button ID="btnCancelar" runat="server" Text="Cancelar" /></td>
+                <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" /></td>
             <td>&nbsp;</td>
             
         </tr>

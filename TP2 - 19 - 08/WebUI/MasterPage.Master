@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="WebUI.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Academia</title>
+    <link href="Estilo/Style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="Administrador/ArchivoJavaScript.js"> </script>
+
+    <asp:ContentPlaceHolder ID="PageHeader" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+<form id="bodyForm" runat="server">
+  <div id="main">
+    
+      <div id="header" >
+          <div id="logo" style="width:100%; height:239px">
+          </div>
+          <div id="menubar" style="width:121%; height:100%">
+            <ul id="menu"><!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+              <li><a href="/Login.aspx">Inicio</a></li>
+              <li><a href="Administrador/Usuario.aspx">Usuarios</a></li>
+              <li><a href="Administrador/Personas.aspx">Personas</a></li>    
+              <li><a href="Administrador/CambioContraseña.aspx">Cambiar Contraseña</a></li>
+              <li><a href="Administrador/Especialidad.aspx">Especialidades</a></li>
+              <li><a href="Administrador/Materias.aspx">Materias</a></li>
+              <li><a href="Administrador/Curso.aspx">Curso</a></li>
+              <li><a href="Productos.aspx">Otro2</a></li>        
+            </ul>
+          </div>
+              <br />
+              <br />
+          <div id="content" style="width:95%; height:100%">
+
+            <!-- insert the page content here -->
+            <asp:ContentPlaceHolder ID="PageContent" runat="server">
+                      
+            </asp:ContentPlaceHolder>  
+          </div>
+    </div>
+
+    <div id="footer" >
+      Copyright ©  Grupo32| <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">design from BeOrFl INC</a>
+    </div>
+  </div>
+
+</form>
+</body>
+
+</html>

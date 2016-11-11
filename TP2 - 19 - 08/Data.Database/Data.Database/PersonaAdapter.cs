@@ -190,6 +190,47 @@ namespace Data.Database
             }
         }
 
+        public Persona GetOnebyLegajo(int legajo)
+        {
+            Persona per = new Persona();
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdGetOnePersona = new SqlCommand("select * from Personas where legajo=@legajo ", SqlConn);
+                cmdGetOnePersona.Parameters.Add("@legajo", SqlDbType.Int).Value = legajo;
+                SqlDataReader drPersonas = cmdGetOnePersona.ExecuteReader();
+
+                if (drPersonas.Read())
+                {
+                    per.ID = (int)drPersonas["id_persona"];
+                    per.Nombre = (string)drPersonas["nombre"];
+                    per.Apellido = (string)drPersonas["apellido"];
+                    per.Direccion = (string)drPersonas["direccion"];
+                    per.Email = (string)drPersonas["email"];
+                    per.Telefono = (string)drPersonas["telefono"];
+                    per.FechaNac = (DateTime)drPersonas["fecha_nac"];
+                    per.Legajo = (int)drPersonas["legajo"];
+                    per.TipoPersona = (Util.Enumeradores.TiposPersonas)drPersonas["tipo_persona"];
+                    per.IdPlan = (int)drPersonas["id_plan"];
+
+                }
+
+                drPersonas.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar los datos de la persona.", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+
+
+            return per;
+        }
         public void Save(Persona persona)
         {
             if (persona.State == BusinessEntity.States.New)

@@ -12,7 +12,7 @@
                         <asp:BoundField HeaderText="Dirección" DataField="Direccion" />
                         <asp:BoundField HeaderText="Email" DataField="Email" />
                         <asp:BoundField HeaderText="Teléfono" DataField="Telefono" />
-                        <asp:BoundField HeaderText="Fecha de nacimiento" DataField="FechaNac" />
+                        <asp:BoundField HeaderText="Fecha de nacimiento" DataField="FechaNac" DataFormatString=" {0:d}" />
                         <asp:BoundField HeaderText="Legajo" DataField="Legajo" />
                         <asp:BoundField HeaderText="Plan" DataField="IdPlan" />
                         <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" />
@@ -28,7 +28,6 @@
                 </asp:GridView>
     </asp:Panel>
                
-
     <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="lblID" runat="server" Text="ID" Width="130px"></asp:Label>
         <asp:TextBox ID="txtId" runat="server" Height="16px" Width="210px"></asp:TextBox>
@@ -43,7 +42,7 @@
         <asp:TextBox ID="txtLegajo" runat="server" Height="16px" Width="210px"></asp:TextBox>
         <br />
         <asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha de nacimiento" Width="130px"></asp:Label>
-        <asp:TextBox ID="txtFechaNacimiento" runat="server" Height="16px" Width="210px"></asp:TextBox>
+        <asp:TextBox ID="txtFechaNacimiento" runat="server" Height="16px" Width="210px" TextMode="Date" ToolTip="15/10/2016"></asp:TextBox>
         <br />
         <asp:Label ID="lblDireccion" runat="server" Text="Dirección" Width="130px"></asp:Label>
         <asp:TextBox ID="txtDireccion" runat="server" Height="16px" Width="210px"></asp:TextBox>
@@ -66,14 +65,19 @@
         <asp:Label ID="lblMensaje" runat="server"></asp:Label>
     </asp:Panel>
 
+    <br />
+
     <asp:Panel ID="gridActionsPanel" runat="server">
-        <asp:LinkButton ID="lnkNuevo" runat="server" Text="Nuevo"></asp:LinkButton>
+        <asp:LinkButton ID="lnkNuevo" runat="server" Text="Nuevo" OnClick="lnkNuevo_Click"></asp:LinkButton>
         <asp:LinkButton ID="lnkEditar" runat="server" Text="Editar" OnClick="lnkEditar_Click"></asp:LinkButton>
-        <asp:LinkButton ID="lnkEliminar" runat="server" Text="Eliminar"></asp:LinkButton>
+        <asp:LinkButton ID="lnkEliminar" runat="server" Text="Eliminar" OnClick="lnkEliminar_Click"></asp:LinkButton>
     </asp:Panel>
+
+    <br />
+
     <asp:Panel ID="formActionsPanel" runat="server">
         <asp:LinkButton ID="lnkAceptar" runat="server" Text="Aceptar" OnClick="lnkAceptar_Click"></asp:LinkButton>
-        <asp:LinkButton ID="lnkCancelar" runat="server" Text="Cancelar"></asp:LinkButton>
+        <asp:LinkButton ID="lnkCancelar" runat="server" Text="Cancelar" OnClick="lnkCancelar_Click"></asp:LinkButton>
     </asp:Panel>
 
            

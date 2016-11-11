@@ -66,10 +66,11 @@ namespace Data.Database
                 {
                     Curso curso = new Curso();
                     curso.ID = (int)drCursos["id_curso"];
-                    curso.Descripcion = (string)drCursos["descripcion"];
-                    curso.IdComision = (int)drCursos["id_curso"];
+                    curso.IdComision = (int)drCursos["id_comision"];
                     curso.IdMAteria = (int)drCursos["id_materia"];
                     curso.AnioCalendario = (int)drCursos["anio_calendario"];
+                    curso.Cupo = (int)drCursos["cupo"];
+                    curso.Descripcion = (string)drCursos["descripcion"];
 
                     cursos.Add(curso);
                 }
@@ -77,7 +78,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al intentarrecuperar lista de especialidades", Ex);
+                Exception ExcepcionManejada = new Exception("Error al intentar recuperar lista de cursos", Ex);
                 throw ExcepcionManejada;
             }
             finally
@@ -121,14 +122,14 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand("UPDATE cursos SET anio_calendario=@anio,cupo=@cupo,id_comision=@id_comision,id_materia=@id_materia,descripcion=@descripcion" +
-                                                    " WHERE id_=@id", SqlConn);
+                                                    " WHERE id_curso=@id", SqlConn);
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int, 50).Value = curso.ID;
                 cmdSave.Parameters.Add("@anio", SqlDbType.VarChar, 50).Value = curso.AnioCalendario;
                 cmdSave.Parameters.Add("@cupo", SqlDbType.Int, 50).Value = curso.Cupo;
                 cmdSave.Parameters.Add("@id_comision", SqlDbType.Int, 50).Value = curso.IdComision;
                 cmdSave.Parameters.Add("@id_materia", SqlDbType.Int, 50).Value = curso.IdMAteria;
-                cmdSave.Parameters.Add("@desc", SqlDbType.VarChar, 50).Value = curso.Descripcion;
+                cmdSave.Parameters.Add("@descripcion", SqlDbType.VarChar, 50).Value = curso.Descripcion;
 
                 cmdSave.ExecuteNonQuery();
                 

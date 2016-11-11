@@ -1,85 +1,80 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Personas.aspx.cs" Inherits="WebUI.Administrador.Persona" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Personas.aspx.cs" Inherits="WebUI.Administrador.Personas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="PageHeader" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            width: 182px;
-        }
-    </style>
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
-    <table style="width:100%;">
-        <tr>
-            <td style="height: 90px; " colspan="2">
-                <asp:ObjectDataSource ID="odsAlumnos" runat="server" SelectMethod="GetAll" TypeName="Business.Logic.PersonaLogic">
-                    <SelectParameters>
-                        <asp:ControlParameter ControlID="cmbRol" DefaultValue="" Name="tipoPersona" PropertyName="SelectedValue" Type="Object" />
-                    </SelectParameters>
-                </asp:ObjectDataSource>
-                <asp:GridView ID="dgvAlumnos" runat="server" DataSourceID="odsAlumnos" AutoGenerateColumns="False">
-                    <Columns>
-                        <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
-                        <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                        <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />
-                        <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-                        <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
-                        <asp:BoundField DataField="IdPlan" HeaderText="IdPlan" SortExpression="IdPlan" />
-                        <asp:BoundField DataField="Legajo" HeaderText="Legajo" SortExpression="Legajo" />
-                        <asp:BoundField DataField="FechaNac" HeaderText="FechaNac" SortExpression="FechaNac" />
-                        <asp:BoundField DataField="TipoPersona" HeaderText="TipoPersona" SortExpression="TipoPersona" />
-                        <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" />
-                        <asp:BoundField DataField="State" HeaderText="State" SortExpression="State" />
-                    </Columns>
-                </asp:GridView>
 
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style1">&nbsp;<asp:Label ID="lblID" runat="server" Text="ID"></asp:Label></td>
-            <td>&nbsp;<asp:TextBox ID="txtId" runat="server" Height="16px" Width="210px"></asp:TextBox></td>
-        </tr>
-        <tr>
-            <td class="auto-style1">&nbsp;<asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label></td>
-            <td>&nbsp;<asp:TextBox ID="txtNombre" runat="server" Height="16px" Width="210px"></asp:TextBox></td>
-        </tr>
-        <tr>
-            <td class="auto-style1">&nbsp;<asp:Label ID="lblApellido" runat="server" Text="Apellido"></asp:Label></td>
-            <td>&nbsp;<asp:TextBox ID="txtApellido" runat="server" Height="16px" Width="210px"></asp:TextBox></td>
-        </tr>
-        <tr>
-            <td class="auto-style1">&nbsp;<asp:Label ID="lblLegajo" runat="server" Text="Legajo"></asp:Label></td>
-            <td>&nbsp;<asp:TextBox ID="txtLegajo" runat="server" Height="16px" Width="210px"></asp:TextBox></td>
-        </tr>
-        <tr>
-            <td class="auto-style1">&nbsp;<asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha de nacimiento"></asp:Label></td>
-            <td>&nbsp;<asp:TextBox ID="txtFechaNacimiento" runat="server" Height="16px" Width="210px"></asp:TextBox></td>
-        </tr>
-        <tr>
-            <td class="auto-style1">&nbsp;<asp:Label ID="lblDireccion" runat="server" Text="Dirección"></asp:Label></td>
-            <td>&nbsp;<asp:TextBox ID="txtDireccion" runat="server" Height="16px" Width="210px"></asp:TextBox></td>
-        </tr>
-                <tr>
-            <td class="auto-style1">&nbsp;<asp:Label ID="lblTelefono" runat="server" Text="Teléfono"></asp:Label></td>
-            <td>&nbsp;<asp:TextBox ID="txtTelefono" runat="server" Height="16px" Width="210px"></asp:TextBox></td>
-        </tr>
-        <tr>
-            <td class="auto-style1">&nbsp;<asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label></td>
-            <td>&nbsp;<asp:TextBox ID="txtEmail" runat="server" Height="16px" Width="210px"></asp:TextBox></td>
-        </tr>
-        <tr>
-            <td class="auto-style1">&nbsp;<asp:Label ID="lblPlan" runat="server" Text="Plan"></asp:Label></td>
-            <td>&nbsp;<asp:DropDownList ID="cmbPlan" runat="server" Height="20px" Width="214px"></asp:DropDownList></td>
-        </tr>
-        <tr>
-            <td class="auto-style1">&nbsp;<asp:Label ID="lblRol" runat="server" Text="Rol"></asp:Label></td>
-            <td>&nbsp;<asp:DropDownList ID="cmbRol" runat="server" Height="20px" Width="214px"></asp:DropDownList></td>
-        </tr>
-        <tr>
-            <td class="auto-style1">&nbsp;</td>
-            <td>
-                <asp:Button ID="btnNuevo" runat="server" Text="Nuevo" Height="26px" Width="59px" OnClick="btnNuevo_Click" />
-                <asp:Button ID="btnEditar" runat="server" Text="Editar" Height="26px" Width="59px" OnClick="btnEditar_Click" />
-                <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" Height="25px" Width="59px" OnClick="btnEliminar_Click" />
-            </td>
-        </tr>
-    </table>
+    <asp:Panel ID="gridPanel" runat="server" HorizontalAlign="Center">
+         <asp:GridView ID="dgvPersonas" runat="server" Width="810px" AutoGenerateColumns="False" DataKeyNames="ID" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" CellSpacing="2" ForeColor="Black" GridLines="None" OnSelectedIndexChanged="dgvPersonas_SelectedIndexChanged">
+                    <AlternatingRowStyle BackColor="PaleGoldenrod" />
+                    <Columns>
+                        <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
+                        <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
+                        <asp:BoundField HeaderText="Dirección" DataField="Direccion" />
+                        <asp:BoundField HeaderText="Email" DataField="Email" />
+                        <asp:BoundField HeaderText="Teléfono" DataField="Telefono" />
+                        <asp:BoundField HeaderText="Fecha de nacimiento" DataField="FechaNac" />
+                        <asp:BoundField HeaderText="Legajo" DataField="Legajo" />
+                        <asp:BoundField HeaderText="Plan" DataField="IdPlan" />
+                        <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" />
+                    </Columns>
+                    <FooterStyle BackColor="Tan" />
+                    <HeaderStyle BackColor="Tan" Font-Bold="True" />
+                    <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+                    <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+                    <SortedAscendingCellStyle BackColor="#FAFAE7" />
+                    <SortedAscendingHeaderStyle BackColor="#DAC09E" />
+                    <SortedDescendingCellStyle BackColor="#E1DB9C" />
+                    <SortedDescendingHeaderStyle BackColor="#C2A47B" />
+                </asp:GridView>
+    </asp:Panel>
+               
+
+    <asp:Panel ID="formPanel" Visible="false" runat="server">
+        <asp:Label ID="lblID" runat="server" Text="ID" Width="130px"></asp:Label>
+        <asp:TextBox ID="txtId" runat="server" Height="16px" Width="210px"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblNombre" runat="server" Text="Nombre" Width="130px"></asp:Label>
+        <asp:TextBox ID="txtNombre" runat="server" Height="16px" Width="210px"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblApellido" runat="server" Text="Apellido" Width="130px"></asp:Label>
+        <asp:TextBox ID="txtApellido" runat="server" Height="16px" Width="210px"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblLegajo" runat="server" Text="Legajo" Width="130px"></asp:Label>
+        <asp:TextBox ID="txtLegajo" runat="server" Height="16px" Width="210px"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha de nacimiento" Width="130px"></asp:Label>
+        <asp:TextBox ID="txtFechaNacimiento" runat="server" Height="16px" Width="210px"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblDireccion" runat="server" Text="Dirección" Width="130px"></asp:Label>
+        <asp:TextBox ID="txtDireccion" runat="server" Height="16px" Width="210px"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblTelefono" runat="server" Text="Teléfono" Width="130px"></asp:Label>
+        <asp:TextBox ID="txtTelefono" runat="server" Height="16px" Width="210px"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblEmail" runat="server" Text="Email" Width="130px"></asp:Label>
+        <asp:TextBox ID="txtEmail" runat="server" Height="16px" Width="210px"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblPlan" runat="server" Text="Plan" Width="130px"></asp:Label>
+        <asp:DropDownList ID="cmbPlan" runat="server" Height="20px" Width="214px" DataSourceID="ObjectGetPlanes" DataTextField="Descripcion" DataValueField="ID"></asp:DropDownList>
+        <asp:ObjectDataSource ID="ObjectGetPlanes" runat="server" SelectMethod="GetAll" TypeName="Business.Logic.PlanLogic"></asp:ObjectDataSource>
+        <br />
+        <asp:Label ID="lblRol" runat="server" Text="Rol" Width="130px"></asp:Label>
+        <asp:DropDownList ID="cmbRol" runat="server" Height="20px" Width="214px">
+        </asp:DropDownList>
+        <br />
+        <br />
+        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+    </asp:Panel>
+
+    <asp:Panel ID="gridActionsPanel" runat="server">
+        <asp:LinkButton ID="lnkNuevo" runat="server" Text="Nuevo"></asp:LinkButton>
+        <asp:LinkButton ID="lnkEditar" runat="server" Text="Editar" OnClick="lnkEditar_Click"></asp:LinkButton>
+        <asp:LinkButton ID="lnkEliminar" runat="server" Text="Eliminar"></asp:LinkButton>
+    </asp:Panel>
+    <asp:Panel ID="formActionsPanel" runat="server">
+        <asp:LinkButton ID="lnkAceptar" runat="server" Text="Aceptar" OnClick="lnkAceptar_Click"></asp:LinkButton>
+        <asp:LinkButton ID="lnkCancelar" runat="server" Text="Cancelar"></asp:LinkButton>
+    </asp:Panel>
+
+           
 </asp:Content>

@@ -10,7 +10,12 @@
         </tr>
         <tr>
             <td>&nbsp;<asp:Label ID="lblPlan" runat="server" Text="Plan:"></asp:Label></td>
-            <td>&nbsp;<asp:DropDownList ID="ddlPlan" runat="server"></asp:DropDownList></td>   
+            <td>&nbsp;<asp:DropDownList ID="ddlPlan" runat="server" DataSourceID="ObjectDataSource1" DataTextField="Descripcion" DataValueField="Descripcion"></asp:DropDownList>
+                
+                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetAll" TypeName="Business.Logic.PlanLogic"></asp:ObjectDataSource>
+                
+                <asp:SqlDataSource ID="sqlDS" runat="server" ConnectionString="<%$ ConnectionStrings:ConnStringFlor %>" SelectCommand="SELECT * FROM [planes]"></asp:SqlDataSource>
+            </td>   
         </tr>
         <tr>
             <td>&nbsp;<asp:Label ID="lblDescripcion" runat="server" Text="Descripcion:"></asp:Label></td>

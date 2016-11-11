@@ -10,25 +10,34 @@
 namespace WebUI.Administrador {
     
     
-    public partial class Persona {
+    public partial class Personas {
         
         /// <summary>
-        /// Control odsAlumnos.
+        /// Control gridPanel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource odsAlumnos;
+        protected global::System.Web.UI.WebControls.Panel gridPanel;
         
         /// <summary>
-        /// Control dgvAlumnos.
+        /// Control dgvPersonas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvAlumnos;
+        protected global::System.Web.UI.WebControls.GridView dgvPersonas;
+        
+        /// <summary>
+        /// Control formPanel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel formPanel;
         
         /// <summary>
         /// Control lblID.
@@ -193,6 +202,15 @@ namespace WebUI.Administrador {
         protected global::System.Web.UI.WebControls.DropDownList cmbPlan;
         
         /// <summary>
+        /// Control ObjectGetPlanes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectGetPlanes;
+        
+        /// <summary>
         /// Control lblRol.
         /// </summary>
         /// <remarks>
@@ -211,30 +229,75 @@ namespace WebUI.Administrador {
         protected global::System.Web.UI.WebControls.DropDownList cmbRol;
         
         /// <summary>
-        /// Control btnNuevo.
+        /// Control lblMensaje.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNuevo;
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
         
         /// <summary>
-        /// Control btnEditar.
+        /// Control gridActionsPanel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditar;
+        protected global::System.Web.UI.WebControls.Panel gridActionsPanel;
         
         /// <summary>
-        /// Control btnEliminar.
+        /// Control lnkNuevo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminar;
+        protected global::System.Web.UI.WebControls.LinkButton lnkNuevo;
+        
+        /// <summary>
+        /// Control lnkEditar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkEditar;
+        
+        /// <summary>
+        /// Control lnkEliminar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkEliminar;
+        
+        /// <summary>
+        /// Control formActionsPanel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel formActionsPanel;
+        
+        /// <summary>
+        /// Control lnkAceptar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkAceptar;
+        
+        /// <summary>
+        /// Control lnkCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkCancelar;
     }
 }

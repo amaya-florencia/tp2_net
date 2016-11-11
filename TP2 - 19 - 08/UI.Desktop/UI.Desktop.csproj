@@ -116,7 +116,7 @@
     <Compile Include="PersonaABM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PersonaABM.Designer.cs">
+    <Compile Include="PersonaABM.designer.cs">
       <DependentUpon>PersonaABM.cs</DependentUpon>
     </Compile>
     <Compile Include="PersonaAlta.cs">

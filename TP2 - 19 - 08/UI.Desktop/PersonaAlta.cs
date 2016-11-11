@@ -15,43 +15,48 @@ namespace UI.Desktop
 {
     public partial class PersonaAlta : ApplicationForm
     {
-        public PersonaAlta(Enum tipoPer) : this()
-        {          
-            Enum tipoPersona = tipoPer;
-            //this.cmbTipoPersona.DisplayMember = tipoPer.ToString();
-            this.cmbTipoPersona.Text = tipoPer.ToString();
+        public PersonaAlta(Enumeradores.TiposPersonas tipoPer) : this()
+        {
+            
+            //this.cmbTipoPersona.Text = tipoPer.ToString();
 
             this.txtTipoPersona.Text = tipoPer.ToString();
 
-          // this.cmbTipoPersona.Enabled = false;
+            // this.cmbTipoPersona.Enabled = false;
             this.txtTipoPersona.Text = tipoPer.ToString();
             this.txtTipoPersona.Enabled = false;
-           
+
         }
         public PersonaAlta()
         {
             InitializeComponent();
+            cargarCombos();
         }
 
-       public PersonaAlta(int ID, ModoForm modo, Enum tipoPer) : this()
+        private void cargarCombos()
         {
-            this.cmbTipoPersona.Text = tipoPer.ToString();
-            this.cmbTipoPersona.Enabled = false;
-
-            Modo = modo;
-            PersonaLogic personaLogic = new PersonaLogic();
-            try
-            {
-                this.PersonaActual = personaLogic.GetOne(ID);
-                this.MapearDeDatos();
-            }
-            catch (Exception e)
-            {
-                this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            cmbTipoPersona.DataSource = Enum.GetNames(typeof(Util.Enumeradores.TiposPersonas));
         }
 
-        
+        public PersonaAlta(int ID, ModoForm modo, Enumeradores.TiposPersonas tipoPer) : this()
+        {
+            if (modo == ModoForm.Modificacion || modo == ModoForm.Baja)
+            {                
+                Modo = modo;
+                PersonaLogic personaLogic = new PersonaLogic();
+                try
+                {
+                    this.PersonaActual = personaLogic.GetOne(ID);
+                    this.MapearDeDatos();
+                }
+                catch (Exception e)
+                {
+                    this.Notificar(this.Text, e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+           
+        }
+
         private Persona _personaActual;
         public Persona PersonaActual
         {
@@ -65,12 +70,13 @@ namespace UI.Desktop
             this.txtNombre.Text = this.PersonaActual.Nombre;
             this.txtApellido.Text = this.PersonaActual.Apellido;
             this.dtpFechaNacimiento.Value = this.PersonaActual.FechaNac;
-            this.txtLegajo.Text = this.PersonaActual.Legajo.ToString();
+            this.udLegajo.Value = this.PersonaActual.Legajo;
             this.txtDireccion.Text = this.PersonaActual.Direccion;
             this.txtTelefono.Text = this.PersonaActual.Telefono;
             this.txtEmail.Text = this.PersonaActual.Email;
             this.cmbPlan.Text = this.PersonaActual.IdPlan.ToString();
-            this.cmbTipoPersona.Text = this.PersonaActual.TipoPersona.ToString();
+            this.txtTipoPersona.Text = this.PersonaActual.TipoPersona.ToString();
+            this.cmbTipoPersona.SelectedIndex = (int)this.PersonaActual.TipoPersona;
 
             if ((Modo == ModoForm.Alta) || (Modo == ModoForm.Modificacion))
             {
@@ -91,47 +97,35 @@ namespace UI.Desktop
 
             if (Modo == ModoForm.Alta)
             {
-                Persona per = new Persona();
-                this.PersonaActual = per;
+                PersonaActual = new Persona();
+                PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)this.cmbTipoPersona.SelectedIndex;
 
+            }
+
+            if ((Modo == ModoForm.Alta || Modo == ModoForm.Modificacion))
+            {
                 PersonaActual.Nombre = this.txtNombre.Text;
                 PersonaActual.Apellido = this.txtApellido.Text;
                 PersonaActual.FechaNac = this.dtpFechaNacimiento.Value;
-                PersonaActual.Legajo = Convert.ToInt32(this.txtLegajo.Text);
+                PersonaActual.Legajo = Convert.ToInt32(this.udLegajo.Value);
                 PersonaActual.Direccion = this.txtDireccion.Text;
                 PersonaActual.Telefono = this.txtTelefono.Text;
                 PersonaActual.Email = this.txtEmail.Text;
                 PersonaActual.IdPlan = Convert.ToInt32(this.cmbPlan.SelectedValue);
-                PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)this.cmbTipoPersona.SelectedItem;
-                
-
-                PersonaActual.State = Usuario.States.New;
+                PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)this.cmbTipoPersona.SelectedIndex;
             }
-
-            if (Modo == ModoForm.Modificacion)
+            switch (this.Modo)
             {
-                PersonaActual.ID = Convert.ToInt32(this.txtId.Text);
-                PersonaActual.Nombre = this.txtNombre.Text;
-                PersonaActual.Apellido = this.txtApellido.Text;
-                PersonaActual.FechaNac = this.dtpFechaNacimiento.Value;
-                PersonaActual.Legajo = Int32.Parse(this.txtLegajo.Text);
-                PersonaActual.Direccion = this.txtDireccion.Text;
-                PersonaActual.Telefono = this.txtTelefono.Text;
-                PersonaActual.Email = this.txtEmail.Text;
-                PersonaActual.IdPlan = Convert.ToInt32(this.cmbPlan.SelectedValue);
-                PersonaActual.TipoPersona = (Enumeradores.TiposPersonas)this.cmbTipoPersona.SelectedItem;
-
-                PersonaActual.State = Usuario.States.Modified;
+                case ModoForm.Alta:
+                    PersonaActual.State = BusinessEntity.States.New;
+                    break;
+                case ModoForm.Modificacion:
+                    PersonaActual.State = BusinessEntity.States.Modified;
+                    break;
+                case ModoForm.Baja:
+                    PersonaActual.State = BusinessEntity.States.Deleted;
+                    break;
             }
-            if (Modo == ModoForm.Consulta)
-            {
-                PersonaActual.State = Usuario.States.Unmodified;
-            }
-            if (Modo == ModoForm.Baja)
-            {
-                PersonaActual.State = Usuario.States.Deleted;
-            }
-
         }
 
         public virtual void GuardarCambios()
@@ -153,7 +147,7 @@ namespace UI.Desktop
                     this.Notificar(e.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
+
         }
 
         public virtual bool Validar()
@@ -167,26 +161,12 @@ namespace UI.Desktop
             if (txtApellido.Text.Trim() == "")
                 mensaje += "El apellido no puede estar en blanco." + "\n";
             
-            /* Esto sí puede estar en blanco según la BD
-             
-            if (string.IsNullOrEmpty(txtDireccion.Text.Trim()))
-                mensaje += "La direccion no puede estar en blanco." + "\n";
-            if (string.IsNullOrEmpty(txtEmail.Text.Trim()))
-                mensaje += "El email no puede estar en blanco." + "\n";
-            if (!util.validarMail(txtEmail.Text))
-                mensaje += "El email no tiene el formato correcto" + "\n";
-            if (string.IsNullOrEmpty(txtTelefono.Text.Trim()))
-                mensaje += "El teléfono no puede estar en blanco." + "\n";
-            if (string.IsNullOrEmpty(txtLegajo.Text.Trim()))
-                mensaje += "El legajo no puede estar en blanco." + "\n";
-            if (string.IsNullOrEmpty(txtFechaNac.Text.Trim()))
-                 mensaje += "La fecha de naciomiento no puede estar en blanco." + "\n";*/
-            
+
             if (String.IsNullOrEmpty(this.dtpFechaNacimiento.Text))
             {
                 mensaje += "- Complete la fecha de nacimiento\n";
             }
-           
+
             if (!string.IsNullOrEmpty(mensaje))
             {
                 this.Notificar(mensaje, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -199,9 +179,17 @@ namespace UI.Desktop
             return valida;
         }
 
-
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private void PersonaAlta_Load_1(object sender, EventArgs e)
         {
+            PlanLogic pl = new PlanLogic();
+            cmbPlan.DataSource = pl.GetAll();
+            cmbPlan.DisplayMember = "Descripcion";
+            cmbPlan.ValueMember = "Id";
+        }
+
+        private void btnAceptar_Click_1(object sender, EventArgs e)
+        {
+
             if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
             {
                 bool valida = this.Validar();
@@ -221,23 +209,6 @@ namespace UI.Desktop
                     this.Close();
                 }
             }
-
-        }
-
-        private void PersonaAlta_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'academia2DataSet1.planes' Puede moverla o quitarla según sea necesario.
-            this.planesTableAdapter1.Fill(this.academia2DataSet1.planes);
-            // TODO: esta línea de código carga datos en la tabla 'academia2DataSet.planes' Puede moverla o quitarla según sea necesario.
-            this.planesTableAdapter.Fill(this.academia2DataSet.planes);
-
-            cmbTipoPersona.DataSource = Enum.GetValues(typeof(Util.Enumeradores.TiposPersonas));
-
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

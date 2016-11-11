@@ -24,9 +24,6 @@ namespace UI.Desktop
             else
             {
                 Application.Exit();
-
-                Application.Run(new Main());
-
             }
         }
     }

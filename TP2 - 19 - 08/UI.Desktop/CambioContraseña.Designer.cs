@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblContraseña = new System.Windows.Forms.Label();
             this.lblNuevaContraseña = new System.Windows.Forms.Label();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtClave = new System.Windows.Forms.TextBox();
+            this.txtConfirmar = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblContraseña = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,8 +44,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.lblNuevaContraseña, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtContraseña, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtClave, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtConfirmar, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblContraseña, 0, 0);
@@ -58,16 +58,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(411, 103);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // lblContraseña
-            // 
-            this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(3, 0);
-            this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(102, 13);
-            this.lblContraseña.TabIndex = 0;
-            this.lblContraseña.Text = "Nueva Contraseña: ";
-            this.lblContraseña.Click += new System.EventHandler(this.label1_Click);
-            // 
             // lblNuevaContraseña
             // 
             this.lblNuevaContraseña.AutoSize = true;
@@ -77,19 +67,19 @@
             this.lblNuevaContraseña.TabIndex = 1;
             this.lblNuevaContraseña.Text = "Confirmar Nueva Contraseña:";
             // 
-            // txtContraseña
+            // txtClave
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(208, 3);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(100, 20);
-            this.txtContraseña.TabIndex = 2;
+            this.txtClave.Location = new System.Drawing.Point(208, 3);
+            this.txtClave.Name = "txtClave";
+            this.txtClave.Size = new System.Drawing.Size(100, 20);
+            this.txtClave.TabIndex = 2;
             // 
-            // textBox2
+            // txtConfirmar
             // 
-            this.textBox2.Location = new System.Drawing.Point(208, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtConfirmar.Location = new System.Drawing.Point(208, 35);
+            this.txtConfirmar.Name = "txtConfirmar";
+            this.txtConfirmar.Size = new System.Drawing.Size(100, 20);
+            this.txtConfirmar.TabIndex = 3;
             // 
             // btnAceptar
             // 
@@ -99,6 +89,7 @@
             this.btnAceptar.TabIndex = 4;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -108,6 +99,15 @@
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // lblContraseña
+            // 
+            this.lblContraseña.AutoSize = true;
+            this.lblContraseña.Location = new System.Drawing.Point(3, 0);
+            this.lblContraseña.Name = "lblContraseña";
+            this.lblContraseña.Size = new System.Drawing.Size(102, 13);
+            this.lblContraseña.TabIndex = 0;
+            this.lblContraseña.Text = "Nueva Contraseña: ";
             // 
             // CambioContraseña
             // 
@@ -128,8 +128,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblContraseña;
         private System.Windows.Forms.Label lblNuevaContraseña;
-        private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtClave;
+        private System.Windows.Forms.TextBox txtConfirmar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
     }

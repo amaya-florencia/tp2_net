@@ -68,11 +68,9 @@ namespace UI.Desktop
                 CursoActual = new Curso();
             }
             if (this.Modo == ApplicationForm.ModoForm.Alta || this.Modo == ApplicationForm.ModoForm.Modificacion)
-            {
-
-                
+            {  
                 CursoActual.IdMAteria = (int)this.cmbMaterias.SelectedValue;
-                //CursoActual.IdComision = (int)this.cmbComisiones.SelectedValue);
+                CursoActual.IdComision = (int)(this.cmbComisiones.SelectedValue);
                 CursoActual.AnioCalendario = Convert.ToInt32(this.udAnio.Value);
                 CursoActual.Cupo = Convert.ToInt32(this.udCupo.Value);
                 CursoActual.Descripcion = this.txtDescripcion.Text;
@@ -96,7 +94,7 @@ namespace UI.Desktop
         {
             this.txtIDCurso.Text = this.CursoActual.ID.ToString();
             this.cmbMaterias.SelectedValue = this.CursoActual.IdMAteria;
-            //this.cmbComisiones.SelectedValue = this.CursoActual.IdComision;
+            this.cmbComisiones.SelectedValue = this.CursoActual.IdComision;
             this.udAnio.Value = this.CursoActual.AnioCalendario;
             this.udCupo.Value = this.CursoActual.Cupo;
             this.txtDescripcion.Text = this.CursoActual.Descripcion.ToString();
@@ -109,7 +107,7 @@ namespace UI.Desktop
                     break;
                 case ModoForm.Baja:
                     this.txtDescripcion.ReadOnly = true;
-                    this.Text = "Baja de Cursp";
+                    this.Text = "Baja de Curso";
                     btnAceptar.Text = "Eliminar";
                     break;
             }
@@ -149,10 +147,10 @@ namespace UI.Desktop
             cmbMaterias.DataSource = ml.GetAll();
             cmbMaterias.DisplayMember = "Descripcion";
             cmbMaterias.ValueMember = "Id";
-            //ComisionesLogic cl = new ComisionesLogic();
-            //cmbComisiones.DataSource = cl.GetAll();
-            //cmbComisiones.DisplayMember = "Descripcion";
-            //cmbComisiones.ValueMember = "Id";
+            ComisionLogic cl = new ComisionLogic();
+            cmbComisiones.DataSource = cl.GetAll();
+            cmbComisiones.DisplayMember = "Descripcion";
+            cmbComisiones.ValueMember = "Id";
         }
 
 

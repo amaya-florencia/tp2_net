@@ -27,8 +27,7 @@ namespace UI.Desktop
 
         private void lnkOlvidaPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("Es Ud. un usuario muy descuidado, haga memoria", "Olvidé mi contraseña",
-             MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show("Es Ud. un usuario muy descuidado, haga memoria", "Olvidé mi contraseña", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
         }
         public void ValidaLogin()

@@ -12,17 +12,17 @@ namespace Business.Logic
     public class PersonaLogic : BusinessLogic
     {
         PersonaAdapter _PersonaData;
-       /* public PersonaAdapter PersonaData
-        {
-            get { return _PersonaData; }
-            set { _PersonaData = value; }
-        }*/
+        /* public PersonaAdapter PersonaData
+         {
+             get { return _PersonaData; }
+             set { _PersonaData = value; }
+         }*/
 
         public PersonaLogic()
         {
-            
-        }
 
+        }
+     
         PersonaAdapter PersonaData = new PersonaAdapter();
         public List<Persona> GetAll(Enum tipoPersona)
         {
@@ -49,6 +49,10 @@ namespace Business.Logic
         public void Save(Persona per)
         {
             PersonaData.Save(per);
+        }
+        public Persona GetOnebyLegajo(int legajo)
+        {
+            return PersonaData.GetOnebyLegajo(legajo);
         }
     }
 }

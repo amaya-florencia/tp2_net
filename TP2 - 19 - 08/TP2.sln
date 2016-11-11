@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Database", "Data.Datab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IU.Console", "IU.Console\IU.Console.csproj", "{EFD5E330-EC1B-40BF-B635-DDAC065E166B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI_Web", "UI_Web\UI_Web.csproj", "{B8E30CFE-F433-4680-B7FD-3C8A1847D097}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Web", "WebUI\UI.Web.csproj", "{7A254484-DDE4-447F-A4EA-CB735C74BB0F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Imagenes", "Imagenes", "{B4E48B2D-A8AB-4964-ADEC-55178509B58E}"
 	ProjectSection(SolutionItems) = preProject
@@ -54,10 +54,10 @@ Global
 		{EFD5E330-EC1B-40BF-B635-DDAC065E166B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFD5E330-EC1B-40BF-B635-DDAC065E166B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFD5E330-EC1B-40BF-B635-DDAC065E166B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8E30CFE-F433-4680-B7FD-3C8A1847D097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8E30CFE-F433-4680-B7FD-3C8A1847D097}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8E30CFE-F433-4680-B7FD-3C8A1847D097}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8E30CFE-F433-4680-B7FD-3C8A1847D097}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A254484-DDE4-447F-A4EA-CB735C74BB0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A254484-DDE4-447F-A4EA-CB735C74BB0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A254484-DDE4-447F-A4EA-CB735C74BB0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A254484-DDE4-447F-A4EA-CB735C74BB0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

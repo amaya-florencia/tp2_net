@@ -47,6 +47,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumosInscripcionesAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlumosInscripcionesAlta.Designer.cs">
+      <DependentUpon>AlumosInscripcionesAlta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComisionAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComisionAlta.Designer.cs">
+      <DependentUpon>ComisionAlta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComisionesABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComisionesABM.Designer.cs">
+      <DependentUpon>ComisionesABM.cs</DependentUpon>
+    </Compile>
     <Compile Include="CursosABM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +113,18 @@
     <Compile Include="MateriasAlta.Designer.cs">
       <DependentUpon>MateriasAlta.cs</DependentUpon>
     </Compile>
+    <Compile Include="PersonaABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonaABM.designer.cs">
+      <DependentUpon>PersonaABM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonaAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonaAlta.Designer.cs">
+      <DependentUpon>PersonaAlta.cs</DependentUpon>
+    </Compile>
     <Compile Include="PlanABM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,12 +142,6 @@
     </Compile>
     <Compile Include="UsuarioAlta.Designer.cs">
       <DependentUpon>UsuarioAlta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AlumnoAlta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AlumnoAlta.Designer.cs">
-      <DependentUpon>AlumnoAlta.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -139,6 +163,15 @@
     <Compile Include="UsuariosABM.designer.cs">
       <DependentUpon>UsuariosABM.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AlumosInscripcionesAlta.resx">
+      <DependentUpon>AlumosInscripcionesAlta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComisionAlta.resx">
+      <DependentUpon>ComisionAlta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComisionesABM.resx">
+      <DependentUpon>ComisionesABM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CursosABM.resx">
       <DependentUpon>CursosABM.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +196,12 @@
     <EmbeddedResource Include="MateriasAlta.resx">
       <DependentUpon>MateriasAlta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PersonaABM.resx">
+      <DependentUpon>PersonaABM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonaAlta.resx">
+      <DependentUpon>PersonaAlta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlanABM.resx">
       <DependentUpon>PlanABM.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,9 +210,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UsuarioAlta.resx">
       <DependentUpon>UsuarioAlta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AlumnoAlta.resx">
-      <DependentUpon>AlumnoAlta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

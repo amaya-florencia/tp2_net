@@ -28,374 +28,306 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.tlpProfesor = new System.Windows.Forms.TableLayoutPanel();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.lblId = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.lblApellido = new System.Windows.Forms.Label();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.lblFechaNac = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblDireccion = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.lblLegajo = new System.Windows.Forms.Label();
-            this.txtLegajo = new System.Windows.Forms.TextBox();
-            this.lblPlan = new System.Windows.Forms.Label();
-            this.cmbPlan = new System.Windows.Forms.ComboBox();
-            this.planesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.academia2DataSet1 = new UI.Desktop.academia2DataSet1();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtTipoPersona = new System.Windows.Forms.TextBox();
-            this.tiposPersonasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.academia2DataSet = new UI.Desktop.academia2DataSet();
-            this.planesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.planesTableAdapter = new UI.Desktop.academia2DataSetTableAdapters.planesTableAdapter();
-            this.planesTableAdapter1 = new UI.Desktop.academia2DataSet1TableAdapters.planesTableAdapter();
             this.cmbTipoPersona = new System.Windows.Forms.ComboBox();
-            this.tlpProfesor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposPersonasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).BeginInit();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.cmbPlan = new System.Windows.Forms.ComboBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.udLegajo = new System.Windows.Forms.NumericUpDown();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.udLegajo)).BeginInit();
             this.SuspendLayout();
             // 
-            // tlpProfesor
+            // tableLayoutPanel1
             // 
-            this.tlpProfesor.AutoScroll = true;
-            this.tlpProfesor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tlpProfesor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tlpProfesor.ColumnCount = 4;
-            this.tlpProfesor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpProfesor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlpProfesor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tlpProfesor.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tlpProfesor.Controls.Add(this.lblNombre, 0, 1);
-            this.tlpProfesor.Controls.Add(this.btnCancelar, 3, 5);
-            this.tlpProfesor.Controls.Add(this.btnAceptar, 2, 5);
-            this.tlpProfesor.Controls.Add(this.txtId, 1, 0);
-            this.tlpProfesor.Controls.Add(this.lblId, 0, 0);
-            this.tlpProfesor.Controls.Add(this.txtApellido, 3, 1);
-            this.tlpProfesor.Controls.Add(this.lblApellido, 2, 1);
-            this.tlpProfesor.Controls.Add(this.lblTelefono, 2, 3);
-            this.tlpProfesor.Controls.Add(this.txtTelefono, 3, 3);
-            this.tlpProfesor.Controls.Add(this.lblFechaNac, 0, 2);
-            this.tlpProfesor.Controls.Add(this.txtNombre, 1, 1);
-            this.tlpProfesor.Controls.Add(this.dtpFechaNacimiento, 1, 2);
-            this.tlpProfesor.Controls.Add(this.btnBuscar, 2, 0);
-            this.tlpProfesor.Controls.Add(this.txtEmail, 1, 4);
-            this.tlpProfesor.Controls.Add(this.lblEmail, 0, 4);
-            this.tlpProfesor.Controls.Add(this.lblDireccion, 0, 3);
-            this.tlpProfesor.Controls.Add(this.txtDireccion, 1, 3);
-            this.tlpProfesor.Controls.Add(this.lblLegajo, 2, 2);
-            this.tlpProfesor.Controls.Add(this.txtLegajo, 3, 2);
-            this.tlpProfesor.Controls.Add(this.lblPlan, 2, 4);
-            this.tlpProfesor.Controls.Add(this.cmbPlan, 3, 4);
-            this.tlpProfesor.Controls.Add(this.txtTipoPersona, 1, 5);
-            this.tlpProfesor.Controls.Add(this.cmbTipoPersona, 3, 0);
-            this.tlpProfesor.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.tlpProfesor.Location = new System.Drawing.Point(12, 12);
-            this.tlpProfesor.Name = "tlpProfesor";
-            this.tlpProfesor.RowCount = 6;
-            this.tlpProfesor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
-            this.tlpProfesor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
-            this.tlpProfesor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
-            this.tlpProfesor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
-            this.tlpProfesor.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
-            this.tlpProfesor.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlpProfesor.Size = new System.Drawing.Size(665, 239);
-            this.tlpProfesor.TabIndex = 3;
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 141F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtId, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtNombre, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dtpFechaNacimiento, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtDireccion, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtEmail, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtTipoPersona, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.cmbTipoPersona, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtApellido, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtTelefono, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cmbPlan, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label9, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.udLegajo, 3, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.10126F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.89874F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(590, 213);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // lblNombre
+            // label1
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(3, 41);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
-            this.lblNombre.TabIndex = 10;
-            this.lblNombre.Text = "Nombre";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID:";
             // 
-            // btnCancelar
+            // label2
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(468, 208);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 24;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nombre:";
             // 
-            // btnAceptar
+            // label3
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(335, 208);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 23;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Fecha de nacimiento:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Direccion:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 134);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Email:";
             // 
             // txtId
             // 
-            this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(136, 3);
+            this.txtId.Location = new System.Drawing.Point(144, 3);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(180, 20);
-            this.txtId.TabIndex = 16;
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(3, 0);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(18, 13);
-            this.lblId.TabIndex = 9;
-            this.lblId.Text = "ID";
-            // 
-            // txtApellido
-            // 
-            this.txtApellido.Location = new System.Drawing.Point(468, 44);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(174, 20);
-            this.txtApellido.TabIndex = 20;
-            this.txtApellido.TabStop = false;
-            // 
-            // lblApellido
-            // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(335, 41);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(44, 13);
-            this.lblApellido.TabIndex = 13;
-            this.lblApellido.Text = "Apellido";
-            // 
-            // lblTelefono
-            // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(335, 123);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
-            this.lblTelefono.TabIndex = 27;
-            this.lblTelefono.Text = "Telefono";
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(468, 126);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(174, 20);
-            this.txtTelefono.TabIndex = 29;
-            // 
-            // lblFechaNac
-            // 
-            this.lblFechaNac.AutoSize = true;
-            this.lblFechaNac.Location = new System.Drawing.Point(3, 82);
-            this.lblFechaNac.Name = "lblFechaNac";
-            this.lblFechaNac.Size = new System.Drawing.Size(91, 13);
-            this.lblFechaNac.TabIndex = 35;
-            this.lblFechaNac.Text = "Fecha nacimiento";
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 5;
             // 
             // txtNombre
             // 
-            this.txtNombre.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtNombre.Location = new System.Drawing.Point(136, 44);
+            this.txtNombre.Location = new System.Drawing.Point(144, 40);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(180, 20);
-            this.txtNombre.TabIndex = 17;
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 6;
             // 
             // dtpFechaNacimiento
             // 
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(136, 85);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(144, 72);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(180, 20);
-            this.dtpFechaNacimiento.TabIndex = 41;
-            this.dtpFechaNacimiento.Value = new System.DateTime(2016, 8, 22, 0, 0, 0, 0);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(335, 3);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 42;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(136, 167);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(180, 20);
-            this.txtEmail.TabIndex = 18;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(3, 164);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
-            this.lblEmail.TabIndex = 11;
-            this.lblEmail.Text = "Email";
-            // 
-            // lblDireccion
-            // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(3, 123);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
-            this.lblDireccion.TabIndex = 36;
-            this.lblDireccion.Text = "Direccion";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(138, 20);
+            this.dtpFechaNacimiento.TabIndex = 7;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(136, 126);
+            this.txtDireccion.Location = new System.Drawing.Point(144, 105);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(180, 20);
-            this.txtDireccion.TabIndex = 37;
+            this.txtDireccion.Size = new System.Drawing.Size(100, 20);
+            this.txtDireccion.TabIndex = 8;
             // 
-            // lblLegajo
+            // txtEmail
             // 
-            this.lblLegajo.AutoSize = true;
-            this.lblLegajo.Location = new System.Drawing.Point(335, 82);
-            this.lblLegajo.Name = "lblLegajo";
-            this.lblLegajo.Size = new System.Drawing.Size(39, 13);
-            this.lblLegajo.TabIndex = 43;
-            this.lblLegajo.Text = "Legajo";
-            // 
-            // txtLegajo
-            // 
-            this.txtLegajo.Location = new System.Drawing.Point(468, 85);
-            this.txtLegajo.Name = "txtLegajo";
-            this.txtLegajo.Size = new System.Drawing.Size(174, 20);
-            this.txtLegajo.TabIndex = 44;
-            // 
-            // lblPlan
-            // 
-            this.lblPlan.AutoSize = true;
-            this.lblPlan.Location = new System.Drawing.Point(335, 164);
-            this.lblPlan.Name = "lblPlan";
-            this.lblPlan.Size = new System.Drawing.Size(28, 13);
-            this.lblPlan.TabIndex = 46;
-            this.lblPlan.Text = "Plan";
-            // 
-            // cmbPlan
-            // 
-            this.cmbPlan.DataSource = this.planesBindingSource1;
-            this.cmbPlan.DisplayMember = "desc_plan";
-            this.cmbPlan.FormattingEnabled = true;
-            this.cmbPlan.Location = new System.Drawing.Point(468, 167);
-            this.cmbPlan.Name = "cmbPlan";
-            this.cmbPlan.Size = new System.Drawing.Size(174, 21);
-            this.cmbPlan.TabIndex = 48;
-            this.cmbPlan.ValueMember = "id_plan";
-            // 
-            // planesBindingSource1
-            // 
-            this.planesBindingSource1.DataMember = "planes";
-            this.planesBindingSource1.DataSource = this.academia2DataSet1;
-            // 
-            // academia2DataSet1
-            // 
-            this.academia2DataSet1.DataSetName = "academia2DataSet1";
-            this.academia2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.txtEmail.Location = new System.Drawing.Point(144, 137);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.TabIndex = 9;
             // 
             // txtTipoPersona
             // 
-            this.txtTipoPersona.Location = new System.Drawing.Point(136, 208);
+            this.txtTipoPersona.Location = new System.Drawing.Point(144, 174);
             this.txtTipoPersona.Name = "txtTipoPersona";
-            this.txtTipoPersona.Size = new System.Drawing.Size(174, 20);
-            this.txtTipoPersona.TabIndex = 50;
-            // 
-            // tiposPersonasBindingSource
-            // 
-            this.tiposPersonasBindingSource.DataSource = typeof(Util.Enumeradores.TiposPersonas);
-            // 
-            // academia2DataSet
-            // 
-            this.academia2DataSet.DataSetName = "academia2DataSet";
-            this.academia2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // planesBindingSource
-            // 
-            this.planesBindingSource.DataMember = "planes";
-            this.planesBindingSource.DataSource = this.academia2DataSet;
-            // 
-            // planesTableAdapter
-            // 
-            this.planesTableAdapter.ClearBeforeFill = true;
-            // 
-            // planesTableAdapter1
-            // 
-            this.planesTableAdapter1.ClearBeforeFill = true;
+            this.txtTipoPersona.Size = new System.Drawing.Size(100, 20);
+            this.txtTipoPersona.TabIndex = 10;
             // 
             // cmbTipoPersona
             // 
             this.cmbTipoPersona.FormattingEnabled = true;
-            this.cmbTipoPersona.Location = new System.Drawing.Point(468, 3);
+            this.cmbTipoPersona.Location = new System.Drawing.Point(440, 3);
             this.cmbTipoPersona.Name = "cmbTipoPersona";
-            this.cmbTipoPersona.Size = new System.Drawing.Size(174, 21);
-            this.cmbTipoPersona.TabIndex = 51;
+            this.cmbTipoPersona.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipoPersona.TabIndex = 11;
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(440, 40);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(100, 20);
+            this.txtApellido.TabIndex = 12;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(440, 105);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.TabIndex = 14;
+            // 
+            // cmbPlan
+            // 
+            this.cmbPlan.FormattingEnabled = true;
+            this.cmbPlan.Location = new System.Drawing.Point(440, 137);
+            this.cmbPlan.Name = "cmbPlan";
+            this.cmbPlan.Size = new System.Drawing.Size(121, 21);
+            this.cmbPlan.TabIndex = 15;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(288, 174);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 16;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_1);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(440, 174);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 17;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(288, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Rol:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(288, 37);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Apellido:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(288, 69);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Legajo";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(288, 102);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 13);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Telefono:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(288, 134);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "Plan:";
+            // 
+            // udLegajo
+            // 
+            this.udLegajo.Location = new System.Drawing.Point(440, 72);
+            this.udLegajo.Name = "udLegajo";
+            this.udLegajo.Size = new System.Drawing.Size(120, 20);
+            this.udLegajo.TabIndex = 23;
             // 
             // PersonaAlta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(685, 252);
-            this.Controls.Add(this.tlpProfesor);
+            this.ClientSize = new System.Drawing.Size(598, 219);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PersonaAlta";
-            this.Text = "ProfesorAlta";
-            this.Load += new System.EventHandler(this.PersonaAlta_Load);
-            this.tlpProfesor.ResumeLayout(false);
-            this.tlpProfesor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tiposPersonasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.academia2DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.planesBindingSource)).EndInit();
+            this.Text = "PersonaAlta";
+            this.Load += new System.EventHandler(this.PersonaAlta_Load_1);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.udLegajo)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tlpProfesor;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.Label lblApellido;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label lblFechaNac;
-        private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Label lblLegajo;
-        private System.Windows.Forms.TextBox txtLegajo;
-        private System.Windows.Forms.Label lblPlan;
-        private System.Windows.Forms.ComboBox cmbPlan;
-        private academia2DataSet academia2DataSet;
-        private System.Windows.Forms.BindingSource planesBindingSource;
-        private academia2DataSetTableAdapters.planesTableAdapter planesTableAdapter;
-        private academia2DataSet1 academia2DataSet1;
-        private System.Windows.Forms.BindingSource planesBindingSource1;
-        private academia2DataSet1TableAdapters.planesTableAdapter planesTableAdapter1;
-        private System.Windows.Forms.BindingSource tiposPersonasBindingSource;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtTipoPersona;
         private System.Windows.Forms.ComboBox cmbTipoPersona;
-
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.ComboBox cmbPlan;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown udLegajo;
     }
 }

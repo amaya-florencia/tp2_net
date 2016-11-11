@@ -4,6 +4,7 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Configuration;
 
+
 namespace Data.Database
 {
     public class Adapter
@@ -12,9 +13,7 @@ namespace Data.Database
 
         //Clave por defecto a utlizar para la cadena de conexion
         //const string consKeyDefaultCnnString = "ConnStringLocal";
-        //const string consKeyDefaultCnnString = "ConnStringFlor";
-        const string consKeyDefaultCnnString = "ConnStringBelen";
-        
+        const string consKeyDefaultCnnString = "ConnStringFlor";
 
         private SqlConnection sqlConn;
         public SqlConnection SqlConn
@@ -32,13 +31,9 @@ namespace Data.Database
 
         protected void CloseConnection()
         {
-            sqlConn.Close();
-            sqlConn = null;
+            SqlConn.Close();
+            SqlConn = null;
         }
 
-        protected SqlDataReader ExecuteReader(String commandText)
-        {
-            throw new Exception("Método no implementado");
-        }
     }
 }

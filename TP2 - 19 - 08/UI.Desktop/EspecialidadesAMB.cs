@@ -105,5 +105,9 @@ namespace UI.Desktop
             }
         }
 
+        private void EspecialidadesAMB_Load(object sender, EventArgs e)
+        {
+            this.Listar();
+        }
     }
 }

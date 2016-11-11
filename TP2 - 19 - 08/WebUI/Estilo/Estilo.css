@@ -1,0 +1,245 @@
+﻿body {
+    background-color: #2E64FE;
+    font-family: "Open Sans",arial;
+    font-size: 14px;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+.centered{
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+#loginPanel{
+    width: 297px;
+    margin: 0px auto;
+    padding: 30px;
+    opacity: 1;  
+    border: 1px solid white;
+    border-radius: 3px;
+    height: 100%;
+}
+.txtLogin{
+    width: 200px;
+    float:left;
+    margin-bottom: 5px;
+}
+.lblLogin{
+    width:80px;
+    float:left;
+    text-align: right;
+    padding-right: 10px;
+}
+#btnIngresar{
+    float: right;
+}
+#lnkOlvideClave{
+    color: white;   
+    padding-top: 5px;
+    display:inline-block;
+}
+.respuesta{    
+    background-color: red;
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px 0px 10px 0px;    
+    display:inline-block;
+    color: white;
+    border-radius: 8px;
+}
+header #headerPanel {
+    background-color:#1b2a39;
+    box-shadow: rgba(0,0,0,0.4) 1px 1px;
+}
+#Salir {
+    float: right;
+}
+#Salir a{
+    font-size: 15px;   
+    text-decoration: none;
+    color: white;  
+    margin-right: 5px;     
+    margin-top: 5px 5px;    
+}
+#MenuHolder{    
+    width: 14%; 
+    margin-top:23px;
+    float: left;
+    border-right: 1px solid #1b2a39;
+}
+#menu a.static {
+    padding-left: 7px;
+    padding-right: 7px;       
+}
+#menu a {
+    text-decoration: none;  
+    color: white;
+    display: block;
+    font-size: 17px;
+}
+#menu a:hover {
+    color: darkorange;
+}
+#menu ul {
+    list-style: outside none none;    
+    margin:0px;
+    padding-left:30px;
+    padding-right:30px;
+}
+#menu ul li{
+    padding: 5px;
+    border: 0,5px solid white; 
+}
+#PageHeader_lblTitulo {
+    font-size: 25px;
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    text-shadow: 3px 3px 2px #1b2a39;
+}
+#PageContent {
+    width: 85%;
+    float:left;
+}
+#PageContent_pnlFiltroGrilla {
+    display: block;
+    text-align: center;
+}
+.grilla {
+   padding: 0;
+   margin: 5px auto;
+   border: 1px solid #333;
+}
+.grilla tr.header {
+   color: white;
+   height: 25px;
+   vertical-align: middle;
+   text-align: center;
+   font-weight: bold;
+   font-size: 15px;
+}
+.grilla tr.normal
+{
+   color: white;
+   height: 25px;
+   vertical-align: middle;
+   text-align: center;
+}
+.grilla tr.normal td {
+    padding: 5px;
+}
+.grilla .filaSeleccionada{
+    color: #FFF;    
+    background-color: darkorange;
+}
+.grilla tr.normal:hover {
+    background-color: darkorange;
+    color: white;
+    cursor: pointer;
+}
+.button{
+    background-color: orange;
+    border-radius: 5px;
+    width: 80px;
+    color: #2c3e50;    
+    height: 25px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+}
+.formbutton{
+    padding: 6px;
+}
+.formbutton:hover {
+    color: #FFF;    
+    background-color: darkorange;
+    transition: all linear 0.1s; 
+}
+div.gridActions {
+    width: 85%;
+    display: block;
+    margin: 15px auto;
+    float: right;
+}
+.error{  
+    background-color: red;
+    font-size: 12px;
+    width: 100%;
+    text-align: center !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px 0px 5px 0px;      
+    color: white;
+    text-shadow: 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+table caption {
+    font-size: 25px;
+    padding: 10px 0;
+    text-shadow: 1px 1px 1px white;
+}
+table tr td .error {
+    float: left;
+}
+.error.mensaje {
+    background-color: #007acc;
+    display: block;
+    margin: 5px auto;
+}
+.caja{     
+    width: 50%;
+    margin: 0 auto;         
+    text-align: center !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px 0px 5px 0px;      
+    color: white;
+    border: 1px dashed white;
+    border-radius: 4px; 
+}
+.cerrar{
+    width:20px;
+    height:20px;
+    cursor: pointer;
+    float:right;
+    padding-right: 5px;
+}
+#PageContent_pnlForm {
+    padding-top: 30px;
+}
+#PageContent_pnlForm table {
+    margin: 5px auto;
+}
+div.pnlForm {
+    display: block;
+    margin: 5px auto;
+    width: 280px;
+}
+table tr td .lblForm {
+    float: right;
+    padding-right: 5px;
+}
+table tr td .txtForm {
+    float: left;
+    margin: 5px 0;
+}
+#PageContent_pnlFormActions {
+    padding-top: 20px;
+}
+#txtDia, #txtMes {
+    float: left;
+    padding-right: 5px;
+}
+#txtAnio {
+    float: left;
+}
+div span .reportViewer {
+	float: left;
+    margin: 10px 0 0 20px;
+}

@@ -69,6 +69,7 @@
     <Content Include="Administrador\CambioContraseña.aspx" />
     <Content Include="Administrador\ArchivoJavaScript.js" />
     <Content Include="Administrador\Personas.aspx" />
+    <Content Include="Administrador\Plan.aspx" />
     <Content Include="Administrador\Usuario.aspx" />
     <Content Include="Estilo\Style.css" />
     <Content Include="Imagen\header_academia.jpg" />
@@ -132,6 +133,13 @@
     </Compile>
     <Compile Include="Administrador\Personas.aspx.designer.cs">
       <DependentUpon>Personas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\Plan.aspx.cs">
+      <DependentUpon>Plan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\Plan.aspx.designer.cs">
+      <DependentUpon>Plan.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administrador\Usuario.aspx.cs">
       <DependentUpon>Usuario.aspx</DependentUpon>

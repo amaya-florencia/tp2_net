@@ -7,6 +7,7 @@
     .auto-style2 {
         width: 190px;
     }
+    
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="PageContent" runat="server">
@@ -32,7 +33,7 @@
         <tr>
             <td> </td>
             <td  class="auto-style2" colspan="2">
-                <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" /></td>
+                <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="validaDatos()" /></td>
             <td>&nbsp;</td>
             
         </tr>

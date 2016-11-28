@@ -64,7 +64,41 @@ namespace Data.Database
             }
             return plan;
         }
-       
+
+        public List<Plan> GetAll(int idEspecialidad)
+        {
+            List<Plan> planes = new List<Plan>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdGetAll = new SqlCommand("SELECT * FROM planes " +
+                    "WHERE id_especialidad = @id_especialidad", this.SqlConn);
+                cmdGetAll.Parameters.Add("@id_especialidad", SqlDbType.Int).Value = idEspecialidad;
+                SqlDataReader drPlanes = cmdGetAll.ExecuteReader();
+
+                while (drPlanes.Read())
+                {
+                    Plan plan = new Plan();
+
+                    plan.ID = (int)drPlanes["id_plan"];
+                    plan.Descripcion = drPlanes["desc_plan"].ToString();
+                    plan.IdEspecialidad = (int)drPlanes["id_especialidad"];
+                    planes.Add(plan);
+                }
+                drPlanes.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al intentar recuperar la lista de planes", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return planes;
+        }
+
 
         public void Save(Plan plan)
         {

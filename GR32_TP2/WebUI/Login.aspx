@@ -33,7 +33,7 @@
         <tr>
             <td> </td>
             <td  class="auto-style2" colspan="2">
-                <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="validaDatos()" /></td>
+                <asp:Button ID="btnIngresar" runat="server" Text="Ingresar"  /></td>
             <td>&nbsp;</td>
             
         </tr>

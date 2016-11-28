@@ -34,8 +34,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AnalysisServices, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.AnalysisServices.SPClient.Interfaces, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -137,6 +146,20 @@
     <Compile Include="PlanAlta.Designer.cs">
       <DependentUpon>PlanAlta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\dsMateriasPlanes.cs">
+      <DependentUpon>dsMateriasPlanes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\dsMateriasPlanes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMateriasPlanes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\MateriasPorPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\MateriasPorPlan.Designer.cs">
+      <DependentUpon>MateriasPorPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsuarioAlta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +231,11 @@
     <EmbeddedResource Include="PlanAlta.resx">
       <DependentUpon>PlanAlta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\MateriasPorPlan.resx">
+      <DependentUpon>MateriasPorPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\Report2.rdlc" />
     <EmbeddedResource Include="UsuarioAlta.resx">
       <DependentUpon>UsuarioAlta.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +258,9 @@
     <EmbeddedResource Include="UsuariosABM.resx">
       <DependentUpon>UsuariosABM.cs</DependentUpon>
     </EmbeddedResource>
+    <Fakes Include="Fakes\Microsoft.ReportViewer.WinForms.fakes" />
+    <Fakes Include="Fakes\Microsoft.ReportViewer.WebForms.fakes" />
+    <Fakes Include="Fakes\Microsoft.ReportViewer.Common.fakes" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -265,6 +296,17 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Reportes\dsMateriasPlanes.xsc">
+      <DependentUpon>dsMateriasPlanes.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\dsMateriasPlanes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMateriasPlanes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\dsMateriasPlanes.xss">
+      <DependentUpon>dsMateriasPlanes.xsd</DependentUpon>
+    </None>
     <None Include="Resources\tsbNuevo.Image.png" />
   </ItemGroup>
   <ItemGroup>

@@ -205,5 +205,17 @@ namespace UI.Desktop
             CambioContraseña formCambio = new CambioContraseña(UsuarioActual);
             formCambio.ShowDialog();
         }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.MateriasPorPlan formrep = new Reportes.MateriasPorPlan();
+            formrep.ShowDialog();
+        }
+
+        private void planesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.MateriasPorPlan formReporte = new Reportes.MateriasPorPlan();
+            formReporte.ShowDialog();
+        }
     }
 }

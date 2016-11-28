@@ -37,13 +37,13 @@
             this.tsMaterias = new System.Windows.Forms.ToolStripMenuItem();
             this.tsComisiones = new System.Windows.Forms.ToolStripMenuItem();
             this.tsAlumnos = new System.Windows.Forms.ToolStripMenuItem();
+            this.verNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsDocentes = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsInscripcion = new System.Windows.Forms.ToolStripMenuItem();
             this.tsCursos = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -128,6 +128,12 @@
             this.tsAlumnos.Text = "Alumnos";
             this.tsAlumnos.Click += new System.EventHandler(this.tsAlumnos_Click);
             // 
+            // verNotasToolStripMenuItem
+            // 
+            this.verNotasToolStripMenuItem.Name = "verNotasToolStripMenuItem";
+            this.verNotasToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.verNotasToolStripMenuItem.Text = "Ver Notas";
+            // 
             // tsDocentes
             // 
             this.tsDocentes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -136,6 +142,12 @@
             this.tsDocentes.Size = new System.Drawing.Size(68, 20);
             this.tsDocentes.Text = "Docentes";
             this.tsDocentes.Click += new System.EventHandler(this.tsDocentes_Click);
+            // 
+            // registrarNotasToolStripMenuItem
+            // 
+            this.registrarNotasToolStripMenuItem.Name = "registrarNotasToolStripMenuItem";
+            this.registrarNotasToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.registrarNotasToolStripMenuItem.Text = "Registrar Notas";
             // 
             // tsUsuarios
             // 
@@ -164,24 +176,14 @@
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // registrarNotasToolStripMenuItem
-            // 
-            this.registrarNotasToolStripMenuItem.Name = "registrarNotasToolStripMenuItem";
-            this.registrarNotasToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.registrarNotasToolStripMenuItem.Text = "Registrar Notas";
-            // 
-            // verNotasToolStripMenuItem
-            // 
-            this.verNotasToolStripMenuItem.Name = "verNotasToolStripMenuItem";
-            this.verNotasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.verNotasToolStripMenuItem.Text = "Ver Notas";
+            this.reportesToolStripMenuItem.Click += new System.EventHandler(this.reportesToolStripMenuItem_Click);
             // 
             // planesToolStripMenuItem
             // 
             this.planesToolStripMenuItem.Name = "planesToolStripMenuItem";
             this.planesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.planesToolStripMenuItem.Text = "Planes";
+            this.planesToolStripMenuItem.Click += new System.EventHandler(this.planesToolStripMenuItem_Click);
             // 
             // Main
             // 

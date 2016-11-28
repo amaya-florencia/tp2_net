@@ -144,6 +144,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PlanAlta";
             this.Text = "PlanAlta";
+            this.Load += new System.EventHandler(this.PlanAlta_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

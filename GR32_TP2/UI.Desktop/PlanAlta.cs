@@ -181,6 +181,10 @@ namespace UI.Desktop
                 return false;
             }
         }
-        
+
+        private void PlanAlta_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

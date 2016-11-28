@@ -26,6 +26,10 @@ namespace Business.Logic
                 throw ExcepcionManejada;
             }
         }
+        public List<Plan> GetAll(int idEspecialidad)
+        {
+            return this.PlanData.GetAll(idEspecialidad);
+        }
         public Plan GetOne(int id)
         {
             return PlanData.GetOne(id);

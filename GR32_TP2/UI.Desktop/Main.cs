@@ -208,13 +208,13 @@ namespace UI.Desktop
 
         private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reportes.MateriasPorPlan formrep = new Reportes.MateriasPorPlan();
-            formrep.ShowDialog();
+           // Reportes.MateriasPorPlan formrep = new Reportes.MateriasPorPlan();
+          //  formrep.ShowDialog();
         }
 
         private void planesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reportes.MateriasPorPlan formReporte = new Reportes.MateriasPorPlan();
+            ReportePlan.RepPlan formReporte = new ReportePlan.RepPlan();
             formReporte.ShowDialog();
         }
     }

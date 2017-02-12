@@ -146,20 +146,31 @@
     <Compile Include="PlanAlta.Designer.cs">
       <DependentUpon>PlanAlta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\dsMateriasPlanes.cs">
-      <DependentUpon>dsMateriasPlanes.xsd</DependentUpon>
+    <Compile Include="ReportePlan\dsVistaPlanesMaterias.cs">
+      <DependentUpon>dsVistaPlanesMaterias.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\dsMateriasPlanes.Designer.cs">
+    <Compile Include="ReportePlan\dsVistaPlanesMaterias.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsVistaPlanesMaterias.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReportePlan\RepPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportePlan\RepPlan.Designer.cs">
+      <DependentUpon>RepPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repo\dsMateriasPlanes.cs" />
+    <Compile Include="Repo\dsMateriasPlanes.Designer.cs" />
+    <Compile Include="Repo\dsMateriasPlanes1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMateriasPlanes.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\MateriasPorPlan.cs">
+    <Compile Include="Repo\MateriasPorPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\MateriasPorPlan.Designer.cs">
-      <DependentUpon>MateriasPorPlan.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Repo\MateriasPorPlan.Designer.cs" />
     <Compile Include="UsuarioAlta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,11 +242,11 @@
     <EmbeddedResource Include="PlanAlta.resx">
       <DependentUpon>PlanAlta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\MateriasPorPlan.resx">
-      <DependentUpon>MateriasPorPlan.cs</DependentUpon>
+    <EmbeddedResource Include="ReportePlan\Report3.rdlc" />
+    <EmbeddedResource Include="ReportePlan\RepPlan.resx">
+      <DependentUpon>RepPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Report1.rdlc" />
-    <EmbeddedResource Include="Reportes\Report2.rdlc" />
+    <EmbeddedResource Include="Repo\MateriasPorPlan.resx" />
     <EmbeddedResource Include="UsuarioAlta.resx">
       <DependentUpon>UsuarioAlta.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,15 +307,26 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Reportes\dsMateriasPlanes.xsc">
-      <DependentUpon>dsMateriasPlanes.xsd</DependentUpon>
+    <None Include="ReportePlan\dsVistaPlanesMaterias.xsc">
+      <DependentUpon>dsVistaPlanesMaterias.xsd</DependentUpon>
     </None>
-    <None Include="Reportes\dsMateriasPlanes.xsd">
+    <None Include="ReportePlan\dsVistaPlanesMaterias.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsMateriasPlanes.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsVistaPlanesMaterias.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Reportes\dsMateriasPlanes.xss">
+    <None Include="ReportePlan\dsVistaPlanesMaterias.xss">
+      <DependentUpon>dsVistaPlanesMaterias.xsd</DependentUpon>
+    </None>
+    <None Include="Repo\dsMateriasPlanes.xsc">
+      <DependentUpon>dsMateriasPlanes.xsd</DependentUpon>
+    </None>
+    <None Include="Repo\dsMateriasPlanes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMateriasPlanes1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Repo\dsMateriasPlanes.xss">
       <DependentUpon>dsMateriasPlanes.xsd</DependentUpon>
     </None>
     <None Include="Resources\tsbNuevo.Image.png" />

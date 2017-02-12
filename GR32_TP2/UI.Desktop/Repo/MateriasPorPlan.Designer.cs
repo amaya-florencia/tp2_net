@@ -36,9 +36,9 @@
             this.cmbPlan = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.dsMateriasPlanes1 = new UI.Desktop.Reportes.dsMateriasPlanes();
+           // this.dsMateriasPlanes1 = new UI.Desktop.Reportes.dsMateriasPlanes();
             this.MateriasPorPlanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.planesMateriasTableAdapter = new UI.Desktop.Reportes.dsMateriasPlanesTableAdapters.PlanesMateriasTableAdapter();
+        //    this.planesMateriasTableAdapter = new UI.Desktop.Reportes.dsMateriasPlanesTableAdapters.PlanesMateriasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsMateriasPlanes1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MateriasPorPlanBindingSource)).BeginInit();
@@ -156,6 +156,6 @@
         private System.Windows.Forms.Button button1;
         private dsMateriasPlanes dsMateriasPlanes1;
         private System.Windows.Forms.BindingSource MateriasPorPlanBindingSource;
-        private dsMateriasPlanesTableAdapters.PlanesMateriasTableAdapter planesMateriasTableAdapter;
+        private dsMateriasPorPlanTableAdapters.PlanesMateriasTableAdapter planesMateriasTableAdapter;
     }
 }

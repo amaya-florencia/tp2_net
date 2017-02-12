@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace UI.Desktop.Reportes {
+namespace UI.Desktop.Repo {
     
     
     /// <summary>
@@ -636,7 +636,7 @@ namespace UI.Desktop.Reportes {
         }
     }
 }
-namespace UI.Desktop.Reportes.dsMateriasPlanesTableAdapters {
+namespace UI.Desktop.Repo.dsMateriasPlanesTableAdapters {
     
     
     /// <summary>
